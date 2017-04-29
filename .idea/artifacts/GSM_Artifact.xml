@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="GSM_Artifact">
+    <output-path>$PROJECT_DIR$/out/artifacts/GSM_Artifact</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="GSM/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="GSM" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring-4.3.8.RELEASE" />
+          <element id="library" level="project" name="Spring MVC-4.3.8.RELEASE" />
+          <element id="library" level="project" name="commons-dbcp2-2.1" />
+          <element id="library" level="project" name="commons-pool2-2.4" />
+          <element id="file-copy" path="$PROJECT_DIR$/ojdbc6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/javaee.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
