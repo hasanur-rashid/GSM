@@ -20,6 +20,7 @@
     </bean>
 
     <bean id="db" class="org.hasan.dbaccess.DataAccess" />
+    <bean id="loginServ" class="org.hasan.service.LoginService" />
 
     <context:property-placeholder location="classpath:jdbc.properties"/>
 

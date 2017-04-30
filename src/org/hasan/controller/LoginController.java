@@ -1,6 +1,9 @@
 package org.hasan.controller;
 
+
 import org.hasan.service.LoginService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,8 +21,11 @@ public class LoginController
     @RequestMapping("/login")
     public ModelAndView login(@RequestParam("usrName") String usrName, @RequestParam("passWd") Long passWd, HttpServletRequest request, HttpServletResponse response)
     {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        LoginService sv  = (LoginService) context.getBean("loginServ");
+
         ModelAndView mv = new ModelAndView();
-        LoginService sv = new LoginService();
+
         if ( sv.doLogin(usrName,passWd) )
         {
             if ( sv.checkAdmin(passWd) )
