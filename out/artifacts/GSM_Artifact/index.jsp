@@ -95,15 +95,15 @@
                 border: 2px solid forestgreen;
                 border-radius: 8px;
                 color: forestgreen;
-                padding: 15px 60px;
+                padding: 1vh 8vh;
                 position: absolute;
-                top: 40%;
+                top: 45%;
                 left: 40%;
                 text-align: center;
                 text-decoration: none;
                 display: block;
-                font-size: 24px;
-                /*margin: auto;*/
+                font-size: 4vh;
+                margin: 1vh;
                 cursor: pointer;
                 -webkit-transition-duration: 0.4s; /* Safari */
                 transition-duration: 0.4s;
@@ -114,15 +114,17 @@
             }
 
             h1.ex1 {
-                font: normal 60px Helvetica,Arial ;
+                font-family: Helvetica,Arial ;
+                font-size: 5vh;
                 text-align: center;
+                text-transform: uppercase;
                 color: forestgreen;
                 position: relative;
-                top: 25%;
+                top: 35%;
             }
 
             h2.ex2 {
-                font: normal 20px Helvetica,Arial ;
+                font: normal 4vh Helvetica,Arial ;
                 text-align: center;
                 color: red;
                 position: relative;
