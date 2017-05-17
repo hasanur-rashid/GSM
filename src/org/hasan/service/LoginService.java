@@ -12,12 +12,8 @@ import javax.annotation.PostConstruct;
 @Component
 public class LoginService
 {
-    private DataAccess db;
-
     @Autowired
-    public void setDb(DataAccess db) {
-        this.db = db;
-    }
+    private DataAccess db;
 
     public boolean doLogin (String usrName, Long passWd )
     {

@@ -170,9 +170,6 @@
     </head>
     <body>
         <h1 class="ex1">Grocery Store Management System</h1>
-        <%--<form action="loginField.jsp">
-            <button type="submit" class="button">Log In</button>
-        </form>--%>
         <button id="myBtn" class="button">Log In</button>
         <!-- The Modal -->
         <div id="myModal" class="modal">
@@ -184,7 +181,7 @@
                     <input type="text" name="usrName" placeholder="User Name" required/> <br>
                     <input type="password" name="passWd" placeholder="Password" required/> <br>
                     <br>
-                    <input type="submit" value="Login" />
+                    <input type="submit" value="Log In" />
                 </form>
             </div>
 

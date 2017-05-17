@@ -21,6 +21,7 @@
 
     <bean id="db" class="org.hasan.dbaccess.DataAccess" />
     <bean id="loginServ" class="org.hasan.service.LoginService" />
+    <bean id="basicInfoServ" class="org.hasan.service.BasicInfoService" />
 
     <context:property-placeholder location="classpath:jdbc.properties"/>
 
