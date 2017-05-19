@@ -171,7 +171,7 @@
         <button class="button pos5">Customer Information</button>
         <button class="button pos6">Company Information</button>
         <button class="button pos7">Representative Information</button>
-        <button class="button pos8">Sell Product</button>
+        <button class="button pos8" id="sellBtn">Sell Product</button>
         <button class="button pos9">Store Product</button>
         <!-- The Modal -->
         <div id="prInfoModal" class="modal">
@@ -187,12 +187,43 @@
             </div>
 
         </div>
+        <!-- The Modal -->
+        <div id="sellCheckModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <input type='checkbox' onclick='handleClickPr();'> Premier Customer <br>
+                <input type='checkbox' onclick='handleClickReg();'> Regular Customer
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="sellRegInfoModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form action="doSellToRegular">
+                    <input type="text" name="name" placeholder="Customer Name" required/> <br>
+                    <input type="text" name="mobile_no" placeholder="Mobile No." required/> <br>
+                    <input type="text" name="pid" placeholder="Product ID" required/> <br>
+                    <input type="text" name="quantity" placeholder="Quantity" required/> <br>
+                    <br>
+                    <input type="submit" value="Generate Memo" />
+                </form>
+            </div>
+
+        </div>
         <script>
             // Get the modal
             var prInfomodal = document.getElementById('prInfoModal');
+            var sellCheckModal = document.getElementById('sellCheckModal');
+            var sellRegInfoModal = document.getElementById('sellRegInfoModal');
 
             // Get the button that opens the modal
             var prInfoBtn = document.getElementById("prInfoBtn");
+            var sellBtn = document.getElementById("sellBtn");
 
             // Get the <span> element that closes the modal
             var span = document.getElementsByClassName("close")[0];
@@ -202,15 +233,38 @@
                 prInfomodal.style.display = "block";
             }
 
+            // When the user clicks the button, open the modal
+            sellBtn.onclick = function() {
+                sellCheckModal.style.display = "block";
+            }
+
+            function handleClickPr() {
+
+            }
+
+            function handleClickReg() {
+                sellCheckModal.style.display = "none";
+                sellRegInfoModal.style.display = "block";
+            }
+
+
             // When the user clicks on <span> (x), close the modal
             span.onclick = function() {
                 prInfomodal.style.display = "none";
+                sellCheckModal.style.display = "none";
+                sellRegInfoModal.style.display = "none";
             }
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == prInfomodal ) {
                     prInfomodal.style.display = "none";
+                }
+                else if (event.target == sellCheckModal ) {
+                    sellCheckModal.style.display = "none";
+                }
+                else if (event.target == sellRegInfoModal ) {
+                    sellRegInfoModal.style.display = "none";
                 }
             }
         </script>
