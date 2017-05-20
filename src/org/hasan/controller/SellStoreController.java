@@ -20,14 +20,36 @@ import javax.servlet.http.HttpSession;
 public class SellStoreController implements ApplicationContextAware
 {
     private ApplicationContext applicationContext;
+    private SellStoreService sv;
 
     @RequestMapping("/doSellToRegular")
     public ModelAndView doSellToRegular(@RequestParam("name") String name, @RequestParam("mobile_no") Long mobile_no, @RequestParam("pid") Long pid, @RequestParam("quantity") Long quantity, HttpServletRequest request, HttpServletResponse response)
     {
         HttpSession session = request.getSession();
         Long emid = (Long)session.getAttribute("emid");
-        SellStoreService sv = (SellStoreService) applicationContext.getBean("sellStoreServ") ;
         sv.performSellToRegular(name, mobile_no, pid, emid, quantity);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("employeeHome.jsp");
+        return mv;
+    }
+
+    @RequestMapping("/doSellToPremier")
+    public ModelAndView doSellToPremier(@RequestParam("pid") Long pid, @RequestParam("cuid") Long cuid, @RequestParam("quantity") Long quantity, HttpServletRequest request, HttpServletResponse response)
+    {
+        HttpSession session = request.getSession();
+        Long emid = (Long)session.getAttribute("emid");
+        sv.performSellToPremier(pid, emid, cuid, quantity);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("employeeHome.jsp");
+        return mv;
+    }
+
+    @RequestMapping("/doStore")
+    public ModelAndView doStore(@RequestParam("pid") Long pid, @RequestParam("price") Long price, @RequestParam("quantity") Long quantity, HttpServletRequest request, HttpServletResponse response)
+    {
+        HttpSession session = request.getSession();
+        Long emid = (Long)session.getAttribute("emid");
+        sv.performStore(pid, emid, price, quantity);
         ModelAndView mv = new ModelAndView();
         mv.setViewName("employeeHome.jsp");
         return mv;
@@ -36,5 +58,6 @@ public class SellStoreController implements ApplicationContextAware
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
+        sv = (SellStoreService) this.applicationContext.getBean("sellStoreServ");
     }
 }

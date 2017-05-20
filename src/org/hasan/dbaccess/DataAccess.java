@@ -108,4 +108,31 @@ public class DataAccess {
         SqlParameterSource in1 = new MapSqlParameterSource("P_ID", pid).addValue("SELL_QUANTITY",quantity);
         procQuantityDown.execute(in1);
     }
+
+    public void sellProductToPremier(Long pid,Long emid, Long cuid, Long quantity)
+    {
+        Long price =
+        this.jdbcTemplate.queryForObject
+        (
+                "select price from product where pid = ?",
+                Long.class,
+                new Object[]{pid}
+        );
+
+        this.jdbcTemplate.update("insert into buys values(?,?,?,sysdate,?,?)",new Object[]{pid,emid,cuid,price,quantity});
+
+        SqlParameterSource in = new MapSqlParameterSource("CU_ID", cuid).addValue("SELL_PRICE",price*quantity);
+        procUpdatePercentage.execute(in);
+
+        SqlParameterSource in1 = new MapSqlParameterSource("P_ID", pid).addValue("SELL_QUANTITY",quantity);
+        procQuantityDown.execute(in1);
+    }
+
+    public void storeProduct (Long pid,Long emid, Long price, Long quantity)
+    {
+        this.jdbcTemplate.update("insert into stores values(?,?,sysdate,?,?)",new Object[]{pid,emid,price,quantity});
+
+        SqlParameterSource in = new MapSqlParameterSource("P_ID", pid).addValue("STORE_QUANTITY",quantity);
+        procQuantityUp.execute(in);
+    }
 }

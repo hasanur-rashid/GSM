@@ -20,11 +20,11 @@ import javax.servlet.http.HttpServletResponse;
 public class BasicInfoController implements ApplicationContextAware
 {
     private ApplicationContext applicationContext;
+    private BasicInfoService sv;
 
     @RequestMapping("/prBasicInfo")
     public ModelAndView prBasicInfo(@RequestParam("pid") Long pid, HttpServletRequest request, HttpServletResponse response)
     {
-        BasicInfoService sv = (BasicInfoService) applicationContext.getBean("basicInfoServ");
         ModelAndView mv = new ModelAndView();
         ProductInformation pInfo = sv.getPrInfo(pid);
         mv.setViewName("basicPrInfo.jsp");
@@ -35,5 +35,6 @@ public class BasicInfoController implements ApplicationContextAware
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
+        sv = (BasicInfoService) this.applicationContext.getBean("basicInfoServ");
     }
 }

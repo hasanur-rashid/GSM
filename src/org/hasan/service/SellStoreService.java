@@ -17,4 +17,14 @@ public class SellStoreService
     {
         db.sellProductToRegular(name, mobile_no, pid, emid, quantity);
     }
+
+    public void performSellToPremier (Long pid,Long emid, Long cuid, Long quantity)
+    {
+        db.sellProductToPremier(pid, emid, cuid, quantity);
+    }
+
+    public void performStore(Long pid,Long emid, Long price, Long quantity)
+    {
+        db.storeProduct(pid, emid, price, quantity);
+    }
 }
