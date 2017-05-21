@@ -12,8 +12,21 @@
         <title>Basic Product Info</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1.ex1
+            {
+                font-family: Helvetica,Arial;
+                color: forestgreen;
+            }
+
+            h2.ex2
+            {
+                font-family: Helvetica,Arial;
+                color: forestgreen;
+            }
+        </style>
     </head>
-    <h1>Product Information:</h1>
+    <h1 class="ex1">Product Information:</h1>
     <%
         ProductInformation pInfo = (ProductInformation) request.getAttribute("pInfo");
         if(pInfo==null)
@@ -22,73 +35,51 @@
         }
         else
         {
-            out.println("<table>");
-            out.println("<tr>");
-            out.println( String.format("<td>Product ID</td><td>:%d</td>", pInfo.getPid().longValue()) );
-            out.println("</tr>");
-            out.println("<tr>");
-            out.println( String.format("<td>Product Name</td><td>:%s</td>", pInfo.getPname()) );
-            out.println("</tr>");
-            out.println("<tr>");
-            out.println( String.format("<td>Product Price</td><td>:%.2f</td>", pInfo.getPrice().floatValue()) );
-            out.println("</tr>");
-            out.println("<tr>");
-            out.println( String.format("<td>Product Quantity</td><td>:%d</td>", pInfo.getQuantity().longValue()) );
-            out.println("</tr>");
-            out.println("<tr>");
-            out.println( String.format("<td>Product Category</td><td>:%s</td>", pInfo.getCategory()) );
-            out.println("</tr>");
-            out.println("<tr>");
+            out.println( String.format("<h2 class=\"ex2\">Product ID: <span style=\"color: black\">%d</span></h2>", pInfo.getPid().longValue()) );
+            out.println( String.format("<h2 class=\"ex2\">Product Name: <span style=\"color: black\">%s</span></h2>", pInfo.getPname()) );
+            out.println( String.format("<h2 class=\"ex2\">Product Price: <span style=\"color: black\">%.2f</span></h2>", pInfo.getPrice().floatValue()) );
+            out.println( String.format("<h2 class=\"ex2\">Product Quantity: <span style=\"color: black\">%d</span></h2>", pInfo.getQuantity().longValue()) );
+            out.println( String.format("<h2 class=\"ex2\">Product Category: <span style=\"color: black\">%s</span></h2>", pInfo.getCategory()) );
             if ( pInfo.getCmid() == null )
             {
-                out.println("<td>Product Company ID</td><td>:</td>");
+                out.println("<h2 class=\"ex2\">Product Company ID: <span style=\"color: black\">No Info Available</span></h2>");
             }
             else
             {
-                out.println( String.format("<td>Product Company ID</td><td>:%d</td>", pInfo.getCmid().longValue()) );
+                out.println( String.format("<h2 class=\"ex2\">Product Company ID: <span style=\"color: black\">%d</span></h2>", pInfo.getCmid().longValue()) );
             }
-            out.println("</tr>");
-            out.println("<tr>");
             if ( pInfo.getCmname() == null )
             {
-                out.println("<td>Product Company Name</td><td>:</td>");
+                out.println("<h2 class=\"ex2\">Product Company Name: <span style=\"color: black\">No Info Available</span></h2>");
             }
             else
             {
-                out.println( String.format("<td>Product Company Name</td><td>:%s</td>", pInfo.getCmname()) );
+                out.println( String.format("<h2 class=\"ex2\">Product Company Name: <span style=\"color: black\">%s</span></h2>", pInfo.getCmname()) );
             }
-            out.println("</tr>");
-            out.println("<tr>");
             if ( pInfo.getRid() == null )
             {
-                out.println("<td>Product Representative ID</td><td>:</td>");
+                out.println("<h2 class=\"ex2\">Product Representative ID: <span style=\"color: black\">No Info Available</span></h2>");
             }
             else
             {
-                out.println( String.format("<td>Product Representative ID</td><td>:%d</td>", pInfo.getRid().longValue()) );
+                out.println( String.format("<h2 class=\"ex2\">Product Representative ID: <span style=\"color: black\">%d</span></h2>", pInfo.getRid().longValue()) );
             }
-            out.println("</tr>");
-            out.println("<tr>");
             if ( pInfo.getRname() == null )
             {
-                out.println("<td>Product Representative</td><td>:</td>");
+                out.println("<h2 class=\"ex2\">Product Representative: <span style=\"color: black\">No Info Available</span></h2>");
             }
             else
             {
-                out.println( String.format("<td>Product Representative</td><td>:%s</td>", pInfo.getRname()) );
+                out.println( String.format("<h2 class=\"ex2\">Product Representative: <span style=\"color: black\">%s</span></h2>", pInfo.getRname()) );
             }
-            out.println("</tr>");
-            out.println("<tr>");
             if ( pInfo.getMobile_no() == null )
             {
-                out.println("<td>Representative Mobile No.</td><td>:</td>");
+                out.println("<h2 class=\"ex2\">Representative Mobile No.: <span style=\"color: black\">No Info Available</span></h2>");
             }
             else
             {
-                out.println( String.format("<td>Representative Mobile No.</td><td>:%d</td>", pInfo.getMobile_no().longValue()) );
+                out.println( String.format("<h2 class=\"ex2\">Representative Mobile No.: <span style=\"color: black\">%d</span></h2>", pInfo.getMobile_no().longValue()) );
             }
-            out.println("</tr>");
-            out.println("</table>");
         }
     %>
     <body>

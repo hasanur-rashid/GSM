@@ -15,20 +15,50 @@
         <style>
             table, th, td
             {
-                border: 1px solid black;
+                border-radius: 8px;
                 border-collapse: collapse;
             }
             th, td
             {
                 padding: 5px;
-            }
-            th, td
-            {
                 text-align: center;
+            }
+
+            tr:nth-child(even)
+            {
+                background-color: lightgreen;
+            }
+
+            tr:nth-child(odd)
+            {
+                background-color: #dee3e9;
+            }
+
+            tr:hover
+            {
+                background-color: forestgreen;
+            }
+
+            h1.ex1
+            {
+                font-family: Helvetica,Arial;
+                color: forestgreen;
+            }
+
+            h2.ex2
+            {
+                font-family: Helvetica,Arial;
+                color: forestgreen;
+            }
+
+            th
+            {
+                background-color: #4CAF50;
+                color: white;
             }
         </style>
     </head>
-    <h1>Company Information:</h1>
+    <h1 class="ex1">Company Information:</h1>
     <%
         CompanyInformation comInfo = (CompanyInformation) request.getAttribute("comInfo");
         if(comInfo==null)
@@ -37,18 +67,10 @@
         }
         else
         {
-            out.println("<table>");
-            out.println("<tr>");
-            out.println( String.format("<td>Company ID</td><td>%d</td>", comInfo.getCmid().longValue()) );
-            out.println("</tr>");
-            out.println("<tr>");
-            out.println( String.format("<td>Company Name</td><td>%s</td>", comInfo.getCmname()) );
-            out.println("</tr>");
-            out.println("<tr>");
-            out.println( String.format("<td>Company Address</td><td>%s</td>", comInfo.getCmaddress()) );
-            out.println("</tr>");
-            out.println("</table>");
-            out.println("<h1>Company Product Information:</h1>");
+            out.println( String.format("<h2 class=\"ex2\">Company ID: <span style=\"color: black\">%d</span></h2>", comInfo.getCmid().longValue()) );
+            out.println( String.format("<h2 class=\"ex2\">Company Name: <span style=\"color: black\">%s</span></h2>", comInfo.getCmname()) );
+            out.println( String.format("<h2 class=\"ex2\">Company Address: <span style=\"color: black\">%s</span></h2>", comInfo.getCmaddress()) );
+            out.println("<h1 class=\"ex1\">Company Product Information:</h1>");
             out.println("<table>");
             out.println("<tr>");
             out.println("<th>Product ID</th>");
@@ -64,7 +86,7 @@
                 out.println("</tr>");
             }
             out.println("</table>");
-            out.println("<h1>Company Representative Information:</h1>");
+            out.println("<h1 class=\"ex1\">Company Representative Information:</h1>");
             out.println("<table>");
             out.println("<tr>");
             out.println("<th>Representative ID</th>");

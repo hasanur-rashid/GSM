@@ -122,79 +122,66 @@ public class DataAccess {
                 }
             }
         );
-        System.out.println("Com Name: " + cInfo.getCmname());
-        cInfo.setPid(
-            this.jdbcTemplate.queryForObject
-            (
-                "select pid from product where cmid = ?",
-                new Object[]{cmid},
-                new RowMapper<List<Long>>() {
-                    public List<Long> mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        List<Long> list = new ArrayList<>();
-                        list.add(rs.getLong(1));
-                        return list;
-                    }
+        List<Long> pid =
+        this.jdbcTemplate.query
+        (
+            "select pid from product where cmid = ?",
+            new Object[]{cmid},
+            new RowMapper<Long>() {
+                public Long mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    return  rs.getLong(1);
                 }
-            )
+            }
         );
-        cInfo.setPname(
-            this.jdbcTemplate.queryForObject
-            (
-                "select name from product where cmid = ?",
-                new Object[]{cmid},
-                new RowMapper<List<String>>() {
-                    public List<String> mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        List<String> list = new ArrayList<>();
-                        list.add(rs.getString(1));
-                        return list;
-                    }
+        cInfo.setPid(pid);
+        List<String> pname =
+        this.jdbcTemplate.query
+        (
+            "select name from product where cmid = ?",
+            new Object[]{cmid},
+            new RowMapper<String>() {
+                public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    return rs.getString(1);
                 }
-            )
+            }
         );
-        System.out.println("Com pr Name: " + cInfo.getPname());
-        cInfo.setRname(
-            this.jdbcTemplate.queryForObject
-            (
-                "select name from representative where cmid = ? ",
-                new Object[]{cmid},
-                new RowMapper<List<String>>() {
-                    public List<String> mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        List<String> list = new ArrayList<>();
-                        list.add(rs.getString(1));
-                        return list;
-                    }
+        cInfo.setPname(pname);
+        List<String> rname =
+        this.jdbcTemplate.query
+        (
+            "select name from representative where cmid = ? ",
+            new Object[]{cmid},
+            new RowMapper<String>() {
+                public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    return rs.getString(1);
                 }
-            )
+            }
         );
-        System.out.println("Com Rep Name: " + cInfo.getRname());
-        cInfo.setRid(
-            this.jdbcTemplate.queryForObject
-            (
-                "select rid from representative where cmid = ? ",
-                new Object[]{cmid},
-                new RowMapper<List<Long>>() {
-                    public List<Long> mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        List<Long> list = new ArrayList<>();
-                        list.add(rs.getLong(1));
-                        return list;
-                    }
+        cInfo.setRname(rname);
+        List<Long> rid =
+        this.jdbcTemplate.query
+        (
+            "select rid from representative where cmid = ? ",
+            new Object[]{cmid},
+            new RowMapper <Long>() {
+                public Long mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    return rs.getLong(1);
                 }
-            )
+            }
         );
-        cInfo.setMobile_no(
-            this.jdbcTemplate.queryForObject
-            (
-                "select mobile_no from representative where cmid = ? ",
-                new Object[]{cmid},
-                new RowMapper<List<Long>>() {
-                    public List<Long> mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        List<Long> list = new ArrayList<>();
-                        list.add(rs.getLong(1));
-                        return list;
-                    }
+        cInfo.setRid(rid);
+        List<Long> mobile_no =
+        this.jdbcTemplate.query
+        (
+            "select mobile_no from representative where cmid = ? ",
+            new Object[]{cmid},
+            new RowMapper<Long>() {
+                public Long mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    return rs.getLong(1);
                 }
-            )
+            }
         );
+        cInfo.setMobile_no(mobile_no);
         return cInfo;
     }
 
