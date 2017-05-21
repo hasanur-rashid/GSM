@@ -1,5 +1,6 @@
 package org.hasan.controller;
 
+import org.hasan.model.CompanyInformation;
 import org.hasan.model.ProductInformation;
 import org.hasan.service.BasicInfoService;
 import org.springframework.beans.BeansException;
@@ -29,6 +30,16 @@ public class BasicInfoController implements ApplicationContextAware
         ProductInformation pInfo = sv.getPrInfo(pid);
         mv.setViewName("basicPrInfo.jsp");
         mv.addObject("pInfo",pInfo);
+        return mv;
+    }
+
+    @RequestMapping("/comBasicInfo")
+    public ModelAndView comBasicInfo(@RequestParam("cmid") Long cmid, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        CompanyInformation comInfo = sv.getComInfo(cmid);
+        mv.setViewName("basicComInfo.jsp");
+        mv.addObject("comInfo",comInfo);
         return mv;
     }
 

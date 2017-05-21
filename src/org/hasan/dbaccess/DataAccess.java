@@ -1,5 +1,6 @@
 package org.hasan.dbaccess;
 
+import org.hasan.model.CompanyInformation;
 import org.hasan.model.ProductInformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,6 +14,8 @@ import javax.sql.DataSource;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -44,6 +47,26 @@ public class DataAccess {
             "select count(*) from employee where name = ? and emid = ?",
             Integer.class,
             new Object[]{usrName,passWd}
+        );
+    }
+
+    public int isCompany( Long cmid )
+    {
+        return this.jdbcTemplate.queryForObject
+        (
+                "select count(*) from company where cmid = ?",
+                Integer.class,
+                new Object[]{cmid}
+        );
+    }
+
+    public int isRep( Long rid, Long cmid )
+    {
+        return this.jdbcTemplate.queryForObject
+        (
+                "select count(*) from representative where rid = ? and cmid = ?",
+                Integer.class,
+                new Object[]{rid,cmid}
         );
     }
 
@@ -80,6 +103,99 @@ public class DataAccess {
                 }
             }
         );
+    }
+
+    public CompanyInformation getCompanyInfo(Long cmid)
+    {
+        CompanyInformation cInfo =
+        this.jdbcTemplate.queryForObject
+        (
+            "select * from company where cmid = ?",
+            new Object[]{cmid},
+            new RowMapper<CompanyInformation>() {
+                public CompanyInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    CompanyInformation cInfo = new CompanyInformation();
+                    cInfo.setCmid(rs.getLong("cmid"));
+                    cInfo.setCmname(rs.getString("name"));
+                    cInfo.setCmaddress(rs.getString("address"));
+                    return cInfo;
+                }
+            }
+        );
+        System.out.println("Com Name: " + cInfo.getCmname());
+        cInfo.setPid(
+            this.jdbcTemplate.queryForObject
+            (
+                "select pid from product where cmid = ?",
+                new Object[]{cmid},
+                new RowMapper<List<Long>>() {
+                    public List<Long> mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        List<Long> list = new ArrayList<>();
+                        list.add(rs.getLong(1));
+                        return list;
+                    }
+                }
+            )
+        );
+        cInfo.setPname(
+            this.jdbcTemplate.queryForObject
+            (
+                "select name from product where cmid = ?",
+                new Object[]{cmid},
+                new RowMapper<List<String>>() {
+                    public List<String> mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        List<String> list = new ArrayList<>();
+                        list.add(rs.getString(1));
+                        return list;
+                    }
+                }
+            )
+        );
+        System.out.println("Com pr Name: " + cInfo.getPname());
+        cInfo.setRname(
+            this.jdbcTemplate.queryForObject
+            (
+                "select name from representative where cmid = ? ",
+                new Object[]{cmid},
+                new RowMapper<List<String>>() {
+                    public List<String> mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        List<String> list = new ArrayList<>();
+                        list.add(rs.getString(1));
+                        return list;
+                    }
+                }
+            )
+        );
+        System.out.println("Com Rep Name: " + cInfo.getRname());
+        cInfo.setRid(
+            this.jdbcTemplate.queryForObject
+            (
+                "select rid from representative where cmid = ? ",
+                new Object[]{cmid},
+                new RowMapper<List<Long>>() {
+                    public List<Long> mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        List<Long> list = new ArrayList<>();
+                        list.add(rs.getLong(1));
+                        return list;
+                    }
+                }
+            )
+        );
+        cInfo.setMobile_no(
+            this.jdbcTemplate.queryForObject
+            (
+                "select mobile_no from representative where cmid = ? ",
+                new Object[]{cmid},
+                new RowMapper<List<Long>>() {
+                    public List<Long> mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        List<Long> list = new ArrayList<>();
+                        list.add(rs.getLong(1));
+                        return list;
+                    }
+                }
+            )
+        );
+        return cInfo;
     }
 
     public void sellProductToRegular(String name, Long mobile_no, Long pid, Long emid, Long quantity)

@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c6e17f6-2a06-4e9f-8d29-5d2a4e19a6ba" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/GSM_Artifact/WEB-INF/classes/org/hasan/controller/BasicInfoController.class" afterPath="$PROJECT_DIR$/out/artifacts/GSM_Artifact/WEB-INF/classes/org/hasan/controller/BasicInfoController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/GSM_Artifact/WEB-INF/classes/org/hasan/dbaccess/DataAccess$1.class" afterPath="$PROJECT_DIR$/out/artifacts/GSM_Artifact/WEB-INF/classes/org/hasan/dbaccess/DataAccess$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/GSM_Artifact/WEB-INF/classes/org/hasan/dbaccess/DataAccess.class" afterPath="$PROJECT_DIR$/out/artifacts/GSM_Artifact/WEB-INF/classes/org/hasan/dbaccess/DataAccess.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/GSM_Artifact/WEB-INF/classes/org/hasan/service/BasicInfoService.class" afterPath="$PROJECT_DIR$/out/artifacts/GSM_Artifact/WEB-INF/classes/org/hasan/service/BasicInfoService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GSM/org/hasan/controller/BasicInfoController.class" afterPath="$PROJECT_DIR$/out/production/GSM/org/hasan/controller/BasicInfoController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GSM/org/hasan/dbaccess/DataAccess$1.class" afterPath="$PROJECT_DIR$/out/production/GSM/org/hasan/dbaccess/DataAccess$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GSM/org/hasan/dbaccess/DataAccess.class" afterPath="$PROJECT_DIR$/out/production/GSM/org/hasan/dbaccess/DataAccess.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GSM/org/hasan/service/BasicInfoService.class" afterPath="$PROJECT_DIR$/out/production/GSM/org/hasan/service/BasicInfoService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/GSM_Artifact/employeeHome.jsp" afterPath="$PROJECT_DIR$/out/artifacts/GSM_Artifact/employeeHome.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java" afterPath="$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/hasan/controller/SellStoreController.java" afterPath="$PROJECT_DIR$/src/org/hasan/controller/SellStoreController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java" afterPath="$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/hasan/service/SellStoreService.java" afterPath="$PROJECT_DIR$/src/org/hasan/service/SellStoreService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java" afterPath="$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/employeeHome.jsp" afterPath="$PROJECT_DIR$/web/employeeHome.jsp" />
     </list>
     <ignored path="GSM.iws" />
@@ -29,59 +37,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BasicInfoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicInfoService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#406#407#0" expanded="true" />
-                <element signature="e#451#452#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="employeeHome.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/employeeHome.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5966">
-              <caret line="314" column="55" lean-forward="true" selection-start-line="314" selection-start-column="55" selection-end-line="314" selection-end-column="55" />
+            <state relative-caret-position="-1463">
+              <caret line="164" column="56" lean-forward="false" selection-start-line="164" selection-start-column="56" selection-end-line="164" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SellStoreController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/SellStoreController.java">
+      <file leaf-file-name="LoginService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/hasan/service/LoginService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="47" column="83" lean-forward="false" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="83" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SellStoreService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/hasan/service/SellStoreService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            <state relative-caret-position="247">
+              <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,19 +72,114 @@
       <file leaf-file-name="DataAccess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="130" column="30" lean-forward="false" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="75" />
+            <state relative-caret-position="2888">
+              <caret line="168" column="64" lean-forward="false" selection-start-line="168" selection-start-column="64" selection-end-line="168" selection-end-column="64" />
               <folding>
-                <marker date="1495303588036" expanded="true" signature="1669:1726" ph="select count... employee" />
-                <marker date="1495303588036" expanded="true" signature="1944:1991" ph="select desig... employee" />
-                <marker date="1495303588036" expanded="true" signature="2212:2403" ph="select p.pid... product" />
-                <marker date="1495303588036" expanded="true" signature="3464:3503" ph="select price... product" />
-                <marker date="1495303588036" expanded="true" signature="3671:3701" ph="select max(c... customer" />
-                <marker date="1495303588036" expanded="true" signature="3946:3980" ph="insert into customer... " />
-                <marker date="1495303588036" expanded="true" signature="4052:4094" ph="insert into buys... " />
-                <marker date="1495303588036" expanded="true" signature="4474:4513" ph="select price... product" />
-                <marker date="1495303588036" expanded="true" signature="4624:4666" ph="insert into buys... " />
-                <marker date="1495303588036" expanded="true" signature="5140:5182" ph="insert into stores... " />
+                <marker date="1495345344245" expanded="true" signature="1763:1820" ph="select count... employee" />
+                <marker date="1495345344245" expanded="true" signature="2028:2071" ph="select count... company" />
+                <marker date="1495345344245" expanded="true" signature="2283:2345" ph="select count... representative" />
+                <marker date="1495345344245" expanded="true" signature="2565:2612" ph="select desig... employee" />
+                <marker date="1495345344245" expanded="true" signature="2833:3024" ph="select p.pid... product" />
+                <marker date="1495345344245" expanded="true" signature="4049:4085" ph="select * fro... company" />
+                <marker date="1495345344245" expanded="true" signature="4756:4794" ph="select pid f... product" />
+                <marker date="1495345344245" expanded="true" signature="5284:5323" ph="select name product" />
+                <marker date="1495345344245" expanded="true" signature="5885:5931" ph="select name representative" />
+                <marker date="1495345344245" expanded="true" signature="6493:6538" ph="select rid f... representative" />
+                <marker date="1495345344245" expanded="true" signature="7033:7084" ph="select mobil... representative" />
+                <marker date="1495345344245" expanded="true" signature="7701:7740" ph="select price... product" />
+                <marker date="1495345344245" expanded="true" signature="7908:7938" ph="select max(c... customer" />
+                <marker date="1495345344245" expanded="true" signature="8183:8217" ph="insert into customer... " />
+                <marker date="1495345344245" expanded="true" signature="8289:8331" ph="insert into buys... " />
+                <marker date="1495345344245" expanded="true" signature="8711:8750" ph="select price... product" />
+                <marker date="1495345344245" expanded="true" signature="8861:8903" ph="insert into buys... " />
+                <marker date="1495345344245" expanded="true" signature="9377:9419" ph="insert into stores... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicInfoController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basicComInfo.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/basicComInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="893">
+              <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basicPrInfo.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/basicPrInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="63" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicInfoService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+              <folding>
+                <element signature="e#556#557#0" expanded="true" />
+                <element signature="e#602#603#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyInformation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/hasan/model/CompanyInformation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+              <folding>
+                <element signature="e#353#354#0" expanded="true" />
+                <element signature="e#391#392#0" expanded="true" />
+                <element signature="e#423#424#0" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#485#486#0" expanded="true" />
+                <element signature="e#529#530#0" expanded="true" />
+                <element signature="e#565#566#0" expanded="true" />
+                <element signature="e#601#602#0" expanded="true" />
+                <element signature="e#633#634#0" expanded="true" />
+                <element signature="e#683#684#0" expanded="true" />
+                <element signature="e#725#726#0" expanded="true" />
+                <element signature="e#759#760#0" expanded="true" />
+                <element signature="e#785#786#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+                <element signature="e#857#858#0" expanded="true" />
+                <element signature="e#895#896#0" expanded="true" />
+                <element signature="e#923#924#0" expanded="true" />
+                <element signature="e#971#972#0" expanded="true" />
+                <element signature="e#1005#1006#0" expanded="true" />
+                <element signature="e#1039#1040#0" expanded="true" />
+                <element signature="e#1065#1066#0" expanded="true" />
+                <element signature="e#1107#1108#0" expanded="true" />
+                <element signature="e#1137#1138#0" expanded="true" />
+                <element signature="e#1175#1176#0" expanded="true" />
+                <element signature="e#1203#1204#0" expanded="true" />
+                <element signature="e#1251#1252#0" expanded="true" />
+                <element signature="e#1285#1286#0" expanded="true" />
+                <element signature="e#1325#1326#0" expanded="true" />
+                <element signature="e#1357#1358#0" expanded="true" />
+                <element signature="e#1411#1412#0" expanded="true" />
+                <element signature="e#1453#1454#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,8 +190,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -145,18 +210,23 @@
         <option value="$PROJECT_DIR$/web/loginField.jsp" />
         <option value="$PROJECT_DIR$/src/org/hasan/service/LoginService.java" />
         <option value="$PROJECT_DIR$/src/org/hasan/model/ProductInformation.java" />
-        <option value="$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/basicPrInfo.jsp" />
         <option value="$PROJECT_DIR$/web/basicPrInfo.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/org/hasan/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/org/hasan/service/SelfStoreService.java" />
         <option value="$PROJECT_DIR$/src/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java" />
         <option value="$PROJECT_DIR$/src/org/hasan/service/SellStoreService.java" />
-        <option value="$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java" />
         <option value="$PROJECT_DIR$/src/org/hasan/controller/SellStoreController.java" />
+        <option value="$PROJECT_DIR$/src/org/hasan/model/CompanyInformation.java" />
+        <option value="$PROJECT_DIR$/src/org/hasan/model/CustomerInformation.java" />
+        <option value="$PROJECT_DIR$/src/org/hasan/model/EmployeeInformation.java" />
+        <option value="$PROJECT_DIR$/src/org/hasan/model/RepresentativeInformation.java" />
+        <option value="$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java" />
+        <option value="$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java" />
         <option value="$PROJECT_DIR$/web/employeeHome.jsp" />
+        <option value="$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java" />
+        <option value="$PROJECT_DIR$/web/basicComInfo.jsp" />
       </list>
     </option>
   </component>
@@ -198,8 +268,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -222,7 +292,65 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GSM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GSM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GSM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GSM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hasan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GSM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GSM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hasan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -828,7 +956,9 @@
       <workItem from="1495029495636" duration="378000" />
       <workItem from="1495030068601" duration="19434000" />
       <workItem from="1495183484002" duration="13916000" />
-      <workItem from="1495301510814" duration="7255000" />
+      <workItem from="1495301510814" duration="11022000" />
+      <workItem from="1495334088068" duration="8086000" />
+      <workItem from="1495354066877" duration="168000" />
     </task>
     <task id="LOCAL-00001" summary="dependency injection switched to controller">
       <created>1493530936439</created>
@@ -841,7 +971,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71378000" />
+    <option name="totallyTimeSpent" value="83399000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -861,7 +991,6 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -870,7 +999,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31950846" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31950846" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18532526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21633889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -878,6 +1007,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -930,65 +1060,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="75" lean-forward="false" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/loginField.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/adminHome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <marker date="1495303588036" expanded="true" signature="1669:1726" ph="select count... employee" />
-            <marker date="1495303588036" expanded="true" signature="1944:1991" ph="select desig... employee" />
-            <marker date="1495303588036" expanded="true" signature="2212:2403" ph="select p.pid... product" />
-            <marker date="1495303588036" expanded="true" signature="3464:3503" ph="select price... product" />
-            <marker date="1495303588036" expanded="true" signature="3671:3701" ph="select max(c... customer" />
-            <marker date="1495303588036" expanded="true" signature="3946:3980" ph="insert into customer... " />
-            <marker date="1495303588036" expanded="true" signature="4052:4094" ph="insert into buys... " />
-            <marker date="1495303588036" expanded="true" signature="4474:4513" ph="select price... product" />
-            <marker date="1495303588036" expanded="true" signature="4624:4666" ph="insert into buys... " />
-            <marker date="1495303588036" expanded="true" signature="5140:5182" ph="insert into stores... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1051,16 +1122,24 @@
         <state relative-caret-position="168">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
-            <marker date="1495303588036" expanded="true" signature="1669:1726" ph="select count... employee" />
-            <marker date="1495303588036" expanded="true" signature="1944:1991" ph="select desig... employee" />
-            <marker date="1495303588036" expanded="true" signature="2212:2403" ph="select p.pid... product" />
-            <marker date="1495303588036" expanded="true" signature="3464:3503" ph="select price... product" />
-            <marker date="1495303588036" expanded="true" signature="3671:3701" ph="select max(c... customer" />
-            <marker date="1495303588036" expanded="true" signature="3946:3980" ph="insert into customer... " />
-            <marker date="1495303588036" expanded="true" signature="4052:4094" ph="insert into buys... " />
-            <marker date="1495303588036" expanded="true" signature="4474:4513" ph="select price... product" />
-            <marker date="1495303588036" expanded="true" signature="4624:4666" ph="insert into buys... " />
-            <marker date="1495303588036" expanded="true" signature="5140:5182" ph="insert into stores... " />
+            <marker date="1495345344245" expanded="true" signature="1763:1820" ph="select count... employee" />
+            <marker date="1495345344245" expanded="true" signature="2028:2071" ph="select count... company" />
+            <marker date="1495345344245" expanded="true" signature="2283:2345" ph="select count... representative" />
+            <marker date="1495345344245" expanded="true" signature="2565:2612" ph="select desig... employee" />
+            <marker date="1495345344245" expanded="true" signature="2833:3024" ph="select p.pid... product" />
+            <marker date="1495345344245" expanded="true" signature="4049:4085" ph="select * fro... company" />
+            <marker date="1495345344245" expanded="true" signature="4756:4794" ph="select pid f... product" />
+            <marker date="1495345344245" expanded="true" signature="5284:5323" ph="select name product" />
+            <marker date="1495345344245" expanded="true" signature="5885:5931" ph="select name representative" />
+            <marker date="1495345344245" expanded="true" signature="6493:6538" ph="select rid f... representative" />
+            <marker date="1495345344245" expanded="true" signature="7033:7084" ph="select mobil... representative" />
+            <marker date="1495345344245" expanded="true" signature="7701:7740" ph="select price... product" />
+            <marker date="1495345344245" expanded="true" signature="7908:7938" ph="select max(c... customer" />
+            <marker date="1495345344245" expanded="true" signature="8183:8217" ph="insert into customer... " />
+            <marker date="1495345344245" expanded="true" signature="8289:8331" ph="insert into buys... " />
+            <marker date="1495345344245" expanded="true" signature="8711:8750" ph="select price... product" />
+            <marker date="1495345344245" expanded="true" signature="8861:8903" ph="insert into buys... " />
+            <marker date="1495345344245" expanded="true" signature="9377:9419" ph="insert into stores... " />
           </folding>
         </state>
       </provider>
@@ -1134,16 +1213,24 @@
         <state relative-caret-position="168">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
-            <marker date="1495303588036" expanded="true" signature="1669:1726" ph="select count... employee" />
-            <marker date="1495303588036" expanded="true" signature="1944:1991" ph="select desig... employee" />
-            <marker date="1495303588036" expanded="true" signature="2212:2403" ph="select p.pid... product" />
-            <marker date="1495303588036" expanded="true" signature="3464:3503" ph="select price... product" />
-            <marker date="1495303588036" expanded="true" signature="3671:3701" ph="select max(c... customer" />
-            <marker date="1495303588036" expanded="true" signature="3946:3980" ph="insert into customer... " />
-            <marker date="1495303588036" expanded="true" signature="4052:4094" ph="insert into buys... " />
-            <marker date="1495303588036" expanded="true" signature="4474:4513" ph="select price... product" />
-            <marker date="1495303588036" expanded="true" signature="4624:4666" ph="insert into buys... " />
-            <marker date="1495303588036" expanded="true" signature="5140:5182" ph="insert into stores... " />
+            <marker date="1495345344245" expanded="true" signature="1763:1820" ph="select count... employee" />
+            <marker date="1495345344245" expanded="true" signature="2028:2071" ph="select count... company" />
+            <marker date="1495345344245" expanded="true" signature="2283:2345" ph="select count... representative" />
+            <marker date="1495345344245" expanded="true" signature="2565:2612" ph="select desig... employee" />
+            <marker date="1495345344245" expanded="true" signature="2833:3024" ph="select p.pid... product" />
+            <marker date="1495345344245" expanded="true" signature="4049:4085" ph="select * fro... company" />
+            <marker date="1495345344245" expanded="true" signature="4756:4794" ph="select pid f... product" />
+            <marker date="1495345344245" expanded="true" signature="5284:5323" ph="select name product" />
+            <marker date="1495345344245" expanded="true" signature="5885:5931" ph="select name representative" />
+            <marker date="1495345344245" expanded="true" signature="6493:6538" ph="select rid f... representative" />
+            <marker date="1495345344245" expanded="true" signature="7033:7084" ph="select mobil... representative" />
+            <marker date="1495345344245" expanded="true" signature="7701:7740" ph="select price... product" />
+            <marker date="1495345344245" expanded="true" signature="7908:7938" ph="select max(c... customer" />
+            <marker date="1495345344245" expanded="true" signature="8183:8217" ph="insert into customer... " />
+            <marker date="1495345344245" expanded="true" signature="8289:8331" ph="insert into buys... " />
+            <marker date="1495345344245" expanded="true" signature="8711:8750" ph="select price... product" />
+            <marker date="1495345344245" expanded="true" signature="8861:8903" ph="insert into buys... " />
+            <marker date="1495345344245" expanded="true" signature="9377:9419" ph="insert into stores... " />
           </folding>
         </state>
       </provider>
@@ -1221,21 +1308,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/loginField.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3477">
-          <caret line="183" column="53" lean-forward="false" selection-start-line="183" selection-start-column="53" selection-end-line="183" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/basicPrInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/hasan/model/ProductInformation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -1243,25 +1315,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java">
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/service/SellStoreService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="532">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/service/LoginService.java">
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/SellStoreController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="222">
+          <caret line="47" column="83" lean-forward="false" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="83" />
         </state>
       </provider>
     </entry>
@@ -1272,22 +1336,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java">
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/service/AddService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="130" column="30" lean-forward="false" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="75" />
-          <folding>
-            <marker date="1495303588036" expanded="true" signature="1669:1726" ph="select count... employee" />
-            <marker date="1495303588036" expanded="true" signature="1944:1991" ph="select desig... employee" />
-            <marker date="1495303588036" expanded="true" signature="2212:2403" ph="select p.pid... product" />
-            <marker date="1495303588036" expanded="true" signature="3464:3503" ph="select price... product" />
-            <marker date="1495303588036" expanded="true" signature="3671:3701" ph="select max(c... customer" />
-            <marker date="1495303588036" expanded="true" signature="3946:3980" ph="insert into customer... " />
-            <marker date="1495303588036" expanded="true" signature="4052:4094" ph="insert into buys... " />
-            <marker date="1495303588036" expanded="true" signature="4474:4513" ph="select price... product" />
-            <marker date="1495303588036" expanded="true" signature="4624:4666" ph="insert into buys... " />
-            <marker date="1495303588036" expanded="true" signature="5140:5182" ph="insert into stores... " />
-          </folding>
+        <state relative-caret-position="95">
+          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/AddController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1299,40 +1358,153 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/service/LoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3477">
+          <caret line="183" column="53" lean-forward="false" selection-start-line="183" selection-start-column="53" selection-end-line="183" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/model/RepresentativeInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/model/EmployeeInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/model/CustomerInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/model/CompanyInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding>
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#785#786#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+            <element signature="e#923#924#0" expanded="true" />
+            <element signature="e#971#972#0" expanded="true" />
+            <element signature="e#1005#1006#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1137#1138#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1203#1204#0" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1285#1286#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+            <element signature="e#1357#1358#0" expanded="true" />
+            <element signature="e#1411#1412#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+          <folding>
+            <element signature="e#556#557#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2888">
+          <caret line="168" column="64" lean-forward="false" selection-start-line="168" selection-start-column="64" selection-end-line="168" selection-end-column="64" />
+          <folding>
+            <marker date="1495345344245" expanded="true" signature="1763:1820" ph="select count... employee" />
+            <marker date="1495345344245" expanded="true" signature="2028:2071" ph="select count... company" />
+            <marker date="1495345344245" expanded="true" signature="2283:2345" ph="select count... representative" />
+            <marker date="1495345344245" expanded="true" signature="2565:2612" ph="select desig... employee" />
+            <marker date="1495345344245" expanded="true" signature="2833:3024" ph="select p.pid... product" />
+            <marker date="1495345344245" expanded="true" signature="4049:4085" ph="select * fro... company" />
+            <marker date="1495345344245" expanded="true" signature="4756:4794" ph="select pid f... product" />
+            <marker date="1495345344245" expanded="true" signature="5284:5323" ph="select name product" />
+            <marker date="1495345344245" expanded="true" signature="5885:5931" ph="select name representative" />
+            <marker date="1495345344245" expanded="true" signature="6493:6538" ph="select rid f... representative" />
+            <marker date="1495345344245" expanded="true" signature="7033:7084" ph="select mobil... representative" />
+            <marker date="1495345344245" expanded="true" signature="7701:7740" ph="select price... product" />
+            <marker date="1495345344245" expanded="true" signature="7908:7938" ph="select max(c... customer" />
+            <marker date="1495345344245" expanded="true" signature="8183:8217" ph="insert into customer... " />
+            <marker date="1495345344245" expanded="true" signature="8289:8331" ph="insert into buys... " />
+            <marker date="1495345344245" expanded="true" signature="8711:8750" ph="select price... product" />
+            <marker date="1495345344245" expanded="true" signature="8861:8903" ph="insert into buys... " />
+            <marker date="1495345344245" expanded="true" signature="9377:9419" ph="insert into stores... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="437">
+          <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/service/SellStoreService.java">
+    <entry file="file://$PROJECT_DIR$/web/basicPrInfo.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="17" column="63" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/SellStoreController.java">
+    <entry file="file://$PROJECT_DIR$/web/basicComInfo.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="47" column="83" lean-forward="false" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="893">
+          <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/employeeHome.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5966">
-          <caret line="314" column="55" lean-forward="true" selection-start-line="314" selection-start-column="55" selection-end-line="314" selection-end-column="55" />
+        <state relative-caret-position="-1463">
+          <caret line="164" column="56" lean-forward="false" selection-start-line="164" selection-start-column="56" selection-end-line="164" selection-end-column="56" />
           <folding />
         </state>
       </provider>

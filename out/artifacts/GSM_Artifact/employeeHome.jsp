@@ -169,7 +169,7 @@
         <button class="button pos3" id="prInfoBtn">Product Information</button>
         <button class="button pos4">Employee Information</button>
         <button class="button pos5">Customer Information</button>
-        <button class="button pos6">Company Information</button>
+        <button class="button pos6" id="comInfoBtn">Company Information</button>
         <button class="button pos7">Representative Information</button>
         <button class="button pos8" id="sellBtn">Sell Product</button>
         <button class="button pos9" id="storeBtn">Store Product</button>
@@ -178,7 +178,7 @@
 
             <!-- Modal content -->
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" id="c0">&times;</span>
                 <form action="prBasicInfo">
                     <input type="text" name="pid" placeholder="Product ID" required/> <br>
                     <br>
@@ -192,9 +192,9 @@
 
             <!-- Modal content -->
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <input type='checkbox' onclick='handleClickPr();'> Premier Customer <br>
-                <input type='checkbox' onclick='handleClickReg();'> Regular Customer
+                <span class="close" id="c1">&times;</span>
+                <label><h4 style="color: forestgreen"><input type='checkbox' onclick='handleClickPr();'>Premier Customer</h4></label>
+                <label><h4 style="color: forestgreen"><input type='checkbox' onclick='handleClickReg();'>Regular Customer</h4></label>
             </div>
 
         </div>
@@ -203,7 +203,7 @@
 
             <!-- Modal content -->
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" id="c2">&times;</span>
                 <form action="doSellToRegular">
                     <input type="text" name="name" placeholder="Customer Name" required/> <br>
                     <input type="text" name="mobile_no" placeholder="Mobile No." required/> <br>
@@ -220,7 +220,7 @@
 
             <!-- Modal content -->
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" id="c3">&times;</span>
                 <form action="doSellToPremier">
                     <input type="text" name="pid" placeholder="Product ID" required/> <br>
                     <input type="text" name="cuid" placeholder="Customer ID" required/> <br>
@@ -236,7 +236,7 @@
 
             <!-- Modal content -->
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" id="c4">&times;</span>
                 <form action="doStore">
                     <input type="text" name="pid" placeholder="Product ID" required/> <br>
                     <input type="text" name="price" placeholder="Product Price" required/> <br>
@@ -247,25 +247,46 @@
             </div>
 
         </div>
+        <!-- The Modal -->
+        <div id="comInfoModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c5">&times;</span>
+                <form action="comBasicInfo">
+                    <input type="text" name="cmid" placeholder="Company ID" required/> <br>
+                    <br>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+
+        </div>
         <script>
             // Get the modal
-            var prInfomodal = document.getElementById('prInfoModal');
+            var prInfoModal = document.getElementById('prInfoModal');
             var sellCheckModal = document.getElementById('sellCheckModal');
             var sellRegModal = document.getElementById('sellRegModal');
             var sellPrModal = document.getElementById('sellPrModal');
             var storeModal = document.getElementById('storeModal');
+            var comInfoModal = document.getElementById('comInfoModal');
 
             // Get the button that opens the modal
             var prInfoBtn = document.getElementById("prInfoBtn");
             var sellBtn = document.getElementById("sellBtn");
             var storeBtn = document.getElementById("storeBtn");
+            var comInfoBtn = document.getElementById("comInfoBtn");
 
             // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
+            var span0 = document.getElementById("c0");
+            var span1 = document.getElementById("c1");
+            var span2 = document.getElementById("c2");
+            var span3 = document.getElementById("c3");
+            var span4 = document.getElementById("c4");
+            var span5 = document.getElementById("c5");
 
             // When the user clicks the button, open the modal
             prInfoBtn.onclick = function() {
-                prInfomodal.style.display = "block";
+                prInfoModal.style.display = "block";
             }
 
             // When the user clicks the button, open the modal
@@ -276,6 +297,11 @@
             // When the user clicks the button, open the modal
             storeBtn.onclick = function() {
                 storeModal.style.display = "block";
+            }
+
+            // When the user clicks the button, open the modal
+            comInfoBtn.onclick = function() {
+                comInfoModal.style.display = "block";
             }
 
             function handleClickPr() {
@@ -290,18 +316,29 @@
 
 
             // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                prInfomodal.style.display = "none";
+            span0.onclick = function() {
+                prInfoModal.style.display = "none";
+            }
+            span1.onclick = function() {
                 sellCheckModal.style.display = "none";
+            }
+            span2.onclick = function() {
                 sellRegModal.style.display = "none";
+            }
+            span3.onclick = function() {
                 sellPrModal.style.display = "none";
+            }
+            span4.onclick = function() {
                 storeModal.style.display = "none";
+            }
+            span5.onclick = function() {
+                comInfoModal.style.display = "none";
             }
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == prInfomodal ) {
-                    prInfomodal.style.display = "none";
+                    prInfoModal.style.display = "none";
                 }
                 else if (event.target == sellCheckModal ) {
                     sellCheckModal.style.display = "none";
@@ -314,6 +351,9 @@
                 }
                 else if (event.target == storeModal ) {
                     storeModal.style.display = "none";
+                }
+                else if (event.target == comInfoModal ) {
+                    comInfoModal.style.display = "none";
                 }
             }
         </script>
