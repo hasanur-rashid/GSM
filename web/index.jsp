@@ -196,7 +196,7 @@
                     <%
                         out.println(request.getAttribute("errorLoginMessage"));
                     %>
-                </h2
+                </h2>
             </div>
 
         </div>

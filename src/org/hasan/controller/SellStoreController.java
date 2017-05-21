@@ -38,9 +38,16 @@ public class SellStoreController implements ApplicationContextAware
     {
         HttpSession session = request.getSession();
         Long emid = (Long)session.getAttribute("emid");
-        sv.performSellToPremier(pid, emid, cuid, quantity);
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("employeeHome.jsp");
+        if ( sv.performSellToPremier(pid, emid, cuid, quantity) )
+        {
+            mv.setViewName("employeeHome.jsp");
+        }
+        else
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("errorValidCuid","Invalid Premier Customer ID !!!");
+        }
         return mv;
     }
 

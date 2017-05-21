@@ -17,11 +17,25 @@ public class BasicInfoService
 
     public ProductInformation getPrInfo ( Long pid )
     {
-        return db.getProductInfo(pid);
+        if ( db.isProduct(pid) > 0 )
+        {
+            return db.getProductInfo(pid);
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public CompanyInformation getComInfo ( Long cmid )
     {
-        return db.getCompanyInfo(cmid);
+        if ( db.isCompany(cmid) > 0 )
+        {
+            return db.getCompanyInfo(cmid);
+        }
+        else
+        {
+            return null;
+        }
     }
 }

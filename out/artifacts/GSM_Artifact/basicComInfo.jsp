@@ -51,6 +51,11 @@
                 color: forestgreen;
             }
 
+            h2:hover
+            {
+                background-color: lightgreen;
+            }
+
             th
             {
                 background-color: #4CAF50;

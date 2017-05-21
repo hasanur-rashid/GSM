@@ -18,9 +18,17 @@ public class SellStoreService
         db.sellProductToRegular(name, mobile_no, pid, emid, quantity);
     }
 
-    public void performSellToPremier (Long pid,Long emid, Long cuid, Long quantity)
+    public boolean performSellToPremier (Long pid,Long emid, Long cuid, Long quantity)
     {
-        db.sellProductToPremier(pid, emid, cuid, quantity);
+        if ( db.isPrCustomer(cuid) > 0 )
+        {
+            db.sellProductToPremier(pid, emid, cuid, quantity);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void performStore(Long pid,Long emid, Long price, Long quantity)

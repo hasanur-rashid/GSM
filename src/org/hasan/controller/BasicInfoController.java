@@ -28,8 +28,16 @@ public class BasicInfoController implements ApplicationContextAware
     {
         ModelAndView mv = new ModelAndView();
         ProductInformation pInfo = sv.getPrInfo(pid);
-        mv.setViewName("basicPrInfo.jsp");
-        mv.addObject("pInfo",pInfo);
+        if ( pInfo == null )
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("errorValidPid","Invalid Product ID !!!");
+        }
+        else
+        {
+            mv.setViewName("basicPrInfo.jsp");
+            mv.addObject("pInfo", pInfo);
+        }
         return mv;
     }
 
@@ -38,8 +46,16 @@ public class BasicInfoController implements ApplicationContextAware
     {
         ModelAndView mv = new ModelAndView();
         CompanyInformation comInfo = sv.getComInfo(cmid);
-        mv.setViewName("basicComInfo.jsp");
-        mv.addObject("comInfo",comInfo);
+        if ( comInfo == null )
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("errorValidCmid","Invalid Company ID !!!");
+        }
+        else
+        {
+            mv.setViewName("basicComInfo.jsp");
+            mv.addObject("comInfo", comInfo);
+        }
         return mv;
     }
 

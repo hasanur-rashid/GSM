@@ -50,23 +50,53 @@ public class DataAccess {
         );
     }
 
+    public int isProduct( Long pid )
+    {
+        return this.jdbcTemplate.queryForObject
+        (
+            "select count(*) from product where pid = ?",
+            Integer.class,
+            new Object[]{pid}
+        );
+    }
+
     public int isCompany( Long cmid )
     {
         return this.jdbcTemplate.queryForObject
         (
-                "select count(*) from company where cmid = ?",
-                Integer.class,
-                new Object[]{cmid}
+            "select count(*) from company where cmid = ?",
+            Integer.class,
+            new Object[]{cmid}
         );
     }
 
-    public int isRep( Long rid, Long cmid )
+    public int isRep( Long rid )
     {
         return this.jdbcTemplate.queryForObject
         (
-                "select count(*) from representative where rid = ? and cmid = ?",
-                Integer.class,
-                new Object[]{rid,cmid}
+            "select count(*) from representative where rid = ?",
+            Integer.class,
+            new Object[]{rid}
+        );
+    }
+
+    public int isPrCustomer( Long cuid )
+    {
+        return this.jdbcTemplate.queryForObject
+        (
+            "select count(*) from prcustomer where cuid = ?",
+            Integer.class,
+            new Object[]{cuid}
+        );
+    }
+
+    public int isRepOfCom( Long rid, Long cmid )
+    {
+        return this.jdbcTemplate.queryForObject
+        (
+            "select count(*) from representative where rid = ? and cmid = ?",
+            Integer.class,
+            new Object[]{rid,cmid}
         );
     }
 
@@ -74,35 +104,130 @@ public class DataAccess {
     {
         return this.jdbcTemplate.queryForObject
         (
-                "select designation from employee where emid = ?",
-                String.class,
-                new Object[]{passWd}
+            "select designation from employee where emid = ?",
+            String.class,
+            new Object[]{passWd}
         );
     }
 
     public ProductInformation getProductInfo(Long prid)
     {
-        return this.jdbcTemplate.queryForObject
+        Long cmid =
+        this.jdbcTemplate.queryForObject
         (
-            "select p.pid, p.name, p.cmid, c.name, p.rid, r.name, r.mobile_no, p.category, p.price, p.quantity from product p,company c,representative r where pid = ? and p.cmid = c.cmid and p.rid = r.rid",
-            new Object[]{prid},
-            new RowMapper<ProductInformation>() {
-                public ProductInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
-                    ProductInformation pInfo = new ProductInformation();
-                    pInfo.setPid(rs.getLong(1));
-                    pInfo.setPname(rs.getString(2));
-                    pInfo.setCmid(rs.getLong(3));
-                    pInfo.setCmname(rs.getString(4));
-                    pInfo.setRid(rs.getLong(5));
-                    pInfo.setRname(rs.getString(6));
-                    pInfo.setMobile_no(rs.getLong(7));
-                    pInfo.setCategory(rs.getString(8));
-                    pInfo.setPrice(rs.getLong(9));
-                    pInfo.setQuantity(rs.getLong(10));
-                    return pInfo;
-                }
-            }
+            "select cmid from product where pid = ?",
+            Long.class,
+            new Object[]{prid}
         );
+        Long rid =
+        this.jdbcTemplate.queryForObject
+        (
+            "select rid from product where pid = ?",
+            Long.class,
+            new Object[]{prid}
+        );
+        if ( cmid==null && rid==null )
+        {
+            ProductInformation pInfo =
+            this.jdbcTemplate.queryForObject
+            (
+                "select pid, name, category, price, quantity from product where pid = ?",
+                new Object[]{prid},
+                new RowMapper<ProductInformation>() {
+                    public ProductInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        ProductInformation pInfo = new ProductInformation();
+                        pInfo.setPid(rs.getLong(1));
+                        pInfo.setPname(rs.getString(2));
+                        pInfo.setCategory(rs.getString(3));
+                        pInfo.setPrice(rs.getLong(4));
+                        pInfo.setQuantity(rs.getLong(5));
+                        return pInfo;
+                    }
+                }
+            );
+            pInfo.setCmid(null);
+            pInfo.setCmname(null);
+            pInfo.setRid(null);
+            pInfo.setRname(null);
+            pInfo.setMobile_no(null);
+            return pInfo;
+        }
+        else if ( cmid==null )
+        {
+            ProductInformation pInfo =
+            this.jdbcTemplate.queryForObject
+            (
+                "select p.pid, p.name, p.rid, r.name, r.mobile_no, p.category, p.price, p.quantity from product p, representative r where pid = ? and p.rid = r.rid",
+                new Object[]{prid},
+                new RowMapper<ProductInformation>() {
+                    public ProductInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        ProductInformation pInfo = new ProductInformation();
+                        pInfo.setPid(rs.getLong(1));
+                        pInfo.setPname(rs.getString(2));
+                        pInfo.setRid(rs.getLong(3));
+                        pInfo.setRname(rs.getString(4));
+                        pInfo.setMobile_no(rs.getLong(5));
+                        pInfo.setCategory(rs.getString(6));
+                        pInfo.setPrice(rs.getLong(7));
+                        pInfo.setQuantity(rs.getLong(8));
+                        return pInfo;
+                    }
+                }
+            );
+            pInfo.setCmid(null);
+            pInfo.setCmname(null);
+            return pInfo;
+        }
+        else if ( rid==null )
+        {
+            ProductInformation pInfo =
+            this.jdbcTemplate.queryForObject
+            (
+                "select p.pid, p.name, p.cmid, c.name, p.category, p.price, p.quantity from product p,company c where pid = ? and p.cmid = c.cmid",
+                new Object[]{prid},
+                new RowMapper<ProductInformation>() {
+                    public ProductInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        ProductInformation pInfo = new ProductInformation();
+                        pInfo.setPid(rs.getLong(1));
+                        pInfo.setPname(rs.getString(2));
+                        pInfo.setCmid(rs.getLong(3));
+                        pInfo.setCmname(rs.getString(4));
+                        pInfo.setCategory(rs.getString(5));
+                        pInfo.setPrice(rs.getLong(6));
+                        pInfo.setQuantity(rs.getLong(7));
+                        return pInfo;
+                    }
+                }
+            );
+            pInfo.setRid(null);
+            pInfo.setRname(null);
+            pInfo.setMobile_no(null);
+            return pInfo;
+        }
+        else
+        {
+            return this.jdbcTemplate.queryForObject
+            (
+                "select p.pid, p.name, p.cmid, c.name, p.rid, r.name, r.mobile_no, p.category, p.price, p.quantity from product p,company c,representative r where pid = ? and p.cmid = c.cmid and p.rid = r.rid",
+                new Object[]{prid},
+                new RowMapper<ProductInformation>() {
+                    public ProductInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        ProductInformation pInfo = new ProductInformation();
+                        pInfo.setPid(rs.getLong(1));
+                        pInfo.setPname(rs.getString(2));
+                        pInfo.setCmid(rs.getLong(3));
+                        pInfo.setCmname(rs.getString(4));
+                        pInfo.setRid(rs.getLong(5));
+                        pInfo.setRname(rs.getString(6));
+                        pInfo.setMobile_no(rs.getLong(7));
+                        pInfo.setCategory(rs.getString(8));
+                        pInfo.setPrice(rs.getLong(9));
+                        pInfo.setQuantity(rs.getLong(10));
+                        return pInfo;
+                    }
+                }
+            );
+        }
     }
 
     public CompanyInformation getCompanyInfo(Long cmid)

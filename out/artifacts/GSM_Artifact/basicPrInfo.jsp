@@ -24,6 +24,11 @@
                 font-family: Helvetica,Arial;
                 color: forestgreen;
             }
+
+            h2:hover
+            {
+                background-color: lightgreen;
+            }
         </style>
     </head>
     <h1 class="ex1">Product Information:</h1>

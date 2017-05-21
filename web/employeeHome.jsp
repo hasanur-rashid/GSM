@@ -37,6 +37,10 @@
                 width: 20%;
             }
 
+            .change-border{
+                border: 5px solid red;
+            }
+
             /* The Close Button */
             .close {
                 color: #aaaaaa;
@@ -133,6 +137,12 @@
                 top: 5%;
             }
 
+            h2.ex2 {
+                font: normal 4vh Helvetica,Arial ;
+                text-align: center;
+                color: red;
+            }
+
             input[type=text], select {
                 width: 100%;
                 padding: 12px 20px;
@@ -164,7 +174,7 @@
         <form action="logout">
             <button class="button pos0">Log Out</button>
         </form>
-        <button class="button pos1">New Product</button>
+        <button class="button pos1" id="newPrBtn">New Product</button>
         <button class="button pos2">New Premiere Customer</button>
         <button class="button pos3" id="prInfoBtn">Product Information</button>
         <button class="button pos4">Employee Information</button>
@@ -193,8 +203,9 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close" id="c1">&times;</span>
-                <label><h4 style="color: forestgreen"><input type='checkbox' onclick='handleClickPr();'>Premier Customer</h4></label>
-                <label><h4 style="color: forestgreen"><input type='checkbox' onclick='handleClickReg();'>Regular Customer</h4></label>
+                <label><h4 style="color: forestgreen"><input type='checkbox' id="sellCheckPr">Premier Customer</h4></label>
+                <label><h4 style="color: forestgreen"><input type='checkbox' id="sellCheckReg">Regular Customer</h4></label>
+                <input type="submit" value="Ok" onclick="handleClickSellCheck();" />
             </div>
 
         </div>
@@ -261,6 +272,91 @@
             </div>
 
         </div>
+        <!-- The Modal -->
+        <div id="prComCheckModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c6">&times;</span>
+                <h3 style="color: forestgreen">Is known company id?</h3>
+                <label><h4 style="color: lightgreen"><input type='checkbox' id="prComYes">Yes</h4></label>
+                <label><h4 style="color: red"><input type='checkbox' id="prComNo">No</h4></label>
+                <input type="submit" value="Ok" onclick="handleClickPrComCheck();" />
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="comIdModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c7">&times;</span>
+                <form action="checkComId">
+                    <input type="text" name="cmid" placeholder="Company ID" required/><br>
+                    <br>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="newComModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c8">&times;</span>
+                <form action="addNewCom">
+                    <input type="text" name="cmid" placeholder="Company ID" required/>
+                    <input type="text" name="name" placeholder="Company Name" required/>
+                    <input type="text" name="address" placeholder="Company Address" required/>
+                    <br>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="errPidModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content change-border">
+                <span class="close" id="c9">&times;</span>
+                <h2 class="ex2">
+                    <%
+                        out.println(request.getAttribute("errorValidPid"));
+                    %>
+                </h2>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="errCmidModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content change-border">
+                <span class="close" id="c10">&times;</span>
+                <h2 class="ex2">
+                    <%
+                        out.println(request.getAttribute("errorValidCmid"));
+                    %>
+                </h2>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="errCuidModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content change-border">
+                <span class="close" id="c11">&times;</span>
+                <h2 class="ex2">
+                    <%
+                        out.println(request.getAttribute("errorValidCuid"));
+                    %>
+                </h2>
+            </div>
+
+        </div>
         <script>
             // Get the modal
             var prInfoModal = document.getElementById('prInfoModal');
@@ -269,12 +365,19 @@
             var sellPrModal = document.getElementById('sellPrModal');
             var storeModal = document.getElementById('storeModal');
             var comInfoModal = document.getElementById('comInfoModal');
+            var prComCheckModal = document.getElementById('prComCheckModal');
+            var comIdModal = document.getElementById('comIdModal');
+            var newComModal = document.getElementById('newComModal');
+            var errPidModal = document.getElementById('errPidModal');
+            var errCmidModal = document.getElementById('errCmidModal');
+            var errCuidModal = document.getElementById('errCuidModal');
 
             // Get the button that opens the modal
             var prInfoBtn = document.getElementById("prInfoBtn");
             var sellBtn = document.getElementById("sellBtn");
             var storeBtn = document.getElementById("storeBtn");
             var comInfoBtn = document.getElementById("comInfoBtn");
+            var newPrBtn = document.getElementById("newPrBtn");
 
             // Get the <span> element that closes the modal
             var span0 = document.getElementById("c0");
@@ -283,6 +386,28 @@
             var span3 = document.getElementById("c3");
             var span4 = document.getElementById("c4");
             var span5 = document.getElementById("c5");
+            var span6 = document.getElementById("c6");
+            var span7 = document.getElementById("c7");
+            var span8 = document.getElementById("c8");
+            var span9 = document.getElementById("c9");
+            var span10 = document.getElementById("c10");
+            var span11 = document.getElementById("c11");
+
+            var errPid = '${errorValidPid}';
+            var errCmid = '${errorValidCmid}';
+            var errCuid = '${errorValidCuid}';
+
+            if ( errPid!=null && errPid!="" ){
+                errPidModal.style.display = "block";
+            }
+
+            if ( errCmid!=null && errCmid!="" ){
+                errCmidModal.style.display = "block";
+            }
+
+            if ( errCuid!=null && errCuid!="" ){
+                errCuidModal.style.display = "block";
+            }
 
             // When the user clicks the button, open the modal
             prInfoBtn.onclick = function() {
@@ -304,16 +429,54 @@
                 comInfoModal.style.display = "block";
             }
 
-            function handleClickPr() {
-                sellCheckModal.style.display = "none";
-                sellPrModal.style.display = "block";
+            // When the user clicks the button, open the modal
+            newPrBtn.onclick = function() {
+                prComCheckModal.style.display = "block";
             }
 
-            function handleClickReg() {
-                sellCheckModal.style.display = "none";
-                sellRegModal.style.display = "block";
+            function handleClickPrComCheck() {
+                if ( document.getElementById("prComYes").checked && !document.getElementById("prComNo").checked )
+                {
+                    prComCheckModal.style.display = "none";
+                    comIdModal.style.display = "block";
+                    document.getElementById("prComYes").checked = false;
+                }
+                else if ( document.getElementById("prComNo").checked && !document.getElementById("prComYes").checked )
+                {
+                    prComCheckModal.style.display = "none";
+                    newComModal.style.display = "block";
+                    document.getElementById("prComNo").checked = false;
+                }
+                else
+                {
+                    alert("Please check one checkbox !!!");
+                    document.getElementById("prComYes").checked = false;
+                    document.getElementById("prComNo").checked = false;
+                    return false;
+                }
             }
 
+            function handleClickSellCheck() {
+                if ( document.getElementById("sellCheckPr").checked && !document.getElementById("sellCheckReg").checked )
+                {
+                    sellCheckModal.style.display = "none";
+                    sellPrModal.style.display = "block";
+                    document.getElementById("sellCheckPr").checked = false;
+                }
+                else if ( document.getElementById("sellCheckReg").checked && !document.getElementById("sellCheckPr").checked )
+                {
+                    sellCheckModal.style.display = "none";
+                    sellRegModal.style.display = "block";
+                    document.getElementById("sellCheckReg").checked = false;
+                }
+                else
+                {
+                    alert("Please check one checkbox !!!");
+                    document.getElementById("sellCheckPr").checked = false;
+                    document.getElementById("sellCheckReg").checked = false;
+                    return false;
+                }
+            }
 
             // When the user clicks on <span> (x), close the modal
             span0.onclick = function() {
@@ -334,10 +497,28 @@
             span5.onclick = function() {
                 comInfoModal.style.display = "none";
             }
+            span6.onclick = function() {
+                prComCheckModal.style.display = "none";
+            }
+            span7.onclick = function() {
+                comIdModal.style.display = "none";
+            }
+            span8.onclick = function() {
+                newComModal.style.display = "none";
+            }
+            span9.onclick = function() {
+                errPidModal.style.display = "none";
+            }
+            span10.onclick = function() {
+                errCmidModal.style.display = "none";
+            }
+            span11.onclick = function() {
+                errCuidModal.style.display = "none";
+            }
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
-                if (event.target == prInfomodal ) {
+                if (event.target == prInfoModal ) {
                     prInfoModal.style.display = "none";
                 }
                 else if (event.target == sellCheckModal ) {
@@ -354,6 +535,24 @@
                 }
                 else if (event.target == comInfoModal ) {
                     comInfoModal.style.display = "none";
+                }
+                else if (event.target == prComCheckModal ) {
+                    prComCheckModal.style.display = "none";
+                }
+                else if (event.target == comIdModal ) {
+                    comIdModal.style.display = "none";
+                }
+                else if (event.target == newComModal ) {
+                    newComModal.style.display = "none";
+                }
+                else if (event.target == errPidModal ) {
+                    errPidModal.style.display = "none";
+                }
+                else if (event.target == errCmidModal ) {
+                    errCmidModal.style.display = "none";
+                }
+                else if (event.target == errCuidModal ) {
+                    errCuidModal.style.display = "none";
                 }
             }
         </script>
