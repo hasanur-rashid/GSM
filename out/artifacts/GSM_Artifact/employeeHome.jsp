@@ -278,8 +278,8 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close" id="c6">&times;</span>
-                <h3 style="color: forestgreen">Is known company id?</h3>
-                <label><h4 style="color: lightgreen"><input type='checkbox' id="prComYes">Yes</h4></label>
+                <h3 style="color: forestgreen">Does product have a company?</h3>
+                <label><h4 style="color: forestgreen"><input type='checkbox' id="prComYes">Yes</h4></label>
                 <label><h4 style="color: red"><input type='checkbox' id="prComNo">No</h4></label>
                 <input type="submit" value="Ok" onclick="handleClickPrComCheck();" />
             </div>
@@ -324,7 +324,6 @@
                 <h2 class="ex2">
                     <%
                         out.println(request.getAttribute("errorValidPid"));
-                        //request.setAttribute("errorValidPid",null);
                     %>
                 </h2>
             </div>
@@ -339,7 +338,6 @@
                 <h2 class="ex2">
                     <%
                         out.println(request.getAttribute("errorValidCmid"));
-                        //request.setAttribute("errorValidCmid",null);
                     %>
                 </h2>
             </div>
@@ -354,9 +352,68 @@
                 <h2 class="ex2">
                     <%
                         out.println(request.getAttribute("errorValidCuid"));
-                        //request.setAttribute("errorValidCuid",null);
                     %>
                 </h2>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="prRepCheckModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c12">&times;</span>
+                <h3 style="color: forestgreen">Does product have a representative?</h3>
+                <label><h4 style="color: forestgreen"><input type='checkbox' id="prRepYes">Yes</h4></label>
+                <label><h4 style="color: red"><input type='checkbox' id="prRepNo">No</h4></label>
+                <input type="submit" value="Ok" onclick="handleClickPrRepCheck();" />
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="repIdModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c13">&times;</span>
+                <form action="checkRepId">
+                    <input type="text" name="rid" placeholder="Representative ID" required/><br>
+                    <br>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="newRepModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c14">&times;</span>
+                <form action="addNewRep">
+                    <input type="text" name="rid" placeholder="Representative ID" required/>
+                    <input type="text" name="name" placeholder="Representative Name" required/>
+                    <input type="text" name="mobile_no" placeholder="Representative Mobile No." required/>
+                    <br>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="newPrModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c15">&times;</span>
+                <form action="addNewPr">
+                    <input type="text" name="pid" placeholder="Product ID" required/>
+                    <input type="text" name="name" placeholder="Product Name" required/>
+                    <input type="text" name="price" placeholder="Product Price" required/>
+                    <input type="text" name="quantity" placeholder="Product Quantity" required/>
+                    <input type="text" name="category" placeholder="Product Category" required/>
+                    <input type="submit" value="Submit" />
+                </form>
             </div>
 
         </div>
@@ -374,6 +431,10 @@
             var errPidModal = document.getElementById('errPidModal');
             var errCmidModal = document.getElementById('errCmidModal');
             var errCuidModal = document.getElementById('errCuidModal');
+            var prRepCheckModal = document.getElementById('prRepCheckModal');
+            var repIdModal = document.getElementById('repIdModal');
+            var newRepModal = document.getElementById('newRepModal');
+            var newPrModal = document.getElementById('newPrModal');
 
             // Get the button that opens the modal
             var prInfoBtn = document.getElementById("prInfoBtn");
@@ -395,13 +456,16 @@
             var span9 = document.getElementById("c9");
             var span10 = document.getElementById("c10");
             var span11 = document.getElementById("c11");
+            var span12 = document.getElementById("c12");
+            var span13 = document.getElementById("c13");
+            var span14 = document.getElementById("c14");
+            var span15 = document.getElementById("c15");
 
             var errPid = '${errorValidPid}';
             var errCmid = '${errorValidCmid}';
             var errCuid = '${errorValidCuid}';
 
             if ( errPid!=null && errPid!="" ){
-                alert("@"+errPid+"#");
                 errPidModal.style.display = "block";
             }
 
@@ -441,14 +505,15 @@
             function handleClickPrComCheck() {
                 if ( document.getElementById("prComYes").checked && !document.getElementById("prComNo").checked )
                 {
-                    prComCheckModal.style.display = "none";
                     comIdModal.style.display = "block";
+                    prComCheckModal.style.display = "none";
                     document.getElementById("prComYes").checked = false;
                 }
                 else if ( document.getElementById("prComNo").checked && !document.getElementById("prComYes").checked )
                 {
+                    <% session.setAttribute("cmid",null); %>
+                    prRepCheckModal.style.display = "block";
                     prComCheckModal.style.display = "none";
-                    newComModal.style.display = "block";
                     document.getElementById("prComNo").checked = false;
                 }
                 else
@@ -456,6 +521,29 @@
                     alert("Please check one checkbox !!!");
                     document.getElementById("prComYes").checked = false;
                     document.getElementById("prComNo").checked = false;
+                    return false;
+                }
+            }
+
+            function handleClickPrRepCheck() {
+                if ( document.getElementById("prRepYes").checked && !document.getElementById("prRepNo").checked )
+                {
+                    repIdModal.style.display = "block";
+                    prRepCheckModal.style.display = "none";
+                    document.getElementById("prRepYes").checked = false;
+                }
+                else if ( document.getElementById("prRepNo").checked && !document.getElementById("prRepYes").checked )
+                {
+                    <% session.setAttribute("rid",null); %>
+                    newPrModal.style.display = "block";
+                    prRepCheckModal.style.display = "none";
+                    document.getElementById("prRepNo").checked = false;
+                }
+                else
+                {
+                    alert("Please check one checkbox !!!");
+                    document.getElementById("prRepYes").checked = false;
+                    document.getElementById("prRepNo").checked = false;
                     return false;
                 }
             }
@@ -519,6 +607,18 @@
             span11.onclick = function() {
                 errCuidModal.style.display = "none";
             }
+            span12.onclick = function() {
+                prRepCheckModal.style.display = "none";
+            }
+            span13.onclick = function() {
+                repIdModal.style.display = "none";
+            }
+            span14.onclick = function() {
+                newRepModal.style.display = "none";
+            }
+            span15.onclick = function() {
+                newPrModal.style.display = "none";
+            }
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
@@ -557,6 +657,18 @@
                 }
                 else if (event.target == errCuidModal ) {
                     errCuidModal.style.display = "none";
+                }
+                else if (event.target == prRepCheckModal ) {
+                    prRepCheckModal.style.display = "none";
+                }
+                else if (event.target == repIdModal ) {
+                    repIdModal.style.display = "none";
+                }
+                else if (event.target == newRepModal ) {
+                    newRepModal.style.display = "none";
+                }
+                else if (event.target == newPrModal ) {
+                    newPrModal.style.display = "none";
                 }
             }
         </script>
