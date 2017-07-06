@@ -31,6 +31,8 @@ public class LoginController
         {
             HttpSession session = request.getSession();
             session.setAttribute("emid",passWd);
+            session.setAttribute("cmid",null);
+            session.setAttribute("rid",null);
             if ( sv.checkAdmin(passWd) )
             {
                 mv.setViewName("adminHome.jsp");

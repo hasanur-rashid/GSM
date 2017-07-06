@@ -40,6 +40,34 @@ public class DataAccess {
         this.funcGetCustomerId = new SimpleJdbcCall(dataSource).withFunctionName("GET_CUID");
     }
 
+    public void createCompany(Long cmid, String name, String address)
+    {
+        this.jdbcTemplate.update
+        (
+            "insert into company values(?,?,?)",
+            cmid,name,address
+        );
+    }
+
+    public void createRepresentative(Long rid, Long cmid, String name, Long mobile_no)
+    {
+        this.jdbcTemplate.update
+        (
+            "insert into representative values(?,?,?,?)",
+            rid,cmid,name,mobile_no
+        );
+    }
+
+    public void createProduct(Long pid, Long cmid, String name, Long price, Long quantity, String category, Long rid, Long emid)
+    {
+        this.jdbcTemplate.update
+        (
+            "insert into product values(?,?,?,?,?,?,?)",
+            pid,cmid,name,price,quantity,category,rid
+        );
+        storeProduct(pid, emid, price, quantity);
+    }
+
     public int isUser( String usrName, Long passWd )
     {
         return this.jdbcTemplate.queryForObject

@@ -174,7 +174,9 @@
         <form action="logout">
             <button class="button pos0">Log Out</button>
         </form>
+        <form action="doNullOnPrBtn">
         <button class="button pos1" id="newPrBtn">New Product</button>
+        </form>
         <button class="button pos2">New Premiere Customer</button>
         <button class="button pos3" id="prInfoBtn">Product Information</button>
         <button class="button pos4">Employee Information</button>
@@ -306,7 +308,6 @@
             <div class="modal-content">
                 <span class="close" id="c8">&times;</span>
                 <form action="addNewCom">
-                    <input type="text" name="cmid" placeholder="Company ID" required/>
                     <input type="text" name="name" placeholder="Company Name" required/>
                     <input type="text" name="address" placeholder="Company Address" required/>
                     <br>
@@ -391,7 +392,6 @@
             <div class="modal-content">
                 <span class="close" id="c14">&times;</span>
                 <form action="addNewRep">
-                    <input type="text" name="rid" placeholder="Representative ID" required/>
                     <input type="text" name="name" placeholder="Representative Name" required/>
                     <input type="text" name="mobile_no" placeholder="Representative Mobile No." required/>
                     <br>
@@ -417,6 +417,44 @@
             </div>
 
         </div>
+        <!-- The Modal -->
+        <div id="showNewComModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c16">&times;</span>
+                <h3 style="color: red">No valid company found in the database by given id.</h3>
+                <label><h4 style="color: forestgreen"><input type='checkbox' id="showNewCom">Include new company info by using given id.</h4></label>
+                <label><h4 style="color: blue"><input type='checkbox' id="showComId">Try giving another id.</h4></label>
+                <input type="submit" value="Ok" onclick="handleClickShowNewCom();" />
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="showNewRepModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c17">&times;</span>
+                <h3 style="color: red">No valid representative found in the database by given id.</h3>
+                <label><h4 style="color: forestgreen"><input type='checkbox' id="showNewRep">Include new representative info by using given id.</h4></label>
+                <label><h4 style="color: blue"><input type='checkbox' id="showRepId">Try giving another id.</h4></label>
+                <input type="submit" value="Ok" onclick="handleClickShowNewRep();" />
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="addPrAgainModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c18">&times;</span>
+                <h3 style="color: forestgreen">Product successfully added in the database.</h3>
+                <h3 style="color: red">Do you want to add another product of same company?</h3>
+                <button class="button" id="addPrSameBtn">Add Product</button>
+            </div>
+
+        </div>
         <script>
             // Get the modal
             var prInfoModal = document.getElementById('prInfoModal');
@@ -435,6 +473,9 @@
             var repIdModal = document.getElementById('repIdModal');
             var newRepModal = document.getElementById('newRepModal');
             var newPrModal = document.getElementById('newPrModal');
+            var showNewComModal = document.getElementById('showNewComModal');
+            var showNewRepModal = document.getElementById('showNewRepModal');
+            var addPrAgainModal = document.getElementById('addPrAgainModal');
 
             // Get the button that opens the modal
             var prInfoBtn = document.getElementById("prInfoBtn");
@@ -442,6 +483,7 @@
             var storeBtn = document.getElementById("storeBtn");
             var comInfoBtn = document.getElementById("comInfoBtn");
             var newPrBtn = document.getElementById("newPrBtn");
+            var addPrSameBtn = document.getElementById("addPrSameBtn");
 
             // Get the <span> element that closes the modal
             var span0 = document.getElementById("c0");
@@ -460,10 +502,35 @@
             var span13 = document.getElementById("c13");
             var span14 = document.getElementById("c14");
             var span15 = document.getElementById("c15");
+            var span16 = document.getElementById("c16");
+            var span17 = document.getElementById("c17");
+            var span18 = document.getElementById("c18");
 
             var errPid = '${errorValidPid}';
             var errCmid = '${errorValidCmid}';
             var errCuid = '${errorValidCuid}';
+            var openPrComCheck = '${openPrComCheck}';
+            var openPrRepCheck = '${openPrRepCheck}';
+            var openShowNewCom = '${openShowNewCom}';
+            var openShowNewRep = '${openShowNewRep}';
+            var openNewPr = '${openNewPr}';
+            var openAddPrAgain = '${openAddPrAgain}';
+
+            if ( openAddPrAgain!=null && openAddPrAgain!="" ){
+                addPrAgainModal.style.display = "block";
+            }
+
+            if ( openNewPr!=null && openNewPr!="" ){
+                newPrModal.style.display = "block";
+            }
+
+            if ( openShowNewRep!=null && openShowNewRep!="" ){
+                showNewRepModal.style.display = "block";
+            }
+
+            if ( openShowNewCom!=null && openShowNewCom!="" ){
+                showNewComModal.style.display = "block";
+            }
 
             if ( errPid!=null && errPid!="" ){
                 errPidModal.style.display = "block";
@@ -475,6 +542,14 @@
 
             if ( errCuid!=null && errCuid!="" ){
                 errCuidModal.style.display = "block";
+            }
+
+            if ( openPrComCheck!=null && openPrComCheck!="" ){
+                prComCheckModal.style.display = "block";
+            }
+
+            if ( openPrRepCheck!=null && openPrRepCheck!="" ){
+                prRepCheckModal.style.display = "block";
             }
 
             // When the user clicks the button, open the modal
@@ -502,6 +577,56 @@
                 prComCheckModal.style.display = "block";
             }
 
+            // When the user clicks the button, open the modal
+            addPrSameBtn.onclick = function() {
+                newPrModal.style.display = "block";
+                addPrAgainModal.style.display = "none";
+            }
+
+            function handleClickShowNewCom() {
+                if ( document.getElementById("showNewCom").checked && !document.getElementById("showComId").checked )
+                {
+                    newComModal.style.display = "block";
+                    showNewComModal.style.display = "none";
+                    document.getElementById("showNewCom").checked = false;
+                }
+                else if ( document.getElementById("showComId").checked && !document.getElementById("showNewCom").checked )
+                {
+                    comIdModal.style.display = "block";
+                    showNewComModal.style.display = "none";
+                    document.getElementById("showComId").checked = false;
+                }
+                else
+                {
+                    alert("Please check one checkbox !!!");
+                    document.getElementById("showNewCom").checked = false;
+                    document.getElementById("showComId").checked = false;
+                    return false;
+                }
+            }
+
+            function handleClickShowNewRep() {
+                if ( document.getElementById("showNewRep").checked && !document.getElementById("showRepId").checked )
+                {
+                    newRepModal.style.display = "block";
+                    showNewRepModal.style.display = "none";
+                    document.getElementById("showNewRep").checked = false;
+                }
+                else if ( document.getElementById("showRepId").checked && !document.getElementById("showNewRep").checked )
+                {
+                    repIdModal.style.display = "block";
+                    showNewRepModal.style.display = "none";
+                    document.getElementById("showRepId").checked = false;
+                }
+                else
+                {
+                    alert("Please check one checkbox !!!");
+                    document.getElementById("showNewRep").checked = false;
+                    document.getElementById("showRepId").checked = false;
+                    return false;
+                }
+            }
+
             function handleClickPrComCheck() {
                 if ( document.getElementById("prComYes").checked && !document.getElementById("prComNo").checked )
                 {
@@ -511,7 +636,6 @@
                 }
                 else if ( document.getElementById("prComNo").checked && !document.getElementById("prComYes").checked )
                 {
-                    <% session.setAttribute("cmid",null); %>
                     prRepCheckModal.style.display = "block";
                     prComCheckModal.style.display = "none";
                     document.getElementById("prComNo").checked = false;
@@ -534,7 +658,6 @@
                 }
                 else if ( document.getElementById("prRepNo").checked && !document.getElementById("prRepYes").checked )
                 {
-                    <% session.setAttribute("rid",null); %>
                     newPrModal.style.display = "block";
                     prRepCheckModal.style.display = "none";
                     document.getElementById("prRepNo").checked = false;
@@ -619,7 +742,15 @@
             span15.onclick = function() {
                 newPrModal.style.display = "none";
             }
-
+            span16.onclick = function() {
+                showNewComModal.style.display = "none";
+            }
+            span17.onclick = function() {
+                showNewRepModal.style.display = "none";
+            }
+            span18.onclick = function() {
+                addPrAgainModal.style.display = "none";
+            }
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == prInfoModal ) {
@@ -669,6 +800,15 @@
                 }
                 else if (event.target == newPrModal ) {
                     newPrModal.style.display = "none";
+                }
+                else if (event.target == showNewComModal ) {
+                    showNewComModal.style.display = "none";
+                }
+                else if (event.target == showNewRepModal ) {
+                    showNewRepModal.style.display = "none";
+                }
+                else if (event.target == addPrAgainModal ) {
+                    addPrAgainModal.style.display = "none";
                 }
             }
         </script>
