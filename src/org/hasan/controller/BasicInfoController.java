@@ -59,6 +59,22 @@ public class BasicInfoController implements ApplicationContextAware
         return mv;
     }
 
+    @RequestMapping("/backBasicPrInfo")
+    public ModelAndView backBasicPrInfo(HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("employeeHome.jsp");
+        return mv;
+    }
+
+    @RequestMapping("/backBasicComInfo")
+    public ModelAndView backBasicComInfo(HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("employeeHome.jsp");
+        return mv;
+    }
+
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;

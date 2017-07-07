@@ -19,11 +19,14 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController
 {
+    private ApplicationContext applicationContext;
+    private LoginService sv;
+
     @RequestMapping("/login")
     public ModelAndView login(@RequestParam("usrName") String usrName, @RequestParam("passWd") Long passWd, HttpServletRequest request, HttpServletResponse response)
     {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        LoginService sv  = (LoginService) applicationContext.getBean("loginServ");
+        applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        sv  = (LoginService) applicationContext.getBean("loginServ");
 
         ModelAndView mv = new ModelAndView();
 
@@ -58,6 +61,24 @@ public class LoginController
 
         ModelAndView mv = new ModelAndView();
         mv.setViewName("index.jsp");
+        return mv;
+    }
+
+    @RequestMapping("/backAdmin")
+    public ModelAndView backToAdmin(HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        HttpSession session = request.getSession();
+        Long emid = (Long) session.getAttribute("emid");
+        if ( sv.checkAdmin(emid) )
+        {
+            mv.setViewName("adminHome.jsp");
+        }
+        else
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("errAdmin", "Not enough privilege !!!");
+        }
         return mv;
     }
 }

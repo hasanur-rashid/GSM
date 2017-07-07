@@ -5,7 +5,7 @@
   Time: 7:33 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
     <head>
         <title>Welcome</title>
@@ -56,6 +56,21 @@
                 cursor: pointer;
             }
 
+            .modalButton {
+                width: 100%;
+                background-color: forestgreen;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 14px 20px;
+                margin: 8px 0;
+                cursor: pointer;
+            }
+
+            .modalButton:hover {
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+
             .button {
                 background-color: white;
                 border: 2px solid forestgreen;
@@ -78,7 +93,7 @@
             }
 
             .pos0{
-                top: 5%;
+                top: 0%;
                 left: 80%;
             }
 
@@ -127,6 +142,12 @@
                 left: 5%;
             }
 
+            .pos10{
+                top: 0%;
+                left: 5%;
+                color: red;
+            }
+
             h1.ex1 {
                 font-family: Helvetica,Arial ;
                 font-size: 5vh;
@@ -173,6 +194,9 @@
         <h1 class="ex1">Employee Home</h1>
         <form action="logout">
             <button class="button pos0">Log Out</button>
+        </form>
+        <form action="backAdmin">
+            <button class="button pos10">Back To Admin</button>
         </form>
         <form action="doNullOnPrBtn">
         <button class="button pos1" id="newPrBtn">New Product</button>
@@ -451,7 +475,21 @@
                 <span class="close" id="c18">&times;</span>
                 <h3 style="color: forestgreen">Product successfully added in the database.</h3>
                 <h3 style="color: red">Do you want to add another product of same company?</h3>
-                <button class="button" id="addPrSameBtn">Add Product</button>
+                <button class="modalButton" id="addPrSameBtn">Add Product</button>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="errBackToAdminModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content change-border">
+                <span class="close" id="c19">&times;</span>
+                <h2 class="ex2">
+                    <%
+                        out.println(request.getAttribute("errAdmin"));
+                    %>
+                </h2>
             </div>
 
         </div>
@@ -476,6 +514,7 @@
             var showNewComModal = document.getElementById('showNewComModal');
             var showNewRepModal = document.getElementById('showNewRepModal');
             var addPrAgainModal = document.getElementById('addPrAgainModal');
+            var errBackToAdminModal = document.getElementById('errBackToAdminModal');
 
             // Get the button that opens the modal
             var prInfoBtn = document.getElementById("prInfoBtn");
@@ -505,16 +544,22 @@
             var span16 = document.getElementById("c16");
             var span17 = document.getElementById("c17");
             var span18 = document.getElementById("c18");
+            var span19 = document.getElementById("c19");
 
             var errPid = '${errorValidPid}';
             var errCmid = '${errorValidCmid}';
             var errCuid = '${errorValidCuid}';
             var openPrComCheck = '${openPrComCheck}';
+            var errAdmin = '${errAdmin}';
             var openPrRepCheck = '${openPrRepCheck}';
             var openShowNewCom = '${openShowNewCom}';
             var openShowNewRep = '${openShowNewRep}';
             var openNewPr = '${openNewPr}';
             var openAddPrAgain = '${openAddPrAgain}';
+
+            if ( errAdmin!=null && errAdmin!="" ){
+                errBackToAdminModal.style.display = "block";
+            }
 
             if ( openAddPrAgain!=null && openAddPrAgain!="" ){
                 addPrAgainModal.style.display = "block";
@@ -751,6 +796,9 @@
             span18.onclick = function() {
                 addPrAgainModal.style.display = "none";
             }
+            span19.onclick = function() {
+                errBackToAdminModal.style.display = "none";
+            }
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == prInfoModal ) {
@@ -809,6 +857,9 @@
                 }
                 else if (event.target == addPrAgainModal ) {
                     addPrAgainModal.style.display = "none";
+                }
+                else if (event.target == errBackToAdminModal ) {
+                    errBackToAdminModal.style.display = "none";
                 }
             }
         </script>
