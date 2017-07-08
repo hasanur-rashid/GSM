@@ -6,7 +6,7 @@
   Time: 11:06 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
     <head>
         <title>Basic Company Info</title>
@@ -84,64 +84,64 @@
             }
 
             .pos0{
-                top: 5%;
+                top: 0%;
                 left: 80%;
+                color: red;
             }
         </style>
     </head>
-    <h1 class="ex1">Company Information:</h1>
-    <form action="backBasicComInfo">
-        <button class="button pos0">Back To Home</button>
-    </form>
-    <%
-        CompanyInformation comInfo = (CompanyInformation) request.getAttribute("comInfo");
-        if(comInfo==null)
-        {
-            out.println("System has no information about the company.");
-        }
-        else
-        {
-            out.println( String.format("<h2 class=\"ex2\">Company ID: <span style=\"color: black\">%d</span></h2>", comInfo.getCmid().longValue()) );
-            out.println( String.format("<h2 class=\"ex2\">Company Name: <span style=\"color: black\">%s</span></h2>", comInfo.getCmname()) );
-            out.println( String.format("<h2 class=\"ex2\">Company Address: <span style=\"color: black\">%s</span></h2>", comInfo.getCmaddress()) );
-            out.println("<h1 class=\"ex1\">Company Product Information:</h1>");
-            out.println("<table>");
-            out.println("<tr>");
-            out.println("<th>Product ID</th>");
-            out.println("<th>Product Name</th>");
-            out.println("</tr>");
-            List<Long> pid = comInfo.getPid();
-            List<String> pname = comInfo.getPname();
-            for ( int  i = 0 ; i<pid.size() ; i++ )
-            {
-                out.println("<tr>");
-                out.println( String.format("<td>%d</td>", pid.get(i)));
-                out.println( String.format("<td>%s</td>", pname.get(i)) );
-                out.println("</tr>");
-            }
-            out.println("</table>");
-            out.println("<h1 class=\"ex1\">Company Representative Information:</h1>");
-            out.println("<table>");
-            out.println("<tr>");
-            out.println("<th>Representative ID</th>");
-            out.println("<th>Representative Name</th>");
-            out.println("<th>Representative Mobile No.</th>");
-            out.println("</tr>");
-            List <Long> rid = comInfo.getRid();
-            List <String> rname = comInfo.getRname();
-            List <Long> mobile_no = comInfo.getMobile_no();
-            for ( int  i = 0 ; i<rid.size() ; i++ )
-            {
-                out.println("<tr>");
-                out.println( String.format("<td>%d</td>", rid.get(i)));
-                out.println( String.format("<td>%s</td>", rname.get(i)) );
-                out.println( String.format("<td>%s</td>", mobile_no.get(i)) );
-                out.println("</tr>");
-            }
-            out.println("</table>");
-        }
-    %>
     <body>
-
+        <h1 class="ex1">Company Information:</h1>
+        <form action="backBasicComInfo">
+            <button class="button pos0">Back To Home</button>
+        </form>
+        <%
+            CompanyInformation comInfo = (CompanyInformation) request.getAttribute("comInfo");
+            if(comInfo==null)
+            {
+                out.println("System has no information about the company.");
+            }
+            else
+            {
+                out.println( String.format("<h2 class=\"ex2\">Company ID: <span style=\"color: black\">%d</span></h2>", comInfo.getCmid().longValue()) );
+                out.println( String.format("<h2 class=\"ex2\">Company Name: <span style=\"color: black\">%s</span></h2>", comInfo.getCmname()) );
+                out.println( String.format("<h2 class=\"ex2\">Company Address: <span style=\"color: black\">%s</span></h2>", comInfo.getCmaddress()) );
+                out.println("<h1 class=\"ex1\">Company Product Information:</h1>");
+                out.println("<table>");
+                out.println("<tr>");
+                out.println("<th>Product ID</th>");
+                out.println("<th>Product Name</th>");
+                out.println("</tr>");
+                List<Long> pid = comInfo.getPid();
+                List<String> pname = comInfo.getPname();
+                for ( int  i = 0 ; i<pid.size() ; i++ )
+                {
+                    out.println("<tr>");
+                    out.println( String.format("<td>%d</td>", pid.get(i)));
+                    out.println( String.format("<td>%s</td>", pname.get(i)) );
+                    out.println("</tr>");
+                }
+                out.println("</table>");
+                out.println("<h1 class=\"ex1\">Company Representative Information:</h1>");
+                out.println("<table>");
+                out.println("<tr>");
+                out.println("<th>Representative ID</th>");
+                out.println("<th>Representative Name</th>");
+                out.println("<th>Representative Mobile No.</th>");
+                out.println("</tr>");
+                List <Long> rid = comInfo.getRid();
+                List <String> rname = comInfo.getRname();
+                List <Long> mobile_no = comInfo.getMobile_no();
+                for ( int  i = 0 ; i<rid.size() ; i++ )
+                {
+                    out.println("<tr>");
+                    out.println( String.format("<td>%d</td>", rid.get(i)));
+                    out.println( String.format("<td>%s</td>", rname.get(i)) );
+                    out.println( String.format("<td>%s</td>", mobile_no.get(i)) );
+                    out.println("</tr>");
+                }
+                out.println("</table>");
+            }
+        %>
     </body>
 </html>

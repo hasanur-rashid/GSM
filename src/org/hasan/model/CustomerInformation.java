@@ -10,8 +10,8 @@ public class CustomerInformation
     Long mobile_no;
     String joindate;
     String cuaddress;
-    Long purchase;
-    Long commission_pct;
+    Float purchase;
+    Float commission_pct;
 
     public Long getCuid() {
         return cuid;
@@ -53,19 +53,19 @@ public class CustomerInformation
         this.cuaddress = cuaddress;
     }
 
-    public Long getPurchase() {
+    public Float getPurchase() {
         return purchase;
     }
 
-    public void setPurchase(Long purchase) {
+    public void setPurchase(Float purchase) {
         this.purchase = purchase;
     }
 
-    public Long getCommission_pct() {
+    public Float getCommission_pct() {
         return commission_pct;
     }
 
-    public void setCommission_pct(Long commission_pct) {
+    public void setCommission_pct(Float commission_pct) {
         this.commission_pct = commission_pct;
     }
 }

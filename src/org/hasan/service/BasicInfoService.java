@@ -1,8 +1,7 @@
 package org.hasan.service;
 
 import org.hasan.dbaccess.DataAccess;
-import org.hasan.model.CompanyInformation;
-import org.hasan.model.ProductInformation;
+import org.hasan.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -32,6 +31,42 @@ public class BasicInfoService
         if ( db.isCompany(cmid) > 0 )
         {
             return db.getCompanyInfo(cmid);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public CustomerInformation getCuInfo (Long cuid )
+    {
+        if ( db.isPrCustomer(cuid) > 0 )
+        {
+            return db.getCustomerInfo(cuid);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public EmployeeInformation getEmInfo (Long emid )
+    {
+        if ( db.isEmployee(emid) > 0 )
+        {
+            return db.getEmployeeInfo(emid);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public RepresentativeInformation getRepInfo (Long rid )
+    {
+        if ( db.isRep(rid) > 0 )
+        {
+            return db.getRepInfo(rid);
         }
         else
         {

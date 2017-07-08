@@ -1,7 +1,6 @@
 package org.hasan.controller;
 
-import org.hasan.model.CompanyInformation;
-import org.hasan.model.ProductInformation;
+import org.hasan.model.*;
 import org.hasan.service.BasicInfoService;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -59,6 +58,60 @@ public class BasicInfoController implements ApplicationContextAware
         return mv;
     }
 
+    @RequestMapping("/emBasicInfo")
+    public ModelAndView emBasicInfo(@RequestParam("emid") Long emid, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        EmployeeInformation emInfo = sv.getEmInfo(emid);
+        if ( emInfo == null )
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("errorValidEmid","Invalid Employee ID !!!");
+        }
+        else
+        {
+            mv.setViewName("basicEmInfo.jsp");
+            mv.addObject("emInfo", emInfo);
+        }
+        return mv;
+    }
+
+    @RequestMapping("/cuBasicInfo")
+    public ModelAndView cuBasicInfo(@RequestParam("cuid") Long cuid, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        CustomerInformation cuInfo = sv.getCuInfo(cuid);
+        if ( cuInfo == null )
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("errorValidCuid","Invalid Customer ID !!!");
+        }
+        else
+        {
+            mv.setViewName("basicCuInfo.jsp");
+            mv.addObject("cuInfo", cuInfo);
+        }
+        return mv;
+    }
+
+    @RequestMapping("/repBasicInfo")
+    public ModelAndView repBasicInfo(@RequestParam("rid") Long rid, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        RepresentativeInformation rInfo = sv.getRepInfo(rid);
+        if ( rInfo == null )
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("errorValidRid","Invalid Representative ID !!!");
+        }
+        else
+        {
+            mv.setViewName("basicRepInfo.jsp");
+            mv.addObject("rInfo", rInfo);
+        }
+        return mv;
+    }
+
     @RequestMapping("/backBasicPrInfo")
     public ModelAndView backBasicPrInfo(HttpServletRequest request, HttpServletResponse response)
     {
@@ -69,6 +122,30 @@ public class BasicInfoController implements ApplicationContextAware
 
     @RequestMapping("/backBasicComInfo")
     public ModelAndView backBasicComInfo(HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("employeeHome.jsp");
+        return mv;
+    }
+
+    @RequestMapping("/backBasicCuInfo")
+    public ModelAndView backBasicCuInfo(HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("employeeHome.jsp");
+        return mv;
+    }
+
+    @RequestMapping("/backBasicEmInfo")
+    public ModelAndView backBasicEmInfo(HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("employeeHome.jsp");
+        return mv;
+    }
+
+    @RequestMapping("/backBasicRepInfo")
+    public ModelAndView backBasicRepInfo(HttpServletRequest request, HttpServletResponse response)
     {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("employeeHome.jsp");

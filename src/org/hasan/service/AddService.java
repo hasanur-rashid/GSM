@@ -52,4 +52,9 @@ public class AddService
     {
         db.createProduct(pid, cmid, name, price, quantity, category, rid, emid);
     }
+
+    public void createNewCu(Long cuid, String name,  Long mobile_no, String address)
+    {
+        db.createCustomer(cuid, name, mobile_no, address);
+    }
 }

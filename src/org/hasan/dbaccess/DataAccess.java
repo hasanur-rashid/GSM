@@ -1,7 +1,6 @@
 package org.hasan.dbaccess;
 
-import org.hasan.model.CompanyInformation;
-import org.hasan.model.ProductInformation;
+import org.hasan.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -14,9 +13,7 @@ import javax.sql.DataSource;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by ENVY on 4/27/2017.
@@ -68,6 +65,20 @@ public class DataAccess {
         storeProduct(pid, emid, price, quantity);
     }
 
+    public void createCustomer(Long cuid, String name, Long mobile_no, String address)
+    {
+        this.jdbcTemplate.update
+        (
+            "insert into customer values(?,?,?)",
+            cuid,name,mobile_no
+        );
+        this.jdbcTemplate.update
+        (
+            "insert into prcustomer ( cuid, joindate, address ) values(?,sysdate,?)",
+            cuid,address
+        );
+    }
+
     public int isUser( String usrName, Long passWd )
     {
         return this.jdbcTemplate.queryForObject
@@ -95,6 +106,16 @@ public class DataAccess {
             "select count(*) from company where cmid = ?",
             Integer.class,
             new Object[]{cmid}
+        );
+    }
+
+    public int isEmployee( Long emid )
+    {
+        return this.jdbcTemplate.queryForObject
+        (
+            "select count(*) from employee where emid = ?",
+            Integer.class,
+            new Object[]{emid}
         );
     }
 
@@ -335,6 +356,114 @@ public class DataAccess {
             }
         );
         cInfo.setMobile_no(mobile_no);
+        return cInfo;
+    }
+
+    public CustomerInformation getCustomerInfo(Long cuid)
+    {
+        CustomerInformation cInfo =
+        this.jdbcTemplate.queryForObject
+        (
+            "SELECT c.CUID, c.NAME, c.MOBILE_NO, p.ADDRESS, p.COMMISSION_PCT, p.PURCHASE, to_char(p.joindate,'YYYY-MM-DD HH24:MI:SS') joindate FROM CUSTOMER c, PRCUSTOMER p WHERE c.CUID=p.CUID AND c.CUID = ?",
+            new Object[]{cuid},
+            new RowMapper<CustomerInformation>() {
+                public CustomerInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    CustomerInformation cInfo = new CustomerInformation();
+                    cInfo.setCuid(rs.getLong(1));
+                    cInfo.setCuname(rs.getString(2));
+                    cInfo.setMobile_no(rs.getLong(3));
+                    cInfo.setCuaddress(rs.getString(4));
+                    cInfo.setCommission_pct(rs.getFloat(5));
+                    cInfo.setPurchase(rs.getFloat(6));
+                    cInfo.setJoindate(rs.getString(7));
+                    return cInfo;
+                }
+            }
+        );
+        return cInfo;
+    }
+
+    public EmployeeInformation getEmployeeInfo(Long emid)
+    {
+        EmployeeInformation cInfo =
+        this.jdbcTemplate.queryForObject
+        (
+            "select * from employee where emid = ?",
+            new Object[]{emid},
+            new RowMapper<EmployeeInformation>() {
+                public EmployeeInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    EmployeeInformation cInfo = new EmployeeInformation();
+                    cInfo.setEmid(rs.getLong("emid"));
+                    cInfo.setEmname(rs.getString("name"));
+                    cInfo.setEmaddress(rs.getString("address"));
+                    cInfo.setSalary(rs.getFloat("salary"));
+                    cInfo.setDesignation(rs.getString("designation"));
+                    cInfo.setMobile_no(rs.getLong("mobile_no"));
+                    return cInfo;
+                }
+            }
+        );
+        return cInfo;
+    }
+
+    public RepresentativeInformation getRepInfo(Long rid)
+    {
+        RepresentativeInformation cInfo =
+        this.jdbcTemplate.queryForObject
+        (
+            "select * from representative where rid = ?",
+            new Object[]{rid},
+            new RowMapper<RepresentativeInformation>() {
+                public RepresentativeInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    RepresentativeInformation cInfo = new RepresentativeInformation();
+                    cInfo.setRid(rs.getLong("rid"));
+                    cInfo.setCmid(rs.getLong("cmid"));
+                    cInfo.setRname(rs.getString("name"));
+                    cInfo.setMobile_no(rs.getLong("mobile_no"));
+                    return cInfo;
+                }
+            }
+        );
+        List<Long> pid =
+        this.jdbcTemplate.query
+        (
+            "select pid from product where rid = ?",
+            new Object[]{rid},
+            new RowMapper<Long>() {
+                public Long mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    return  rs.getLong(1);
+                }
+            }
+        );
+        cInfo.setPid(pid);
+        List<String> pname =
+        this.jdbcTemplate.query
+        (
+            "select name from product where rid = ?",
+            new Object[]{rid},
+            new RowMapper<String>() {
+                public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    return rs.getString(1);
+                }
+            }
+        );
+        cInfo.setPname(pname);
+        Long cmid = cInfo.getCmid();
+        if ( cmid==null )
+        {
+            cInfo.setCmname(null);
+        }
+        else
+        {
+            cInfo.setCmname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from company where cmid = ?",
+                    String.class,
+                    new Object[]{cmid}
+                )
+            );
+        }
         return cInfo;
     }
 

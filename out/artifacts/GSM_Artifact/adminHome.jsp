@@ -62,7 +62,7 @@
                 color: white;
                 border: none;
                 border-radius: 8px;
-                padding: 14px 20px;
+                padding: 4px 8px;
                 margin: 8px 0;
                 cursor: pointer;
             }
@@ -95,6 +95,7 @@
             .pos0{
                 top: 0%;
                 left: 80%;
+                color: red;
             }
 
             .pos1{
@@ -174,6 +175,16 @@
                 box-sizing: border-box;
             }
 
+            input[type=number], select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 2px solid forestgreen;
+                border-radius: 8px;
+                box-sizing: border-box;
+            }
+
             input[type=submit] {
                 width: 100%;
                 background-color: forestgreen;
@@ -200,10 +211,122 @@
         </form>
         <button class="button pos1">New Employee</button>
         <button class="button pos2">Statistics</button>
-        <button class="button pos3">Sell Information</button>
-        <button class="button pos4">Store Information</button>
-        <button class="button pos5">Edit Information</button>
+        <button class="button pos3" id="sellInfoBtn">Sell Information</button>
+        <button class="button pos4" id="storeInfoBtn">Store Information</button>
+        <button class="button pos5" id="editInfoBtn">Edit Information</button>
+        <!-- The Modal -->
+        <div id="sellInfoModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c0">&times;</span>
+                <form action="sellInfoPr">
+                <button class="modalButton">Product</button>
+                </form>
+                <form action="sellInfoEmp">
+                <button class="modalButton">Employee</button>
+                </form>
+                <form action="sellInfoCu">
+                <button class="modalButton">Customer</button>
+                </form>
+                <form action="sellInfoDate">
+                <button class="modalButton">Date</button>
+                </form>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="storeInfoModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c1">&times;</span>
+                <form action="storeInfoPr">
+                    <button class="modalButton">Product</button>
+                </form>
+                <form action="storeInfoEmp">
+                    <button class="modalButton">Employee</button>
+                </form>
+                <form action="storeInfoDate">
+                    <button class="modalButton">Date</button>
+                </form>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="editInfoModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c2">&times;</span>
+                <form action="editInfoPr">
+                    <button class="modalButton">Product</button>
+                </form>
+                <form action="editInfoCom">
+                    <button class="modalButton">Company</button>
+                </form>
+                <form action="editInfoEmp">
+                    <button class="modalButton">Employee</button>
+                </form>
+                <form action="editInfoRep">
+                    <button class="modalButton">Representative</button>
+                </form>
+                <form action="editInfoCu">
+                    <button class="modalButton">Customer</button>
+                </form>
+            </div>
+
+        </div>
         <script>
+            // Get the modal
+            var sellInfoModal = document.getElementById('sellInfoModal');
+            var storeInfoModal = document.getElementById('storeInfoModal');
+            var editInfoModal = document.getElementById('editInfoModal');
+
+            // Get the <span> element that closes the modal
+            var span0 = document.getElementById("c0");
+            var span1 = document.getElementById("c1");
+            var span2 = document.getElementById("c2");
+
+            // Get the button that opens the modal
+            var sellInfoBtn = document.getElementById("sellInfoBtn");
+            var storeInfoBtn = document.getElementById("storeInfoBtn");
+            var editInfoBtn = document.getElementById("editInfoBtn");
+
+            // When the user clicks the button, open the modal
+            sellInfoBtn.onclick = function() {
+                sellInfoModal.style.display = "block";
+            }
+            storeInfoBtn.onclick = function() {
+                storeInfoModal.style.display = "block";
+            }
+            editInfoBtn.onclick = function() {
+                editInfoModal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span0.onclick = function() {
+                sellInfoModal.style.display = "none";
+            }
+            span1.onclick = function() {
+                storeInfoModal.style.display = "none";
+            }
+            span2.onclick = function() {
+                editInfoModal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == sellInfoModal) {
+                    sellInfoModal.style.display = "none";
+                }
+                else if (event.target == storeInfoModal) {
+                    storeInfoModal.style.display = "none";
+                }
+                else if (event.target == sellRegModal) {
+                    editInfoModal.style.display = "none";
+                }
+            }
         </script>
     </body>
 </html>

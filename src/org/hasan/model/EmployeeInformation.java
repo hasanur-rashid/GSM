@@ -8,7 +8,7 @@ public class EmployeeInformation
     Long emid;
     String emname;
     String emaddress;
-    Long salary;
+    Float salary;
     String designation;
     Long mobile_no;
 
@@ -36,11 +36,11 @@ public class EmployeeInformation
         this.emaddress = emaddress;
     }
 
-    public Long getSalary() {
+    public Float getSalary() {
         return salary;
     }
 
-    public void setSalary(Long salary) {
+    public void setSalary(Float salary) {
         this.salary = salary;
     }
 

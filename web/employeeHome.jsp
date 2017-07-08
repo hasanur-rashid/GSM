@@ -62,7 +62,7 @@
                 color: white;
                 border: none;
                 border-radius: 8px;
-                padding: 14px 20px;
+                padding: 4px 8px;
                 margin: 8px 0;
                 cursor: pointer;
             }
@@ -95,6 +95,7 @@
             .pos0{
                 top: 0%;
                 left: 80%;
+                color: red;
             }
 
             .pos1{
@@ -174,6 +175,16 @@
                 box-sizing: border-box;
             }
 
+            input[type=number], select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 2px solid forestgreen;
+                border-radius: 8px;
+                box-sizing: border-box;
+            }
+
             input[type=submit] {
                 width: 100%;
                 background-color: forestgreen;
@@ -201,12 +212,12 @@
         <form action="doNullOnPrBtn">
         <button class="button pos1" id="newPrBtn">New Product</button>
         </form>
-        <button class="button pos2">New Premiere Customer</button>
+        <button class="button pos2" id="newCuBtn">New Premiere Customer</button>
         <button class="button pos3" id="prInfoBtn">Product Information</button>
-        <button class="button pos4">Employee Information</button>
-        <button class="button pos5">Customer Information</button>
+        <button class="button pos4" id="emInfoBtn">Employee Information</button>
+        <button class="button pos5" id="cuInfoBtn">Customer Information</button>
         <button class="button pos6" id="comInfoBtn">Company Information</button>
-        <button class="button pos7">Representative Information</button>
+        <button class="button pos7" id="repInfoBtn">Representative Information</button>
         <button class="button pos8" id="sellBtn">Sell Product</button>
         <button class="button pos9" id="storeBtn">Store Product</button>
         <!-- The Modal -->
@@ -216,7 +227,7 @@
             <div class="modal-content">
                 <span class="close" id="c0">&times;</span>
                 <form action="prBasicInfo">
-                    <input type="text" name="pid" placeholder="Product ID" required/> <br>
+                    <input type="number" name="pid" placeholder="Product ID" required/> <br>
                     <br>
                     <input type="submit" value="Submit" />
                 </form>
@@ -243,9 +254,9 @@
                 <span class="close" id="c2">&times;</span>
                 <form action="doSellToRegular">
                     <input type="text" name="name" placeholder="Customer Name" required/> <br>
-                    <input type="text" name="mobile_no" placeholder="Mobile No." required/> <br>
-                    <input type="text" name="pid" placeholder="Product ID" required/> <br>
-                    <input type="text" name="quantity" placeholder="Quantity" required/> <br>
+                    <input type="number" name="mobile_no" placeholder="Mobile No." required/> <br>
+                    <input type="number" name="pid" placeholder="Product ID" required/> <br>
+                    <input type="number" name="quantity" placeholder="Quantity" required/> <br>
                     <br>
                     <input type="submit" value="Generate Memo" />
                 </form>
@@ -259,9 +270,9 @@
             <div class="modal-content">
                 <span class="close" id="c3">&times;</span>
                 <form action="doSellToPremier">
-                    <input type="text" name="pid" placeholder="Product ID" required/> <br>
-                    <input type="text" name="cuid" placeholder="Customer ID" required/> <br>
-                    <input type="text" name="quantity" placeholder="Quantity" required/> <br>
+                    <input type="number" name="pid" placeholder="Product ID" required/> <br>
+                    <input type="number" name="cuid" placeholder="Customer ID" required/> <br>
+                    <input type="number" name="quantity" placeholder="Quantity" required/> <br>
                     <br>
                     <input type="submit" value="Generate Memo" />
                 </form>
@@ -275,9 +286,9 @@
             <div class="modal-content">
                 <span class="close" id="c4">&times;</span>
                 <form action="doStore">
-                    <input type="text" name="pid" placeholder="Product ID" required/> <br>
-                    <input type="text" name="price" placeholder="Product Price" required/> <br>
-                    <input type="text" name="quantity" placeholder="Quantity" required/> <br>
+                    <input type="number" name="pid" placeholder="Product ID" required/> <br>
+                    <input type="number" name="price" placeholder="Product Price" required/> <br>
+                    <input type="number" name="quantity" placeholder="Quantity" required/> <br>
                     <br>
                     <input type="submit" value="Generate Memo" />
                 </form>
@@ -291,7 +302,7 @@
             <div class="modal-content">
                 <span class="close" id="c5">&times;</span>
                 <form action="comBasicInfo">
-                    <input type="text" name="cmid" placeholder="Company ID" required/> <br>
+                    <input type="number" name="cmid" placeholder="Company ID" required/> <br>
                     <br>
                     <input type="submit" value="Submit" />
                 </form>
@@ -318,7 +329,7 @@
             <div class="modal-content">
                 <span class="close" id="c7">&times;</span>
                 <form action="checkComId">
-                    <input type="text" name="cmid" placeholder="Company ID" required/><br>
+                    <input type="number" name="cmid" placeholder="Company ID" required/><br>
                     <br>
                     <input type="submit" value="Submit" />
                 </form>
@@ -402,7 +413,7 @@
             <div class="modal-content">
                 <span class="close" id="c13">&times;</span>
                 <form action="checkRepId">
-                    <input type="text" name="rid" placeholder="Representative ID" required/><br>
+                    <input type="number" name="rid" placeholder="Representative ID" required/><br>
                     <br>
                     <input type="submit" value="Submit" />
                 </form>
@@ -417,7 +428,7 @@
                 <span class="close" id="c14">&times;</span>
                 <form action="addNewRep">
                     <input type="text" name="name" placeholder="Representative Name" required/>
-                    <input type="text" name="mobile_no" placeholder="Representative Mobile No." required/>
+                    <input type="number" name="mobile_no" placeholder="Representative Mobile No." required/>
                     <br>
                     <input type="submit" value="Submit" />
                 </form>
@@ -431,10 +442,10 @@
             <div class="modal-content">
                 <span class="close" id="c15">&times;</span>
                 <form action="addNewPr">
-                    <input type="text" name="pid" placeholder="Product ID" required/>
+                    <input type="number" name="pid" placeholder="Product ID" required/>
                     <input type="text" name="name" placeholder="Product Name" required/>
-                    <input type="text" name="price" placeholder="Product Price" required/>
-                    <input type="text" name="quantity" placeholder="Product Quantity" required/>
+                    <input type="number" name="price" placeholder="Product Price" required/>
+                    <input type="number" name="quantity" placeholder="Product Quantity" required/>
                     <input type="text" name="category" placeholder="Product Category" required/>
                     <input type="submit" value="Submit" />
                 </form>
@@ -493,6 +504,102 @@
             </div>
 
         </div>
+        <!-- The Modal -->
+        <div id="newCuModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c20">&times;</span>
+                <form action="addNewCu">
+                    <input type="number" name="cuid" placeholder="Customer ID" required/>
+                    <input type="text" name="name" placeholder="Customer Name" required/>
+                    <input type="number" name="mobile_no" placeholder="Mobile No." required/>
+                    <input type="text" name="address" placeholder="Address" required/>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="addCuAgainModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c21">&times;</span>
+                <h3 style="color: forestgreen">Customer successfully added in the database of premiere customer list.</h3>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="emInfoModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c22">&times;</span>
+                <form action="emBasicInfo">
+                    <input type="number" name="emid" placeholder="Employee ID" required/> <br>
+                    <br>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="cuInfoModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c23">&times;</span>
+                <form action="cuBasicInfo">
+                    <input type="number" name="cuid" placeholder="Customer ID" required/> <br>
+                    <br>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="repInfoModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c24">&times;</span>
+                <form action="repBasicInfo">
+                    <input type="number" name="rid" placeholder="Representative ID" required/> <br>
+                    <br>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="errRidModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content change-border">
+                <span class="close" id="c25">&times;</span>
+                <h2 class="ex2">
+                    <%
+                        out.println(request.getAttribute("errorValidRid"));
+                    %>
+                </h2>
+            </div>
+
+        </div>
+        <!-- The Modal -->
+        <div id="errEmidModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content change-border">
+                <span class="close" id="c26">&times;</span>
+                <h2 class="ex2">
+                    <%
+                        out.println(request.getAttribute("errorValidEmid"));
+                    %>
+                </h2>
+            </div>
+
+        </div>
         <script>
             // Get the modal
             var prInfoModal = document.getElementById('prInfoModal');
@@ -515,14 +622,24 @@
             var showNewRepModal = document.getElementById('showNewRepModal');
             var addPrAgainModal = document.getElementById('addPrAgainModal');
             var errBackToAdminModal = document.getElementById('errBackToAdminModal');
+            var newCuModal = document.getElementById('newCuModal');
+            var addCuAgainModal = document.getElementById('addCuAgainModal');
+            var emInfoModal = document.getElementById('emInfoModal');
+            var repInfoModal = document.getElementById('repInfoModal');
+            var cuInfoModal = document.getElementById('cuInfoModal');
+            var errRidModal = document.getElementById('errRidModal');
+            var errEmidModal = document.getElementById('errEmidModal');
 
             // Get the button that opens the modal
             var prInfoBtn = document.getElementById("prInfoBtn");
             var sellBtn = document.getElementById("sellBtn");
             var storeBtn = document.getElementById("storeBtn");
             var comInfoBtn = document.getElementById("comInfoBtn");
-            var newPrBtn = document.getElementById("newPrBtn");
             var addPrSameBtn = document.getElementById("addPrSameBtn");
+            var newCuBtn = document.getElementById("newCuBtn");
+            var emInfoBtn = document.getElementById("emInfoBtn");
+            var cuInfoBtn = document.getElementById("cuInfoBtn");
+            var repInfoBtn = document.getElementById("repInfoBtn");
 
             // Get the <span> element that closes the modal
             var span0 = document.getElementById("c0");
@@ -545,10 +662,19 @@
             var span17 = document.getElementById("c17");
             var span18 = document.getElementById("c18");
             var span19 = document.getElementById("c19");
+            var span20 = document.getElementById("c20");
+            var span21 = document.getElementById("c21");
+            var span22 = document.getElementById("c22");
+            var span23 = document.getElementById("c23");
+            var span24 = document.getElementById("c24");
+            var span25 = document.getElementById("c25");
+            var span26 = document.getElementById("c26");
 
             var errPid = '${errorValidPid}';
             var errCmid = '${errorValidCmid}';
             var errCuid = '${errorValidCuid}';
+            var errRid = '${errorValidRid}';
+            var errEmid = '${errorValidEmid}';
             var openPrComCheck = '${openPrComCheck}';
             var errAdmin = '${errAdmin}';
             var openPrRepCheck = '${openPrRepCheck}';
@@ -556,6 +682,11 @@
             var openShowNewRep = '${openShowNewRep}';
             var openNewPr = '${openNewPr}';
             var openAddPrAgain = '${openAddPrAgain}';
+            var openAddCuAgain = '${openAddCuAgain}';
+
+            if ( openAddCuAgain!=null && openAddCuAgain!="" ){
+                addCuAgainModal.style.display = "block";
+            }
 
             if ( errAdmin!=null && errAdmin!="" ){
                 errBackToAdminModal.style.display = "block";
@@ -589,6 +720,14 @@
                 errCuidModal.style.display = "block";
             }
 
+            if ( errRid!=null && errRid!="" ){
+                errRidModal.style.display = "block";
+            }
+
+            if ( errEmid!=null && errEmid!="" ){
+                errEmidModal.style.display = "block";
+            }
+
             if ( openPrComCheck!=null && openPrComCheck!="" ){
                 prComCheckModal.style.display = "block";
             }
@@ -618,14 +757,29 @@
             }
 
             // When the user clicks the button, open the modal
-            newPrBtn.onclick = function() {
-                prComCheckModal.style.display = "block";
-            }
-
-            // When the user clicks the button, open the modal
             addPrSameBtn.onclick = function() {
                 newPrModal.style.display = "block";
                 addPrAgainModal.style.display = "none";
+            }
+
+            // When the user clicks the button, open the modal
+            newCuBtn.onclick = function() {
+                newCuModal.style.display = "block";
+            }
+
+            // When the user clicks the button, open the modal
+            emInfoBtn.onclick = function() {
+                emInfoModal.style.display = "block";
+            }
+
+            // When the user clicks the button, open the modal
+            cuInfoBtn.onclick = function() {
+                cuInfoModal.style.display = "block";
+            }
+
+            // When the user clicks the button, open the modal
+            repInfoBtn.onclick = function() {
+                repInfoModal.style.display = "block";
             }
 
             function handleClickShowNewCom() {
@@ -799,6 +953,27 @@
             span19.onclick = function() {
                 errBackToAdminModal.style.display = "none";
             }
+            span20.onclick = function() {
+                newCuModal.style.display = "none";
+            }
+            span21.onclick = function() {
+                addCuAgainModal.style.display = "none";
+            }
+            span22.onclick = function() {
+                emInfoModal.style.display = "none";
+            }
+            span23.onclick = function() {
+                cuInfoModal.style.display = "none";
+            }
+            span24.onclick = function() {
+                repInfoModal.style.display = "none";
+            }
+            span25.onclick = function() {
+                errRidModal.style.display = "none";
+            }
+            span26.onclick = function() {
+                errEmidModal.style.display = "none";
+            }
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == prInfoModal ) {
@@ -860,6 +1035,27 @@
                 }
                 else if (event.target == errBackToAdminModal ) {
                     errBackToAdminModal.style.display = "none";
+                }
+                else if (event.target == newCuModal ) {
+                    newCuModal.style.display = "none";
+                }
+                else if (event.target == addCuAgainModal ) {
+                    addCuAgainModal.style.display = "none";
+                }
+                else if (event.target == emInfoModal ) {
+                    emInfoModal.style.display = "none";
+                }
+                else if (event.target == cuInfoModal ) {
+                    cuInfoModal.style.display = "none";
+                }
+                else if (event.target == repInfoModal ) {
+                    repInfoModal.style.display = "none";
+                }
+                else if (event.target == errRidModal ) {
+                    errRidModal.style.display = "none";
+                }
+                else if (event.target == errEmidModal ) {
+                    errEmidModal.style.display = "none";
                 }
             }
         </script>

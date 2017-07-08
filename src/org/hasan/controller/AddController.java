@@ -97,6 +97,16 @@ public class AddController implements ApplicationContextAware
         return mv;
     }
 
+    @RequestMapping("/addNewCu")
+    public ModelAndView addNewCu(@RequestParam("cuid") Long cuid, @RequestParam("name") String name, @RequestParam("mobile_no") Long mobile_no, @RequestParam("address") String address, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        sv.createNewCu(cuid, name, mobile_no, address);
+        mv.setViewName("employeeHome.jsp");
+        mv.addObject("openAddCuAgain","open");
+        return mv;
+    }
+
     @RequestMapping("/doNullOnPrBtn")
     public ModelAndView doNullOnPrBtn(HttpServletRequest request, HttpServletResponse response)
     {
