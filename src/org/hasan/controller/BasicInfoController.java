@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * Created by ENVY on 5/18/2017.
@@ -112,6 +113,24 @@ public class BasicInfoController implements ApplicationContextAware
         return mv;
     }
 
+    @RequestMapping("/sellPrInfo")
+    public ModelAndView sellPrInfo(@RequestParam("pid") Long pid, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        List<SellInformation> sInfo = sv.getSellPrInfo(pid);
+        if ( sInfo == null )
+        {
+            mv.setViewName("adminHome.jsp");
+            mv.addObject("errPid","Invalid Product ID !!!");
+        }
+        else
+        {
+            mv.setViewName("sellPrInfo.jsp");
+            mv.addObject("sInfo", sInfo);
+        }
+        return mv;
+    }
+
     @RequestMapping("/backBasicPrInfo")
     public ModelAndView backBasicPrInfo(HttpServletRequest request, HttpServletResponse response)
     {
@@ -149,6 +168,14 @@ public class BasicInfoController implements ApplicationContextAware
     {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("employeeHome.jsp");
+        return mv;
+    }
+
+    @RequestMapping("/backAdminHome")
+    public ModelAndView backAdminHome(HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("adminHome.jsp");
         return mv;
     }
 

@@ -62,7 +62,7 @@
                 color: white;
                 border: none;
                 border-radius: 8px;
-                padding: 4px 8px;
+                padding: 14px 20px;
                 margin: 8px 0;
                 cursor: pointer;
             }

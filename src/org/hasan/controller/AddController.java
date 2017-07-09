@@ -107,6 +107,23 @@ public class AddController implements ApplicationContextAware
         return mv;
     }
 
+    @RequestMapping("/addNewEm")
+    public ModelAndView addNewEm(@RequestParam("emid") Long emid, @RequestParam("name") String name, @RequestParam("mobile_no") Long mobile_no, @RequestParam("address") String address, @RequestParam("designation") String designation, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        if ( sv.createNewEm(emid, name, mobile_no, address, designation) )
+        {
+            mv.setViewName("adminHome.jsp");
+            mv.addObject("addNewEm", "add");
+        }
+        else
+        {
+            mv.setViewName("adminHome.jsp");
+            mv.addObject("errNewEm", "Employee ID is already given to another person. Try another ID!!!");
+        }
+        return mv;
+    }
+
     @RequestMapping("/doNullOnPrBtn")
     public ModelAndView doNullOnPrBtn(HttpServletRequest request, HttpServletResponse response)
     {

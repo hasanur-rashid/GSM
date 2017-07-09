@@ -79,6 +79,15 @@ public class DataAccess {
         );
     }
 
+    public void createEmployee(Long emid, String name, Long mobile_no, String address, String designation)
+    {
+        this.jdbcTemplate.update
+        (
+            "insert into employee ( emid, name, address, mobile_no, designation ) values(?,?,?,?,?)",
+            emid,name,address,mobile_no,designation
+        );
+    }
+
     public int isUser( String usrName, Long passWd )
     {
         return this.jdbcTemplate.queryForObject
@@ -465,6 +474,65 @@ public class DataAccess {
             );
         }
         return cInfo;
+    }
+
+    public List<SellInformation> getSellPrInfo( Long pid )
+    {
+
+        List<SellInformation> sInfo =
+        this.jdbcTemplate.query
+        (
+            "select pid,emid,cuid,price,quantity, to_char(bdate,'YYYY-MM-DD HH24:MI:SS') bdate from buys where pid = ? order by bdate desc",
+            new Object[]{pid},
+            new RowMapper<SellInformation>() {
+                public SellInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    SellInformation sInfo = new SellInformation();
+                    sInfo.setPid(rs.getLong("pid"));
+                    sInfo.setEmid(rs.getLong("emid"));
+                    sInfo.setCuid(rs.getLong("cuid"));
+                    sInfo.setPrice(rs.getLong("price"));
+                    sInfo.setQuantity(rs.getLong("quantity"));
+                    sInfo.setDate(rs.getString("bdate"));
+                    return sInfo;
+                }
+            }
+        );
+        for ( SellInformation s: sInfo )
+        {
+            s.setPname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from product where pid = ?",
+                    String.class,
+                    new Object[]{s.getPid()}
+                )
+            );
+            s.setEmname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from employee where emid = ?",
+                    String.class,
+                    new Object[]{s.getEmid()}
+                )
+            );
+            s.setCuname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from customer where cuid = ?",
+                    String.class,
+                    new Object[]{s.getCuid()}
+                )
+            );
+            s.setMobile_no(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select mobile_no from customer where cuid = ?",
+                    Long.class,
+                    new Object[]{s.getCuid()}
+                )
+            );
+        }
+        return sInfo;
     }
 
     public void sellProductToRegular(String name, Long mobile_no, Long pid, Long emid, Long quantity)

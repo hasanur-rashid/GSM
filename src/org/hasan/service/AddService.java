@@ -57,4 +57,17 @@ public class AddService
     {
         db.createCustomer(cuid, name, mobile_no, address);
     }
+
+    public boolean createNewEm(Long emid, String name, Long mobile_no, String address, String designation)
+    {
+        if ( db.isEmployee(emid) > 0 )
+        {
+            return false;
+        }
+        else
+        {
+            db.createEmployee(emid, name, mobile_no, address, designation);
+            return true;
+        }
+    }
 }

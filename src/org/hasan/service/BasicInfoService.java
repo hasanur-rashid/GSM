@@ -5,6 +5,8 @@ import org.hasan.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * Created by ENVY on 5/18/2017.
  */
@@ -67,6 +69,18 @@ public class BasicInfoService
         if ( db.isRep(rid) > 0 )
         {
             return db.getRepInfo(rid);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public List<SellInformation> getSellPrInfo (Long pid )
+    {
+        if ( db.isProduct(pid) > 0 )
+        {
+            return db.getSellPrInfo(pid);
         }
         else
         {

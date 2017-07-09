@@ -15,6 +15,8 @@
         <style>
             table, th, td
             {
+                font-family: Helvetica,Arial;
+                font-size: 3vh;
                 border-radius: 8px;
                 border-collapse: collapse;
             }
@@ -36,7 +38,7 @@
 
             tr:hover
             {
-                background-color: forestgreen;
+                background-color: yellow;
             }
 
             h1.ex1
