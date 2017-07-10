@@ -24,6 +24,7 @@
     <bean id="basicInfoServ" class="org.hasan.service.BasicInfoService" />
     <bean id="sellStoreServ" class="org.hasan.service.SellStoreService" />
     <bean id="addServ" class="org.hasan.service.AddService" />
+    <bean id="editServ" class="org.hasan.service.EditInfoService" />
 
     <context:property-placeholder location="classpath:jdbc.properties"/>
 

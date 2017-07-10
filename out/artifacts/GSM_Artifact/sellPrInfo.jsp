@@ -105,7 +105,7 @@
         }
         else
         {
-            out.println("<table>");
+            out.println("<table align=\"center\">");
             out.println("<tr>");
             out.println("<th>Product ID</th>");
             out.println("<th>Product Name</th>");

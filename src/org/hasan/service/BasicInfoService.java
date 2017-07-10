@@ -87,4 +87,14 @@ public class BasicInfoService
             return null;
         }
     }
+
+    public List<PrTotSaleList> getPrTotSaleInfo ( String sdate )
+    {
+        List<PrTotSaleList> pList = db.getTotSaleList(sdate);
+        for ( PrTotSaleList p: pList )
+        {
+            p.setPname(db.findProductName(p.getPid()));
+        }
+        return pList;
+    }
 }

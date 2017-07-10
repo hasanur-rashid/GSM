@@ -38,24 +38,56 @@ public class AddService
         return false;
     }*/
 
-    public void createNewCom(Long cmid, String name, String address)
+    public boolean createNewCom(Long cmid, String name, String address)
     {
-        db.createCompany(cmid, name, address);
+        if ( db.isCompany(cmid) > 0 )
+        {
+            return false;
+        }
+        else
+        {
+            db.createCompany(cmid, name, address);
+            return true;
+        }
     }
 
-    public void createNewRep(Long rid, Long cmid, String name, Long mobile_no)
+    public boolean createNewRep(Long rid, Long cmid, String name, Long mobile_no)
     {
-        db.createRepresentative(rid, cmid, name, mobile_no);
+        if ( db.isRep(rid) > 0 )
+        {
+            return false;
+        }
+        else
+        {
+            db.createRepresentative(rid, cmid, name, mobile_no);
+            return true;
+        }
     }
 
-    public void createNewPr(Long pid, Long cmid, String name, Long price, Long quantity, String category, Long rid, Long emid)
+    public boolean createNewPr(Long pid, Long cmid, String name, Long price, Long quantity, String category, Long rid, Long emid)
     {
-        db.createProduct(pid, cmid, name, price, quantity, category, rid, emid);
+        if ( db.isEmployee(emid) > 0 )
+        {
+            return false;
+        }
+        else
+        {
+            db.createProduct(pid, cmid, name, price, quantity, category, rid, emid);
+            return true;
+        }
     }
 
-    public void createNewCu(Long cuid, String name,  Long mobile_no, String address)
+    public boolean createNewCu(Long cuid, String name,  Long mobile_no, String address)
     {
-        db.createCustomer(cuid, name, mobile_no, address);
+        if ( db.isCustomer(cuid) > 0 )
+        {
+            return false;
+        }
+        else
+        {
+            db.createCustomer(cuid, name, mobile_no, address);
+            return true;
+        }
     }
 
     public boolean createNewEm(Long emid, String name, Long mobile_no, String address, String designation)

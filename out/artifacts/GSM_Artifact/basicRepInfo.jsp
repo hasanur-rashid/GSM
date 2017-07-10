@@ -124,7 +124,7 @@
                     out.println( String.format("<h2 class=\"ex2\">Representative Company Name: <span style=\"color: black\">%s</span></h2>", comInfo.getCmname()) );
                 }
                 out.println("<h1 class=\"ex1\">Representative Product Information:</h1>");
-                out.println("<table>");
+                out.println("<table align=\"center\">");
                 out.println("<tr>");
                 out.println("<th>Product ID</th>");
                 out.println("<th>Product Name</th>");

@@ -131,6 +131,15 @@ public class BasicInfoController implements ApplicationContextAware
         return mv;
     }
 
+    @RequestMapping("/totPrSale")
+    public ModelAndView totPrSale(@RequestParam("sdate") String sdate, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("prTotSaleList.jsp");
+        mv.addObject("pList", sv.getPrTotSaleInfo(sdate));
+        return mv;
+    }
+
     @RequestMapping("/backAdminHome")
     public ModelAndView backAdminHome(HttpServletRequest request, HttpServletResponse response)
     {

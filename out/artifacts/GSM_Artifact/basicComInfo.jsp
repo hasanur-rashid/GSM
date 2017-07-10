@@ -109,7 +109,7 @@
                 out.println( String.format("<h2 class=\"ex2\">Company Name: <span style=\"color: black\">%s</span></h2>", comInfo.getCmname()) );
                 out.println( String.format("<h2 class=\"ex2\">Company Address: <span style=\"color: black\">%s</span></h2>", comInfo.getCmaddress()) );
                 out.println("<h1 class=\"ex1\">Company Product Information:</h1>");
-                out.println("<table>");
+                out.println("<table align=\"center\">");
                 out.println("<tr>");
                 out.println("<th>Product ID</th>");
                 out.println("<th>Product Name</th>");
@@ -125,7 +125,7 @@
                 }
                 out.println("</table>");
                 out.println("<h1 class=\"ex1\">Company Representative Information:</h1>");
-                out.println("<table>");
+                out.println("<table align=\"center\">");
                 out.println("<tr>");
                 out.println("<th>Representative ID</th>");
                 out.println("<th>Representative Name</th>");

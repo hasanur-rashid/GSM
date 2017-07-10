@@ -64,22 +64,35 @@ public class AddController implements ApplicationContextAware
         ModelAndView mv = new ModelAndView();
         HttpSession session = request.getSession();
         Long cmid = (Long) session.getAttribute("cmid");
-        sv.createNewCom(cmid,name,address);
-        mv.setViewName("employeeHome.jsp");
-        mv.addObject("openPrRepCheck","open");
+        if (sv.createNewCom(cmid,name,address))
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("openPrRepCheck", "open");
+        }
+        else
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("errorValidCmid", "Company ID is already given to another person. Try another ID!!!");
+        }
         return mv;
     }
 
     @RequestMapping("/addNewRep")
-    public ModelAndView addNewRep(@RequestParam("name") String name, @RequestParam("mobile_no") Long mobile_no, HttpServletRequest request, HttpServletResponse response)
-    {
+    public ModelAndView addNewRep(@RequestParam("name") String name, @RequestParam("mobile_no") Long mobile_no, HttpServletRequest request, HttpServletResponse response) {
         ModelAndView mv = new ModelAndView();
         HttpSession session = request.getSession();
         Long rid = (Long) session.getAttribute("rid");
         Long cmid = (Long) session.getAttribute("cmid");
-        sv.createNewRep(rid,cmid,name,mobile_no);
-        mv.setViewName("employeeHome.jsp");
-        mv.addObject("openNewPr","open");
+        if (sv.createNewRep(rid, cmid, name, mobile_no))
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("openNewPr", "open");
+        }
+        else
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("errorValidRid", "Representative ID is already given to another person. Try another ID!!!");
+        }
         return mv;
     }
 
@@ -91,9 +104,16 @@ public class AddController implements ApplicationContextAware
         Long cmid = (Long) session.getAttribute("cmid");
         Long rid = (Long) session.getAttribute("rid");
         Long emid = (Long) session.getAttribute("emid");
-        sv.createNewPr(pid,cmid,name,price,quantity,category,rid,emid);
-        mv.setViewName("employeeHome.jsp");
-        mv.addObject("openAddPrAgain","open");
+        if (sv.createNewPr(pid,cmid,name,price,quantity,category,rid,emid))
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("openAddPrAgain", "open");
+        }
+        else
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("errorValidPid", "Product ID is already given to another person. Try another ID!!!");
+        }
         return mv;
     }
 
@@ -101,9 +121,16 @@ public class AddController implements ApplicationContextAware
     public ModelAndView addNewCu(@RequestParam("cuid") Long cuid, @RequestParam("name") String name, @RequestParam("mobile_no") Long mobile_no, @RequestParam("address") String address, HttpServletRequest request, HttpServletResponse response)
     {
         ModelAndView mv = new ModelAndView();
-        sv.createNewCu(cuid, name, mobile_no, address);
-        mv.setViewName("employeeHome.jsp");
-        mv.addObject("openAddCuAgain","open");
+        if (sv.createNewCu(cuid, name, mobile_no, address))
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("openAddCuAgain", "open");
+        }
+        else
+        {
+            mv.setViewName("employeeHome.jsp");
+            mv.addObject("errorValidCuid", "Customer ID is already given to another person. Try another ID!!!");
+        }
         return mv;
     }
 

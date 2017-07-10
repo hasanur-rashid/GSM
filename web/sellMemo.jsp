@@ -112,7 +112,7 @@
                 out.println( String.format("<h2 class=\"ex2\">Customer Name: <span style=\"color: black\">%s</span></h2>", name) );
                 out.println( String.format("<h2 class=\"ex2\">Customer Mobile No.: <span style=\"color: black\">%d</span></h2>", mobile_no) );
                 out.println("<h1 class=\"ex1\">Sold Product List:</h1>");
-                out.println("<table>");
+                out.println("<table align=\"center\">");
                 out.println("<tr>");
                 out.println("<th>Product ID</th>");
                 out.println("<th>Product Name</th>");

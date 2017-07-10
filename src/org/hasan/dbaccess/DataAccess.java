@@ -138,6 +138,16 @@ public class DataAccess {
         );
     }
 
+    public int isCustomer( Long cuid )
+    {
+        return this.jdbcTemplate.queryForObject
+        (
+            "select count(*) from customer where cuid = ?",
+            Integer.class,
+            new Object[]{cuid}
+        );
+    }
+
     public int isPrCustomer( Long cuid )
     {
         return this.jdbcTemplate.queryForObject
@@ -603,5 +613,114 @@ public class DataAccess {
 
         SqlParameterSource in = new MapSqlParameterSource("P_ID", pid).addValue("STORE_QUANTITY",quantity);
         procQuantityUp.execute(in);
+    }
+
+    public List<PrTotSaleList> getTotSaleList ( String sdate )
+    {
+        List<PrTotSaleList> pList =
+        this.jdbcTemplate.query
+        (
+            "select pid, sum(price*quantity) \"Total Sales\" from buys where bdate > to_date(?,'YYYY-MM-DD') group by pid order by \"Total Sales\" desc",
+            new Object[]{sdate},
+            new RowMapper<PrTotSaleList>() {
+                public PrTotSaleList mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    PrTotSaleList pList = new PrTotSaleList();
+                    pList.setPid(rs.getLong(1));
+                    pList.setTotSale(rs.getDouble(2));
+                    return pList;
+                }
+            }
+        );
+        return pList;
+    }
+
+    public void updatePrPrice( Long pid, Float price )
+    {
+        this.jdbcTemplate.update
+        (
+            "update product set price = ? where pid = ?",
+            price,pid
+        );
+    }
+
+    public void updatePrName( Long pid, String name )
+    {
+        this.jdbcTemplate.update
+        (
+            "update product set name = ? where pid = ?",
+            name,pid
+        );
+    }
+
+    public void updateCuAdr( Long cuid, String address )
+    {
+        this.jdbcTemplate.update
+        (
+            "update prcustomer set address = ? where cuid = ?",
+            address,cuid
+        );
+    }
+
+    public void updateCuMob( Long cuid, Long mobile_no )
+    {
+        this.jdbcTemplate.update
+        (
+            "update customer set mobile_no = ? where cuid = ?",
+            mobile_no,cuid
+        );
+    }
+
+    public void updateRepMob( Long rid, Long mobile_no )
+    {
+        this.jdbcTemplate.update
+        (
+            "update representative set mobile_no = ? where rid = ?",
+            mobile_no,rid
+        );
+    }
+
+    public void updateComAdr( Long cmid, String address )
+    {
+        this.jdbcTemplate.update
+        (
+            "update company set address = ? where cmid = ?",
+            address,cmid
+        );
+    }
+
+    public void updateEmMob( Long emid, Long mobile_no )
+    {
+        this.jdbcTemplate.update
+        (
+            "update employee set mobile_no = ? where emid = ?",
+            mobile_no,emid
+        );
+    }
+
+    public void updateEmAdr( Long emid, String address )
+    {
+        this.jdbcTemplate.update
+        (
+            "update employee set address = ? where emid = ?",
+            address,emid
+        );
+    }
+
+    public void updateEmSal( Long emid, Long salary )
+    {
+        this.jdbcTemplate.update
+        (
+            "update employee set salary = nvl(salary,?) where emid = ?",
+            salary,emid
+        );
+    }
+
+    public void updateEmDesg( Long emid, String designation )
+    {
+        this.jdbcTemplate.update
+        (
+            "update employee set designation = ? where emid = ?",
+            designation,emid
+        );
     }
 }

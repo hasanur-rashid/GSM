@@ -1,15 +1,15 @@
-<%@ page import="java.util.List" %>
-<%@ page import="org.hasan.model.SellInformation" %><%--
+<%@ page import="org.hasan.model.PrTotSaleList" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: ENVY
   Date: 7/10/2017
-  Time: 12:14 AM
+  Time: 8:21 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
-        <title>Product Sell Info</title>
+        <title>Total Sale List</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -93,15 +93,15 @@
         </style>
     </head>
     <body>
-    <h1 class="ex1">Product Sell Information:</h1>
+    <h1 class="ex1">Total Sale List Of Product:</h1>
     <form action="/backAdminHome">
         <button class="button pos0">Back To Home</button>
     </form>
     <%
-        List<SellInformation> sInfo = (List<SellInformation>) request.getAttribute("sInfo");
-        if(sInfo==null)
+        List<PrTotSaleList> pList = (List<PrTotSaleList>) request.getAttribute("pList");
+        if( pList.size()==0 )
         {
-            out.println("System has no information about the product.");
+            out.println("No Info Available From That Date !!!");
         }
         else
         {
@@ -109,28 +109,14 @@
             out.println("<tr>");
             out.println("<th>Product ID</th>");
             out.println("<th>Product Name</th>");
-            out.println("<th>Customer ID</th>");
-            out.println("<th>Customer Name</th>");
-            out.println("<th>Customer Mobile No.</th>");
-            out.println("<th>Employee ID</th>");
-            out.println("<th>Employee Name</th>");
-            out.println("<th>Date</th>");
-            out.println("<th>Price</th>");
-            out.println("<th>Quantity</th>");
+            out.println("<th>Total Sale</th>");
             out.println("</tr>");
-            for ( SellInformation s: sInfo )
+            for ( PrTotSaleList p: pList )
             {
                 out.println("<tr>");
-                out.println( String.format("<td>%d</td>", s.getPid().longValue()));
-                out.println( String.format("<td>%s</td>", s.getPname()) );
-                out.println( String.format("<td>%d</td>", s.getCuid().longValue()));
-                out.println( String.format("<td>%s</td>", s.getCuname()) );
-                out.println( String.format("<td>%d</td>", s.getMobile_no().longValue()));
-                out.println( String.format("<td>%d</td>", s.getEmid().longValue()));
-                out.println( String.format("<td>%s</td>", s.getEmname()) );
-                out.println( String.format("<td>%s</td>", s.getDate()) );
-                out.println( String.format("<td>%d</td>", s.getPrice().longValue()));
-                out.println( String.format("<td>%d</td>", s.getQuantity().longValue()));
+                out.println( String.format("<td>%d</td>", p.getPid().longValue()));
+                out.println( String.format("<td>%s</td>", p.getPname()) );
+                out.println( String.format("<td>%.2f</td>", p.getTotSale().floatValue()));
                 out.println("</tr>");
             }
             out.println("</table>");
