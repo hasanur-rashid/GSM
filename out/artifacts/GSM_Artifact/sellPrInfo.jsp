@@ -99,7 +99,7 @@
     </form>
     <%
         List<SellInformation> sInfo = (List<SellInformation>) request.getAttribute("sInfo");
-        if(sInfo==null)
+        if(sInfo.size()==0)
         {
             out.println("System has no information about the product.");
         }

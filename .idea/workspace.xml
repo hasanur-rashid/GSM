@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9c6e17f6-2a06-4e9f-8d29-5d2a4e19a6ba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/applicationContext.xml" afterPath="$PROJECT_DIR$/src/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/hasan/controller/AddController.java" afterPath="$PROJECT_DIR$/src/org/hasan/controller/AddController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java" afterPath="$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java" afterPath="$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/hasan/service/AddService.java" afterPath="$PROJECT_DIR$/src/org/hasan/service/AddService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java" afterPath="$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/adminHome.jsp" afterPath="$PROJECT_DIR$/web/adminHome.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/basicComInfo.jsp" afterPath="$PROJECT_DIR$/web/basicComInfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/basicRepInfo.jsp" afterPath="$PROJECT_DIR$/web/basicRepInfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/sellMemo.jsp" afterPath="$PROJECT_DIR$/web/sellMemo.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/sellPrInfo.jsp" afterPath="$PROJECT_DIR$/web/sellPrInfo.jsp" />
     </list>
     <ignored path="GSM.iws" />
@@ -38,52 +32,28 @@
       <file leaf-file-name="adminHome.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/adminHome.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1453">
-              <caret line="1068" column="54" lean-forward="false" selection-start-line="1068" selection-start-column="54" selection-end-line="1068" selection-end-column="54" />
+            <state relative-caret-position="428">
+              <caret line="399" column="39" lean-forward="false" selection-start-line="399" selection-start-column="39" selection-end-line="399" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditInfoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/EditInfoController.java">
+      <file leaf-file-name="BasicInfoController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1070">
-              <caret line="66" column="31" lean-forward="false" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/AddController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="134" column="5" lean-forward="true" selection-start-line="134" selection-start-column="5" selection-end-line="151" selection-end-column="5" />
+            <state relative-caret-position="1742">
+              <caret line="176" column="18" lean-forward="false" selection-start-line="176" selection-start-column="18" selection-end-line="176" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditInfoService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/hasan/service/EditInfoService.java">
+      <file leaf-file-name="BasicInfoService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="134" column="40" lean-forward="true" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/hasan/service/AddService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="-220">
+              <caret line="121" column="49" lean-forward="false" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -92,76 +62,150 @@
       <file leaf-file-name="DataAccess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="712" column="54" lean-forward="false" selection-start-line="712" selection-start-column="54" selection-end-line="712" selection-end-column="54" />
+            <state relative-caret-position="298">
+              <caret line="810" column="0" lean-forward="false" selection-start-line="810" selection-start-column="0" selection-end-line="810" selection-end-column="0" />
               <folding>
-                <marker date="1499714192911" expanded="true" signature="1655:1688" ph="insert into company... " />
-                <marker date="1499714192911" expanded="true" signature="1888:1930" ph="insert into representative... " />
-                <marker date="1499714192911" expanded="true" signature="2178:2219" ph="insert into product... " />
-                <marker date="1499714192911" expanded="true" signature="2493:2527" ph="insert into customer... " />
-                <marker date="1499714192911" expanded="true" signature="2629:2699" ph="insert into prcustomer... " />
-                <marker date="1499714192911" expanded="true" signature="2914:3000" ph="insert into employee... " />
-                <marker date="1499714192911" expanded="true" signature="3203:3260" ph="select count... employee" />
-                <marker date="1499714192911" expanded="true" signature="3463:3505" ph="select count... product" />
-                <marker date="1499714192911" expanded="true" signature="3698:3741" ph="select count... company" />
-                <marker date="1499714192911" expanded="true" signature="3936:3980" ph="select count... employee" />
-                <marker date="1499714192911" expanded="true" signature="4169:4218" ph="select count... representative" />
-                <marker date="1499714192911" expanded="true" signature="4412:4456" ph="select count... customer" />
-                <marker date="1499714192911" expanded="true" signature="4653:4699" ph="select count... prcustomer" />
-                <marker date="1499714192911" expanded="true" signature="4904:4966" ph="select count... representative" />
-                <marker date="1499714192911" expanded="true" signature="5174:5221" ph="select desig... employee" />
-                <marker date="1499714192911" expanded="true" signature="5447:5485" ph="select pid f... product" />
-                <marker date="1499714192911" expanded="true" signature="5637:5674" ph="select rid f... product" />
-                <marker date="1499714192911" expanded="true" signature="5907:5977" ph="select pid, product" />
-                <marker date="1499714192911" expanded="true" signature="6988:7134" ph="select p.pid... product" />
-                <marker date="1499714192911" expanded="true" signature="8209:8337" ph="select p.pid... product" />
-                <marker date="1499714192911" expanded="true" signature="9342:9533" ph="select p.pid... product" />
-                <marker date="1499714192911" expanded="true" signature="10640:10676" ph="select * fro... company" />
-                <marker date="1499714192911" expanded="true" signature="11267:11305" ph="select pid f... product" />
-                <marker date="1499714192911" expanded="true" signature="11656:11695" ph="select name product" />
-                <marker date="1499714192911" expanded="true" signature="12055:12101" ph="select name representative" />
-                <marker date="1499714192911" expanded="true" signature="12458:12503" ph="select rid f... representative" />
-                <marker date="1499714192911" expanded="true" signature="12857:12908" ph="select mobil... representative" />
-                <marker date="1499714192911" expanded="true" signature="13380:13574" ph="SELECT c.CUI... CUSTOMER" />
-                <marker date="1499714192911" expanded="true" signature="14491:14528" ph="select * fro... employee" />
-                <marker date="1499714192911" expanded="true" signature="15438:15480" ph="select * fro... representative" />
-                <marker date="1499714192911" expanded="true" signature="16150:16187" ph="select pid f... product" />
-                <marker date="1499714192911" expanded="true" signature="16537:16575" ph="select name product" />
-                <marker date="1499714192911" expanded="true" signature="17108:17147" ph="select name company" />
-                <marker date="1499714192911" expanded="true" signature="17454:17579" ph="select pid,e... buys" />
-                <marker date="1499714192911" expanded="true" signature="18402:18440" ph="select name product" />
-                <marker date="1499714192911" expanded="true" signature="18668:18708" ph="select name employee" />
-                <marker date="1499714192911" expanded="true" signature="18937:18977" ph="select name customer" />
-                <marker date="1499714192911" expanded="true" signature="19209:19254" ph="select mobil... customer" />
-                <marker date="1499714192911" expanded="true" signature="19588:19627" ph="select price... product" />
-                <marker date="1499714192911" expanded="true" signature="19739:19781" ph="insert into buys... " />
-                <marker date="1499714192911" expanded="true" signature="20162:20192" ph="select max(c... customer" />
-                <marker date="1499714192911" expanded="true" signature="20437:20471" ph="insert into customer... " />
-                <marker date="1499714192911" expanded="true" signature="20660:20698" ph="select price... product" />
-                <marker date="1499714192911" expanded="true" signature="20953:20992" ph="select price... product" />
-                <marker date="1499714192911" expanded="true" signature="21103:21145" ph="insert into buys... " />
-                <marker date="1499714192911" expanded="true" signature="21619:21661" ph="insert into stores... " />
-                <marker date="1499714192911" expanded="true" signature="22015:22153" ph="select pid, buys" />
-                <marker date="1499714192911" expanded="true" signature="22716:22758" ph="update produ... " />
-                <marker date="1499714192911" expanded="true" signature="22917:22958" ph="update produ... " />
-                <marker date="1499714192911" expanded="true" signature="23119:23167" ph="update produ... " />
-                <marker date="1499714192911" expanded="true" signature="23332:23380" ph="update prcus... " />
-                <marker date="1499714192911" expanded="true" signature="23547:23600" ph="update custo... " />
-                <marker date="1499714192911" expanded="true" signature="23767:23812" ph="update prcus... " />
-                <marker date="1499714192911" expanded="true" signature="23977:24025" ph="update repre... " />
-                <marker date="1499714192911" expanded="true" signature="24192:24238" ph="update compa... " />
-                <marker date="1499714192911" expanded="true" signature="24400:24457" ph="update emplo... " />
-                <marker date="1499714192911" expanded="true" signature="24626:24676" ph="update emplo... " />
+                <marker date="1499722057086" expanded="true" signature="1655:1688" ph="insert into company... " />
+                <marker date="1499722057086" expanded="true" signature="1888:1930" ph="insert into representative... " />
+                <marker date="1499722057086" expanded="true" signature="2178:2219" ph="insert into product... " />
+                <marker date="1499722057086" expanded="true" signature="2493:2527" ph="insert into customer... " />
+                <marker date="1499722057086" expanded="true" signature="2629:2699" ph="insert into prcustomer... " />
+                <marker date="1499722057086" expanded="true" signature="2914:3000" ph="insert into employee... " />
+                <marker date="1499722057086" expanded="true" signature="3203:3260" ph="select count... employee" />
+                <marker date="1499722057086" expanded="true" signature="3463:3505" ph="select count... product" />
+                <marker date="1499722057086" expanded="true" signature="3698:3741" ph="select count... company" />
+                <marker date="1499722057086" expanded="true" signature="3936:3980" ph="select count... employee" />
+                <marker date="1499722057086" expanded="true" signature="4169:4218" ph="select count... representative" />
+                <marker date="1499722057086" expanded="true" signature="4412:4456" ph="select count... customer" />
+                <marker date="1499722057086" expanded="true" signature="4653:4699" ph="select count... prcustomer" />
+                <marker date="1499722057086" expanded="true" signature="4904:4966" ph="select count... representative" />
+                <marker date="1499722057086" expanded="true" signature="5174:5221" ph="select desig... employee" />
+                <marker date="1499722057086" expanded="true" signature="5447:5485" ph="select pid f... product" />
+                <marker date="1499722057086" expanded="true" signature="5637:5674" ph="select rid f... product" />
+                <marker date="1499722057086" expanded="true" signature="5907:5977" ph="select pid, product" />
+                <marker date="1499722057086" expanded="true" signature="6988:7134" ph="select p.pid... product" />
+                <marker date="1499722057086" expanded="true" signature="8209:8337" ph="select p.pid... product" />
+                <marker date="1499722057086" expanded="true" signature="9342:9533" ph="select p.pid... product" />
+                <marker date="1499722057086" expanded="true" signature="10640:10676" ph="select * fro... company" />
+                <marker date="1499722057086" expanded="true" signature="11267:11305" ph="select pid f... product" />
+                <marker date="1499722057086" expanded="true" signature="11656:11695" ph="select name product" />
+                <marker date="1499722057086" expanded="true" signature="12055:12101" ph="select name representative" />
+                <marker date="1499722057086" expanded="true" signature="12458:12503" ph="select rid f... representative" />
+                <marker date="1499722057086" expanded="true" signature="12857:12908" ph="select mobil... representative" />
+                <marker date="1499722057086" expanded="true" signature="13380:13574" ph="SELECT c.CUI... CUSTOMER" />
+                <marker date="1499722057086" expanded="true" signature="14491:14528" ph="select * fro... employee" />
+                <marker date="1499722057086" expanded="true" signature="15438:15480" ph="select * fro... representative" />
+                <marker date="1499722057086" expanded="true" signature="16150:16187" ph="select pid f... product" />
+                <marker date="1499722057086" expanded="true" signature="16537:16575" ph="select name product" />
+                <marker date="1499722057086" expanded="true" signature="17108:17147" ph="select name company" />
+                <marker date="1499722057086" expanded="true" signature="17454:17579" ph="select pid,e... buys" />
+                <marker date="1499722057086" expanded="true" signature="18402:18440" ph="select name product" />
+                <marker date="1499722057086" expanded="true" signature="18668:18708" ph="select name employee" />
+                <marker date="1499722057086" expanded="true" signature="18937:18977" ph="select name customer" />
+                <marker date="1499722057086" expanded="true" signature="19209:19254" ph="select mobil... customer" />
+                <marker date="1499722057086" expanded="true" signature="19567:19693" ph="select pid,e... buys" />
+                <marker date="1499722057086" expanded="true" signature="20517:20555" ph="select name product" />
+                <marker date="1499722057086" expanded="true" signature="20783:20823" ph="select name employee" />
+                <marker date="1499722057086" expanded="true" signature="21052:21092" ph="select name customer" />
+                <marker date="1499722057086" expanded="true" signature="21324:21369" ph="select mobil... customer" />
+                <marker date="1499722057086" expanded="true" signature="21682:21808" ph="select pid,e... buys" />
+                <marker date="1499722057086" expanded="true" signature="22632:22670" ph="select name product" />
+                <marker date="1499722057086" expanded="true" signature="22898:22938" ph="select name employee" />
+                <marker date="1499722057086" expanded="true" signature="23167:23207" ph="select name customer" />
+                <marker date="1499722057086" expanded="true" signature="23439:23484" ph="select mobil... customer" />
+                <marker date="1499722057086" expanded="true" signature="23816:24006" ph="select pid,e... buys" />
+                <marker date="1499722057086" expanded="true" signature="24837:24875" ph="select name product" />
+                <marker date="1499722057086" expanded="true" signature="25103:25143" ph="select name employee" />
+                <marker date="1499722057086" expanded="true" signature="25372:25412" ph="select name customer" />
+                <marker date="1499722057086" expanded="true" signature="25644:25689" ph="select mobil... customer" />
+                <marker date="1499722057086" expanded="true" signature="26024:26211" ph="select pid,e... stores" />
+                <marker date="1499722057086" expanded="true" signature="26992:27030" ph="select name product" />
+                <marker date="1499722057086" expanded="true" signature="27258:27298" ph="select name employee" />
+                <marker date="1499722057086" expanded="true" signature="27615:27737" ph="select pid,e... stores" />
+                <marker date="1499722057086" expanded="true" signature="28510:28548" ph="select name product" />
+                <marker date="1499722057086" expanded="true" signature="28776:28816" ph="select name employee" />
+                <marker date="1499722057086" expanded="true" signature="29134:29258" ph="select pid,e... stores" />
+                <marker date="1499722057086" expanded="true" signature="30032:30070" ph="select name product" />
+                <marker date="1499722057086" expanded="true" signature="30298:30338" ph="select name employee" />
+                <marker date="1499722057086" expanded="true" signature="30674:30713" ph="select price... product" />
+                <marker date="1499722057086" expanded="true" signature="30825:30867" ph="insert into buys... " />
+                <marker date="1499722057086" expanded="true" signature="31248:31278" ph="select max(c... customer" />
+                <marker date="1499722057086" expanded="true" signature="31523:31557" ph="insert into customer... " />
+                <marker date="1499722057086" expanded="true" signature="31746:31784" ph="select price... product" />
+                <marker date="1499722057086" expanded="true" signature="32039:32078" ph="select price... product" />
+                <marker date="1499722057086" expanded="true" signature="32189:32231" ph="insert into buys... " />
+                <marker date="1499722057086" expanded="true" signature="32705:32747" ph="insert into stores... " />
+                <marker date="1499722057086" expanded="true" signature="33101:33239" ph="select pid, buys" />
+                <marker date="1499722057086" expanded="true" signature="33802:33844" ph="update produ... " />
+                <marker date="1499722057086" expanded="true" signature="34003:34044" ph="update produ... " />
+                <marker date="1499722057086" expanded="true" signature="34205:34253" ph="update produ... " />
+                <marker date="1499722057086" expanded="true" signature="34418:34466" ph="update prcus... " />
+                <marker date="1499722057086" expanded="true" signature="34633:34686" ph="update custo... " />
+                <marker date="1499722057086" expanded="true" signature="34853:34898" ph="update prcus... " />
+                <marker date="1499722057086" expanded="true" signature="35063:35111" ph="update repre... " />
+                <marker date="1499722057086" expanded="true" signature="35278:35324" ph="update compa... " />
+                <marker date="1499722057086" expanded="true" signature="35486:35543" ph="update emplo... " />
+                <marker date="1499722057086" expanded="true" signature="35712:35762" ph="update emplo... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
+      <file leaf-file-name="sellPrInfo.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/sellPrInfo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+            <state relative-caret-position="171">
+              <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sellEmInfo.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/sellEmInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sellDateInfo.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/sellDateInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="121" column="13" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="storePrInfo.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/storePrInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2063">
+              <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="storeEmInfo.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/storeEmInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="storeDateInfo.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/storeDateInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -172,8 +216,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -210,10 +254,7 @@
         <option value="$PROJECT_DIR$/src/org/hasan/service/SellStoreService.java" />
         <option value="$PROJECT_DIR$/src/org/hasan/controller/SellStoreController.java" />
         <option value="$PROJECT_DIR$/src/org/hasan/model/PrTotSaleList.java" />
-        <option value="$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java" />
-        <option value="$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java" />
         <option value="$PROJECT_DIR$/web/prTotSaleList.jsp" />
-        <option value="$PROJECT_DIR$/web/sellPrInfo.jsp" />
         <option value="$PROJECT_DIR$/web/sellMemo.jsp" />
         <option value="$PROJECT_DIR$/web/basicRepInfo.jsp" />
         <option value="$PROJECT_DIR$/web/basicComInfo.jsp" />
@@ -221,8 +262,17 @@
         <option value="$PROJECT_DIR$/src/org/hasan/controller/AddController.java" />
         <option value="$PROJECT_DIR$/src/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/org/hasan/controller/EditInfoController.java" />
-        <option value="$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java" />
         <option value="$PROJECT_DIR$/src/org/hasan/service/EditInfoService.java" />
+        <option value="$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java" />
+        <option value="$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java" />
+        <option value="$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java" />
+        <option value="$PROJECT_DIR$/web/sellPrInfo.jsp" />
+        <option value="$PROJECT_DIR$/web/sellCuInfo.jsp" />
+        <option value="$PROJECT_DIR$/web/sellEmInfo.jsp" />
+        <option value="$PROJECT_DIR$/web/sellDateInfo.jsp" />
+        <option value="$PROJECT_DIR$/web/storePrInfo.jsp" />
+        <option value="$PROJECT_DIR$/web/storeEmInfo.jsp" />
+        <option value="$PROJECT_DIR$/web/storeDateInfo.jsp" />
         <option value="$PROJECT_DIR$/web/adminHome.jsp" />
       </list>
     </option>
@@ -973,7 +1023,7 @@
       <workItem from="1499614176300" duration="25046000" />
       <workItem from="1499664119908" duration="38000" />
       <workItem from="1499666842469" duration="2000" />
-      <workItem from="1499690793958" duration="17722000" />
+      <workItem from="1499690793958" duration="23719000" />
     </task>
     <task id="LOCAL-00001" summary="dependency injection switched to controller">
       <created>1493530936439</created>
@@ -986,7 +1036,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230999000" />
+    <option name="totallyTimeSpent" value="236996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -1076,104 +1126,92 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="75" lean-forward="false" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/loginField.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/adminHome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
-            <marker date="1499714192911" expanded="true" signature="1655:1688" ph="insert into company... " />
-            <marker date="1499714192911" expanded="true" signature="1888:1930" ph="insert into representative... " />
-            <marker date="1499714192911" expanded="true" signature="2178:2219" ph="insert into product... " />
-            <marker date="1499714192911" expanded="true" signature="2493:2527" ph="insert into customer... " />
-            <marker date="1499714192911" expanded="true" signature="2629:2699" ph="insert into prcustomer... " />
-            <marker date="1499714192911" expanded="true" signature="2914:3000" ph="insert into employee... " />
-            <marker date="1499714192911" expanded="true" signature="3203:3260" ph="select count... employee" />
-            <marker date="1499714192911" expanded="true" signature="3463:3505" ph="select count... product" />
-            <marker date="1499714192911" expanded="true" signature="3698:3741" ph="select count... company" />
-            <marker date="1499714192911" expanded="true" signature="3936:3980" ph="select count... employee" />
-            <marker date="1499714192911" expanded="true" signature="4169:4218" ph="select count... representative" />
-            <marker date="1499714192911" expanded="true" signature="4412:4456" ph="select count... customer" />
-            <marker date="1499714192911" expanded="true" signature="4653:4699" ph="select count... prcustomer" />
-            <marker date="1499714192911" expanded="true" signature="4904:4966" ph="select count... representative" />
-            <marker date="1499714192911" expanded="true" signature="5174:5221" ph="select desig... employee" />
-            <marker date="1499714192911" expanded="true" signature="5447:5485" ph="select pid f... product" />
-            <marker date="1499714192911" expanded="true" signature="5637:5674" ph="select rid f... product" />
-            <marker date="1499714192911" expanded="true" signature="5907:5977" ph="select pid, product" />
-            <marker date="1499714192911" expanded="true" signature="6988:7134" ph="select p.pid... product" />
-            <marker date="1499714192911" expanded="true" signature="8209:8337" ph="select p.pid... product" />
-            <marker date="1499714192911" expanded="true" signature="9342:9533" ph="select p.pid... product" />
-            <marker date="1499714192911" expanded="true" signature="10640:10676" ph="select * fro... company" />
-            <marker date="1499714192911" expanded="true" signature="11267:11305" ph="select pid f... product" />
-            <marker date="1499714192911" expanded="true" signature="11656:11695" ph="select name product" />
-            <marker date="1499714192911" expanded="true" signature="12055:12101" ph="select name representative" />
-            <marker date="1499714192911" expanded="true" signature="12458:12503" ph="select rid f... representative" />
-            <marker date="1499714192911" expanded="true" signature="12857:12908" ph="select mobil... representative" />
-            <marker date="1499714192911" expanded="true" signature="13380:13574" ph="SELECT c.CUI... CUSTOMER" />
-            <marker date="1499714192911" expanded="true" signature="14491:14528" ph="select * fro... employee" />
-            <marker date="1499714192911" expanded="true" signature="15438:15480" ph="select * fro... representative" />
-            <marker date="1499714192911" expanded="true" signature="16150:16187" ph="select pid f... product" />
-            <marker date="1499714192911" expanded="true" signature="16537:16575" ph="select name product" />
-            <marker date="1499714192911" expanded="true" signature="17108:17147" ph="select name company" />
-            <marker date="1499714192911" expanded="true" signature="17454:17579" ph="select pid,e... buys" />
-            <marker date="1499714192911" expanded="true" signature="18402:18440" ph="select name product" />
-            <marker date="1499714192911" expanded="true" signature="18668:18708" ph="select name employee" />
-            <marker date="1499714192911" expanded="true" signature="18937:18977" ph="select name customer" />
-            <marker date="1499714192911" expanded="true" signature="19209:19254" ph="select mobil... customer" />
-            <marker date="1499714192911" expanded="true" signature="19588:19627" ph="select price... product" />
-            <marker date="1499714192911" expanded="true" signature="19739:19781" ph="insert into buys... " />
-            <marker date="1499714192911" expanded="true" signature="20162:20192" ph="select max(c... customer" />
-            <marker date="1499714192911" expanded="true" signature="20437:20471" ph="insert into customer... " />
-            <marker date="1499714192911" expanded="true" signature="20660:20698" ph="select price... product" />
-            <marker date="1499714192911" expanded="true" signature="20953:20992" ph="select price... product" />
-            <marker date="1499714192911" expanded="true" signature="21103:21145" ph="insert into buys... " />
-            <marker date="1499714192911" expanded="true" signature="21619:21661" ph="insert into stores... " />
-            <marker date="1499714192911" expanded="true" signature="22015:22153" ph="select pid, buys" />
-            <marker date="1499714192911" expanded="true" signature="22716:22758" ph="update produ... " />
-            <marker date="1499714192911" expanded="true" signature="22917:22958" ph="update produ... " />
-            <marker date="1499714192911" expanded="true" signature="23119:23167" ph="update produ... " />
-            <marker date="1499714192911" expanded="true" signature="23332:23380" ph="update prcus... " />
-            <marker date="1499714192911" expanded="true" signature="23547:23600" ph="update custo... " />
-            <marker date="1499714192911" expanded="true" signature="23767:23812" ph="update prcus... " />
-            <marker date="1499714192911" expanded="true" signature="23977:24025" ph="update repre... " />
-            <marker date="1499714192911" expanded="true" signature="24192:24238" ph="update compa... " />
-            <marker date="1499714192911" expanded="true" signature="24400:24457" ph="update emplo... " />
-            <marker date="1499714192911" expanded="true" signature="24626:24676" ph="update emplo... " />
+            <marker date="1499722057086" expanded="true" signature="1655:1688" ph="insert into company... " />
+            <marker date="1499722057086" expanded="true" signature="1888:1930" ph="insert into representative... " />
+            <marker date="1499722057086" expanded="true" signature="2178:2219" ph="insert into product... " />
+            <marker date="1499722057086" expanded="true" signature="2493:2527" ph="insert into customer... " />
+            <marker date="1499722057086" expanded="true" signature="2629:2699" ph="insert into prcustomer... " />
+            <marker date="1499722057086" expanded="true" signature="2914:3000" ph="insert into employee... " />
+            <marker date="1499722057086" expanded="true" signature="3203:3260" ph="select count... employee" />
+            <marker date="1499722057086" expanded="true" signature="3463:3505" ph="select count... product" />
+            <marker date="1499722057086" expanded="true" signature="3698:3741" ph="select count... company" />
+            <marker date="1499722057086" expanded="true" signature="3936:3980" ph="select count... employee" />
+            <marker date="1499722057086" expanded="true" signature="4169:4218" ph="select count... representative" />
+            <marker date="1499722057086" expanded="true" signature="4412:4456" ph="select count... customer" />
+            <marker date="1499722057086" expanded="true" signature="4653:4699" ph="select count... prcustomer" />
+            <marker date="1499722057086" expanded="true" signature="4904:4966" ph="select count... representative" />
+            <marker date="1499722057086" expanded="true" signature="5174:5221" ph="select desig... employee" />
+            <marker date="1499722057086" expanded="true" signature="5447:5485" ph="select pid f... product" />
+            <marker date="1499722057086" expanded="true" signature="5637:5674" ph="select rid f... product" />
+            <marker date="1499722057086" expanded="true" signature="5907:5977" ph="select pid, product" />
+            <marker date="1499722057086" expanded="true" signature="6988:7134" ph="select p.pid... product" />
+            <marker date="1499722057086" expanded="true" signature="8209:8337" ph="select p.pid... product" />
+            <marker date="1499722057086" expanded="true" signature="9342:9533" ph="select p.pid... product" />
+            <marker date="1499722057086" expanded="true" signature="10640:10676" ph="select * fro... company" />
+            <marker date="1499722057086" expanded="true" signature="11267:11305" ph="select pid f... product" />
+            <marker date="1499722057086" expanded="true" signature="11656:11695" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="12055:12101" ph="select name representative" />
+            <marker date="1499722057086" expanded="true" signature="12458:12503" ph="select rid f... representative" />
+            <marker date="1499722057086" expanded="true" signature="12857:12908" ph="select mobil... representative" />
+            <marker date="1499722057086" expanded="true" signature="13380:13574" ph="SELECT c.CUI... CUSTOMER" />
+            <marker date="1499722057086" expanded="true" signature="14491:14528" ph="select * fro... employee" />
+            <marker date="1499722057086" expanded="true" signature="15438:15480" ph="select * fro... representative" />
+            <marker date="1499722057086" expanded="true" signature="16150:16187" ph="select pid f... product" />
+            <marker date="1499722057086" expanded="true" signature="16537:16575" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="17108:17147" ph="select name company" />
+            <marker date="1499722057086" expanded="true" signature="17454:17579" ph="select pid,e... buys" />
+            <marker date="1499722057086" expanded="true" signature="18402:18440" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="18668:18708" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="18937:18977" ph="select name customer" />
+            <marker date="1499722057086" expanded="true" signature="19209:19254" ph="select mobil... customer" />
+            <marker date="1499722057086" expanded="true" signature="19567:19693" ph="select pid,e... buys" />
+            <marker date="1499722057086" expanded="true" signature="20517:20555" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="20783:20823" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="21052:21092" ph="select name customer" />
+            <marker date="1499722057086" expanded="true" signature="21324:21369" ph="select mobil... customer" />
+            <marker date="1499722057086" expanded="true" signature="21682:21808" ph="select pid,e... buys" />
+            <marker date="1499722057086" expanded="true" signature="22632:22670" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="22898:22938" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="23167:23207" ph="select name customer" />
+            <marker date="1499722057086" expanded="true" signature="23439:23484" ph="select mobil... customer" />
+            <marker date="1499722057086" expanded="true" signature="23816:24006" ph="select pid,e... buys" />
+            <marker date="1499722057086" expanded="true" signature="24837:24875" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="25103:25143" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="25372:25412" ph="select name customer" />
+            <marker date="1499722057086" expanded="true" signature="25644:25689" ph="select mobil... customer" />
+            <marker date="1499722057086" expanded="true" signature="26024:26211" ph="select pid,e... stores" />
+            <marker date="1499722057086" expanded="true" signature="26992:27030" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="27258:27298" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="27615:27737" ph="select pid,e... stores" />
+            <marker date="1499722057086" expanded="true" signature="28510:28548" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="28776:28816" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="29134:29258" ph="select pid,e... stores" />
+            <marker date="1499722057086" expanded="true" signature="30032:30070" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="30298:30338" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="30674:30713" ph="select price... product" />
+            <marker date="1499722057086" expanded="true" signature="30825:30867" ph="insert into buys... " />
+            <marker date="1499722057086" expanded="true" signature="31248:31278" ph="select max(c... customer" />
+            <marker date="1499722057086" expanded="true" signature="31523:31557" ph="insert into customer... " />
+            <marker date="1499722057086" expanded="true" signature="31746:31784" ph="select price... product" />
+            <marker date="1499722057086" expanded="true" signature="32039:32078" ph="select price... product" />
+            <marker date="1499722057086" expanded="true" signature="32189:32231" ph="insert into buys... " />
+            <marker date="1499722057086" expanded="true" signature="32705:32747" ph="insert into stores... " />
+            <marker date="1499722057086" expanded="true" signature="33101:33239" ph="select pid, buys" />
+            <marker date="1499722057086" expanded="true" signature="33802:33844" ph="update produ... " />
+            <marker date="1499722057086" expanded="true" signature="34003:34044" ph="update produ... " />
+            <marker date="1499722057086" expanded="true" signature="34205:34253" ph="update produ... " />
+            <marker date="1499722057086" expanded="true" signature="34418:34466" ph="update prcus... " />
+            <marker date="1499722057086" expanded="true" signature="34633:34686" ph="update custo... " />
+            <marker date="1499722057086" expanded="true" signature="34853:34898" ph="update prcus... " />
+            <marker date="1499722057086" expanded="true" signature="35063:35111" ph="update repre... " />
+            <marker date="1499722057086" expanded="true" signature="35278:35324" ph="update compa... " />
+            <marker date="1499722057086" expanded="true" signature="35486:35543" ph="update emplo... " />
+            <marker date="1499722057086" expanded="true" signature="35712:35762" ph="update emplo... " />
           </folding>
         </state>
       </provider>
@@ -1257,13 +1295,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/model/StoreInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1352,41 +1383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/service/SellStoreService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-          <folding>
-            <element signature="e#507#508#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/SellStoreController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="65" column="92" lean-forward="false" selection-start-line="65" selection-start-column="92" selection-end-line="65" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="94" column="9" lean-forward="false" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="138" column="58" lean-forward="true" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/hasan/model/PrTotSaleList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -1411,14 +1407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="107" column="32" lean-forward="false" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/sellPrInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="107" column="48" lean-forward="false" selection-start-line="107" selection-start-column="48" selection-end-line="107" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1458,7 +1446,7 @@
     <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
-          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1474,7 +1462,7 @@
     <entry file="file://$PROJECT_DIR$/src/org/hasan/service/AddService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="11" selection-end-column="26" />
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="11" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1482,81 +1470,15 @@
     <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/AddController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
-          <caret line="134" column="5" lean-forward="true" selection-start-line="134" selection-start-column="5" selection-end-line="151" selection-end-column="5" />
+          <caret line="134" column="5" lean-forward="false" selection-start-line="134" selection-start-column="5" selection-end-line="151" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="712" column="54" lean-forward="false" selection-start-line="712" selection-start-column="54" selection-end-line="712" selection-end-column="54" />
-          <folding>
-            <marker date="1499714192911" expanded="true" signature="1655:1688" ph="insert into company... " />
-            <marker date="1499714192911" expanded="true" signature="1888:1930" ph="insert into representative... " />
-            <marker date="1499714192911" expanded="true" signature="2178:2219" ph="insert into product... " />
-            <marker date="1499714192911" expanded="true" signature="2493:2527" ph="insert into customer... " />
-            <marker date="1499714192911" expanded="true" signature="2629:2699" ph="insert into prcustomer... " />
-            <marker date="1499714192911" expanded="true" signature="2914:3000" ph="insert into employee... " />
-            <marker date="1499714192911" expanded="true" signature="3203:3260" ph="select count... employee" />
-            <marker date="1499714192911" expanded="true" signature="3463:3505" ph="select count... product" />
-            <marker date="1499714192911" expanded="true" signature="3698:3741" ph="select count... company" />
-            <marker date="1499714192911" expanded="true" signature="3936:3980" ph="select count... employee" />
-            <marker date="1499714192911" expanded="true" signature="4169:4218" ph="select count... representative" />
-            <marker date="1499714192911" expanded="true" signature="4412:4456" ph="select count... customer" />
-            <marker date="1499714192911" expanded="true" signature="4653:4699" ph="select count... prcustomer" />
-            <marker date="1499714192911" expanded="true" signature="4904:4966" ph="select count... representative" />
-            <marker date="1499714192911" expanded="true" signature="5174:5221" ph="select desig... employee" />
-            <marker date="1499714192911" expanded="true" signature="5447:5485" ph="select pid f... product" />
-            <marker date="1499714192911" expanded="true" signature="5637:5674" ph="select rid f... product" />
-            <marker date="1499714192911" expanded="true" signature="5907:5977" ph="select pid, product" />
-            <marker date="1499714192911" expanded="true" signature="6988:7134" ph="select p.pid... product" />
-            <marker date="1499714192911" expanded="true" signature="8209:8337" ph="select p.pid... product" />
-            <marker date="1499714192911" expanded="true" signature="9342:9533" ph="select p.pid... product" />
-            <marker date="1499714192911" expanded="true" signature="10640:10676" ph="select * fro... company" />
-            <marker date="1499714192911" expanded="true" signature="11267:11305" ph="select pid f... product" />
-            <marker date="1499714192911" expanded="true" signature="11656:11695" ph="select name product" />
-            <marker date="1499714192911" expanded="true" signature="12055:12101" ph="select name representative" />
-            <marker date="1499714192911" expanded="true" signature="12458:12503" ph="select rid f... representative" />
-            <marker date="1499714192911" expanded="true" signature="12857:12908" ph="select mobil... representative" />
-            <marker date="1499714192911" expanded="true" signature="13380:13574" ph="SELECT c.CUI... CUSTOMER" />
-            <marker date="1499714192911" expanded="true" signature="14491:14528" ph="select * fro... employee" />
-            <marker date="1499714192911" expanded="true" signature="15438:15480" ph="select * fro... representative" />
-            <marker date="1499714192911" expanded="true" signature="16150:16187" ph="select pid f... product" />
-            <marker date="1499714192911" expanded="true" signature="16537:16575" ph="select name product" />
-            <marker date="1499714192911" expanded="true" signature="17108:17147" ph="select name company" />
-            <marker date="1499714192911" expanded="true" signature="17454:17579" ph="select pid,e... buys" />
-            <marker date="1499714192911" expanded="true" signature="18402:18440" ph="select name product" />
-            <marker date="1499714192911" expanded="true" signature="18668:18708" ph="select name employee" />
-            <marker date="1499714192911" expanded="true" signature="18937:18977" ph="select name customer" />
-            <marker date="1499714192911" expanded="true" signature="19209:19254" ph="select mobil... customer" />
-            <marker date="1499714192911" expanded="true" signature="19588:19627" ph="select price... product" />
-            <marker date="1499714192911" expanded="true" signature="19739:19781" ph="insert into buys... " />
-            <marker date="1499714192911" expanded="true" signature="20162:20192" ph="select max(c... customer" />
-            <marker date="1499714192911" expanded="true" signature="20437:20471" ph="insert into customer... " />
-            <marker date="1499714192911" expanded="true" signature="20660:20698" ph="select price... product" />
-            <marker date="1499714192911" expanded="true" signature="20953:20992" ph="select price... product" />
-            <marker date="1499714192911" expanded="true" signature="21103:21145" ph="insert into buys... " />
-            <marker date="1499714192911" expanded="true" signature="21619:21661" ph="insert into stores... " />
-            <marker date="1499714192911" expanded="true" signature="22015:22153" ph="select pid, buys" />
-            <marker date="1499714192911" expanded="true" signature="22716:22758" ph="update produ... " />
-            <marker date="1499714192911" expanded="true" signature="22917:22958" ph="update produ... " />
-            <marker date="1499714192911" expanded="true" signature="23119:23167" ph="update produ... " />
-            <marker date="1499714192911" expanded="true" signature="23332:23380" ph="update prcus... " />
-            <marker date="1499714192911" expanded="true" signature="23547:23600" ph="update custo... " />
-            <marker date="1499714192911" expanded="true" signature="23767:23812" ph="update prcus... " />
-            <marker date="1499714192911" expanded="true" signature="23977:24025" ph="update repre... " />
-            <marker date="1499714192911" expanded="true" signature="24192:24238" ph="update compa... " />
-            <marker date="1499714192911" expanded="true" signature="24400:24457" ph="update emplo... " />
-            <marker date="1499714192911" expanded="true" signature="24626:24676" ph="update emplo... " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/hasan/service/EditInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="134" column="40" lean-forward="true" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
+          <caret line="134" column="40" lean-forward="false" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1573,10 +1495,199 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/service/SellStoreService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+          <folding>
+            <element signature="e#507#508#0" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/SellStoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="65" column="92" lean-forward="false" selection-start-line="65" selection-start-column="92" selection-end-line="65" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/model/StoreInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/dbaccess/DataAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="810" column="0" lean-forward="false" selection-start-line="810" selection-start-column="0" selection-end-line="810" selection-end-column="0" />
+          <folding>
+            <marker date="1499722057086" expanded="true" signature="1655:1688" ph="insert into company... " />
+            <marker date="1499722057086" expanded="true" signature="1888:1930" ph="insert into representative... " />
+            <marker date="1499722057086" expanded="true" signature="2178:2219" ph="insert into product... " />
+            <marker date="1499722057086" expanded="true" signature="2493:2527" ph="insert into customer... " />
+            <marker date="1499722057086" expanded="true" signature="2629:2699" ph="insert into prcustomer... " />
+            <marker date="1499722057086" expanded="true" signature="2914:3000" ph="insert into employee... " />
+            <marker date="1499722057086" expanded="true" signature="3203:3260" ph="select count... employee" />
+            <marker date="1499722057086" expanded="true" signature="3463:3505" ph="select count... product" />
+            <marker date="1499722057086" expanded="true" signature="3698:3741" ph="select count... company" />
+            <marker date="1499722057086" expanded="true" signature="3936:3980" ph="select count... employee" />
+            <marker date="1499722057086" expanded="true" signature="4169:4218" ph="select count... representative" />
+            <marker date="1499722057086" expanded="true" signature="4412:4456" ph="select count... customer" />
+            <marker date="1499722057086" expanded="true" signature="4653:4699" ph="select count... prcustomer" />
+            <marker date="1499722057086" expanded="true" signature="4904:4966" ph="select count... representative" />
+            <marker date="1499722057086" expanded="true" signature="5174:5221" ph="select desig... employee" />
+            <marker date="1499722057086" expanded="true" signature="5447:5485" ph="select pid f... product" />
+            <marker date="1499722057086" expanded="true" signature="5637:5674" ph="select rid f... product" />
+            <marker date="1499722057086" expanded="true" signature="5907:5977" ph="select pid, product" />
+            <marker date="1499722057086" expanded="true" signature="6988:7134" ph="select p.pid... product" />
+            <marker date="1499722057086" expanded="true" signature="8209:8337" ph="select p.pid... product" />
+            <marker date="1499722057086" expanded="true" signature="9342:9533" ph="select p.pid... product" />
+            <marker date="1499722057086" expanded="true" signature="10640:10676" ph="select * fro... company" />
+            <marker date="1499722057086" expanded="true" signature="11267:11305" ph="select pid f... product" />
+            <marker date="1499722057086" expanded="true" signature="11656:11695" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="12055:12101" ph="select name representative" />
+            <marker date="1499722057086" expanded="true" signature="12458:12503" ph="select rid f... representative" />
+            <marker date="1499722057086" expanded="true" signature="12857:12908" ph="select mobil... representative" />
+            <marker date="1499722057086" expanded="true" signature="13380:13574" ph="SELECT c.CUI... CUSTOMER" />
+            <marker date="1499722057086" expanded="true" signature="14491:14528" ph="select * fro... employee" />
+            <marker date="1499722057086" expanded="true" signature="15438:15480" ph="select * fro... representative" />
+            <marker date="1499722057086" expanded="true" signature="16150:16187" ph="select pid f... product" />
+            <marker date="1499722057086" expanded="true" signature="16537:16575" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="17108:17147" ph="select name company" />
+            <marker date="1499722057086" expanded="true" signature="17454:17579" ph="select pid,e... buys" />
+            <marker date="1499722057086" expanded="true" signature="18402:18440" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="18668:18708" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="18937:18977" ph="select name customer" />
+            <marker date="1499722057086" expanded="true" signature="19209:19254" ph="select mobil... customer" />
+            <marker date="1499722057086" expanded="true" signature="19567:19693" ph="select pid,e... buys" />
+            <marker date="1499722057086" expanded="true" signature="20517:20555" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="20783:20823" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="21052:21092" ph="select name customer" />
+            <marker date="1499722057086" expanded="true" signature="21324:21369" ph="select mobil... customer" />
+            <marker date="1499722057086" expanded="true" signature="21682:21808" ph="select pid,e... buys" />
+            <marker date="1499722057086" expanded="true" signature="22632:22670" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="22898:22938" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="23167:23207" ph="select name customer" />
+            <marker date="1499722057086" expanded="true" signature="23439:23484" ph="select mobil... customer" />
+            <marker date="1499722057086" expanded="true" signature="23816:24006" ph="select pid,e... buys" />
+            <marker date="1499722057086" expanded="true" signature="24837:24875" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="25103:25143" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="25372:25412" ph="select name customer" />
+            <marker date="1499722057086" expanded="true" signature="25644:25689" ph="select mobil... customer" />
+            <marker date="1499722057086" expanded="true" signature="26024:26211" ph="select pid,e... stores" />
+            <marker date="1499722057086" expanded="true" signature="26992:27030" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="27258:27298" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="27615:27737" ph="select pid,e... stores" />
+            <marker date="1499722057086" expanded="true" signature="28510:28548" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="28776:28816" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="29134:29258" ph="select pid,e... stores" />
+            <marker date="1499722057086" expanded="true" signature="30032:30070" ph="select name product" />
+            <marker date="1499722057086" expanded="true" signature="30298:30338" ph="select name employee" />
+            <marker date="1499722057086" expanded="true" signature="30674:30713" ph="select price... product" />
+            <marker date="1499722057086" expanded="true" signature="30825:30867" ph="insert into buys... " />
+            <marker date="1499722057086" expanded="true" signature="31248:31278" ph="select max(c... customer" />
+            <marker date="1499722057086" expanded="true" signature="31523:31557" ph="insert into customer... " />
+            <marker date="1499722057086" expanded="true" signature="31746:31784" ph="select price... product" />
+            <marker date="1499722057086" expanded="true" signature="32039:32078" ph="select price... product" />
+            <marker date="1499722057086" expanded="true" signature="32189:32231" ph="insert into buys... " />
+            <marker date="1499722057086" expanded="true" signature="32705:32747" ph="insert into stores... " />
+            <marker date="1499722057086" expanded="true" signature="33101:33239" ph="select pid, buys" />
+            <marker date="1499722057086" expanded="true" signature="33802:33844" ph="update produ... " />
+            <marker date="1499722057086" expanded="true" signature="34003:34044" ph="update produ... " />
+            <marker date="1499722057086" expanded="true" signature="34205:34253" ph="update produ... " />
+            <marker date="1499722057086" expanded="true" signature="34418:34466" ph="update prcus... " />
+            <marker date="1499722057086" expanded="true" signature="34633:34686" ph="update custo... " />
+            <marker date="1499722057086" expanded="true" signature="34853:34898" ph="update prcus... " />
+            <marker date="1499722057086" expanded="true" signature="35063:35111" ph="update repre... " />
+            <marker date="1499722057086" expanded="true" signature="35278:35324" ph="update compa... " />
+            <marker date="1499722057086" expanded="true" signature="35486:35543" ph="update emplo... " />
+            <marker date="1499722057086" expanded="true" signature="35712:35762" ph="update emplo... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/service/BasicInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-220">
+          <caret line="121" column="49" lean-forward="false" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hasan/controller/BasicInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1742">
+          <caret line="176" column="18" lean-forward="false" selection-start-line="176" selection-start-column="18" selection-end-line="176" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/sellCuInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2375">
+          <caret line="125" column="89" lean-forward="false" selection-start-line="125" selection-start-column="89" selection-end-line="125" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/storePrInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2063">
+          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/sellPrInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/sellEmInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/storeEmInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/sellDateInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="121" column="13" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/storeDateInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/adminHome.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1453">
-          <caret line="1068" column="54" lean-forward="false" selection-start-line="1068" selection-start-column="54" selection-end-line="1068" selection-end-column="54" />
+        <state relative-caret-position="428">
+          <caret line="399" column="39" lean-forward="false" selection-start-line="399" selection-start-column="39" selection-end-line="399" selection-end-column="39" />
           <folding />
         </state>
       </provider>

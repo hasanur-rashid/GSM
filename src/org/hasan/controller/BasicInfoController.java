@@ -131,6 +131,98 @@ public class BasicInfoController implements ApplicationContextAware
         return mv;
     }
 
+    @RequestMapping("/sellEmInfo")
+    public ModelAndView sellEmInfo(@RequestParam("emid") Long emid, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        List<SellInformation> sInfo = sv.getSellEmInfo(emid);
+        if ( sInfo == null )
+        {
+            mv.setViewName("adminHome.jsp");
+            mv.addObject("errEmid","Invalid Employee ID !!!");
+        }
+        else
+        {
+            mv.setViewName("sellEmInfo.jsp");
+            mv.addObject("sInfo", sInfo);
+        }
+        return mv;
+    }
+
+    @RequestMapping("/sellCuInfo")
+    public ModelAndView sellCuInfo(@RequestParam("cuid") Long cuid, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        List<SellInformation> sInfo = sv.getSellCuInfo(cuid);
+        if ( sInfo == null )
+        {
+            mv.setViewName("adminHome.jsp");
+            mv.addObject("errCuid","Invalid Customer ID !!!");
+        }
+        else
+        {
+            mv.setViewName("sellCuInfo.jsp");
+            mv.addObject("sInfo", sInfo);
+        }
+        return mv;
+    }
+
+    @RequestMapping("/sellDateInfo")
+    public ModelAndView sellDateInfo(@RequestParam("sdate") String sdate, @RequestParam("edate") String edate, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        List<SellInformation> sInfo = sv.getSellDateInfo(sdate, edate);
+        mv.setViewName("sellDateInfo.jsp");
+        mv.addObject("sInfo", sInfo);
+        return mv;
+    }
+
+    @RequestMapping("/storePrInfo")
+    public ModelAndView storePrInfo(@RequestParam("pid") Long pid, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        List<StoreInformation> sInfo = sv.getStorePrInfo(pid);
+        if ( sInfo == null )
+        {
+            mv.setViewName("adminHome.jsp");
+            mv.addObject("errPid","Invalid Product ID !!!");
+        }
+        else
+        {
+            mv.setViewName("storePrInfo.jsp");
+            mv.addObject("sInfo", sInfo);
+        }
+        return mv;
+    }
+
+    @RequestMapping("/storeEmInfo")
+    public ModelAndView storeEmInfo(@RequestParam("emid") Long emid, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        List<StoreInformation> sInfo = sv.getStoreEmInfo(emid);
+        if ( sInfo == null )
+        {
+            mv.setViewName("adminHome.jsp");
+            mv.addObject("errEmid","Invalid Employee ID !!!");
+        }
+        else
+        {
+            mv.setViewName("storeEmInfo.jsp");
+            mv.addObject("sInfo", sInfo);
+        }
+        return mv;
+    }
+
+    @RequestMapping("/storeDateInfo")
+    public ModelAndView storeDateInfo(@RequestParam("sdate") String sdate, @RequestParam("edate") String edate, HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        List<StoreInformation> sInfo = sv.getStoreDateInfo(sdate, edate);
+        mv.setViewName("storeDateInfo.jsp");
+        mv.addObject("sInfo", sInfo);
+        return mv;
+    }
+
     @RequestMapping("/totPrSale")
     public ModelAndView totPrSale(@RequestParam("sdate") String sdate, HttpServletRequest request, HttpServletResponse response)
     {

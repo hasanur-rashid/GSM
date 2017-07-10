@@ -350,7 +350,9 @@
             <div class="modal-content">
                 <span class="close" id="c9">&times;</span>
                 <form action="sellDateInfo">
+                    <h2 class="ex3">Start Date:</h2>
                     <input type="date" name="sdate" placeholder="Start Date" required/> <br>
+                    <h2 class="ex3">End Date:</h2>
                     <input type="date" name="edate" placeholder="End Date" required/> <br>
                     <br>
                     <input type="submit" value="Submit" />
@@ -393,7 +395,9 @@
             <div class="modal-content">
                 <span class="close" id="c12">&times;</span>
                 <form action="storeDateInfo">
+                    <h2 class="ex3">Start Date:</h2>
                     <input type="date" name="sdate" placeholder="Start Date" required/> <br>
+                    <h2 class="ex3">End Date:</h2>
                     <input type="date" name="edate" placeholder="End Date" required/> <br>
                     <br>
                     <input type="submit" value="Submit" />

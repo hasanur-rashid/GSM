@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
     <head>
-        <title>Product Sell Info</title>
+        <title>Customer Purchase Info</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -93,7 +93,7 @@
         </style>
     </head>
     <body>
-    <h1 class="ex1">Product Sell Information:</h1>
+    <h1 class="ex1">Customer Purchase Information:</h1>
     <form action="/backAdminHome">
         <button class="button pos0">Back To Home</button>
     </form>
@@ -101,17 +101,17 @@
         List<SellInformation> sInfo = (List<SellInformation>) request.getAttribute("sInfo");
         if(sInfo.size()==0)
         {
-            out.println("System has no information about the product.");
+            out.println("System has no information about the customer.");
         }
         else
         {
             out.println("<table align=\"center\">");
             out.println("<tr>");
-            out.println("<th>Product ID</th>");
-            out.println("<th>Product Name</th>");
             out.println("<th>Customer ID</th>");
             out.println("<th>Customer Name</th>");
             out.println("<th>Customer Mobile No.</th>");
+            out.println("<th>Product ID</th>");
+            out.println("<th>Product Name</th>");
             out.println("<th>Employee ID</th>");
             out.println("<th>Employee Name</th>");
             out.println("<th>Date</th>");
@@ -121,11 +121,11 @@
             for ( SellInformation s: sInfo )
             {
                 out.println("<tr>");
-                out.println( String.format("<td>%d</td>", s.getPid().longValue()));
-                out.println( String.format("<td>%s</td>", s.getPname()) );
                 out.println( String.format("<td>%d</td>", s.getCuid().longValue()));
                 out.println( String.format("<td>%s</td>", s.getCuname()) );
                 out.println( String.format("<td>%d</td>", s.getMobile_no().longValue()));
+                out.println( String.format("<td>%d</td>", s.getPid().longValue()));
+                out.println( String.format("<td>%s</td>", s.getPname()) );
                 out.println( String.format("<td>%d</td>", s.getEmid().longValue()));
                 out.println( String.format("<td>%s</td>", s.getEmname()) );
                 out.println( String.format("<td>%s</td>", s.getDate()) );

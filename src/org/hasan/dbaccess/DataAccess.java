@@ -545,6 +545,309 @@ public class DataAccess {
         return sInfo;
     }
 
+    public List<SellInformation> getSellEmInfo( Long emid )
+    {
+
+        List<SellInformation> sInfo =
+        this.jdbcTemplate.query
+        (
+            "select pid,emid,cuid,price,quantity, to_char(bdate,'YYYY-MM-DD HH24:MI:SS') bdate from buys where emid = ? order by bdate desc",
+            new Object[]{emid},
+            new RowMapper<SellInformation>() {
+                public SellInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    SellInformation sInfo = new SellInformation();
+                    sInfo.setPid(rs.getLong("pid"));
+                    sInfo.setEmid(rs.getLong("emid"));
+                    sInfo.setCuid(rs.getLong("cuid"));
+                    sInfo.setPrice(rs.getLong("price"));
+                    sInfo.setQuantity(rs.getLong("quantity"));
+                    sInfo.setDate(rs.getString("bdate"));
+                    return sInfo;
+                }
+            }
+        );
+        for ( SellInformation s: sInfo )
+        {
+            s.setPname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from product where pid = ?",
+                    String.class,
+                    new Object[]{s.getPid()}
+                )
+            );
+            s.setEmname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from employee where emid = ?",
+                    String.class,
+                    new Object[]{s.getEmid()}
+                )
+            );
+            s.setCuname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from customer where cuid = ?",
+                    String.class,
+                    new Object[]{s.getCuid()}
+                )
+            );
+            s.setMobile_no(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select mobile_no from customer where cuid = ?",
+                    Long.class,
+                    new Object[]{s.getCuid()}
+                )
+            );
+        }
+        return sInfo;
+    }
+
+    public List<SellInformation> getSellCuInfo( Long cuid )
+    {
+
+        List<SellInformation> sInfo =
+        this.jdbcTemplate.query
+        (
+            "select pid,emid,cuid,price,quantity, to_char(bdate,'YYYY-MM-DD HH24:MI:SS') bdate from buys where cuid = ? order by bdate desc",
+            new Object[]{cuid},
+            new RowMapper<SellInformation>() {
+                public SellInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    SellInformation sInfo = new SellInformation();
+                    sInfo.setPid(rs.getLong("pid"));
+                    sInfo.setEmid(rs.getLong("emid"));
+                    sInfo.setCuid(rs.getLong("cuid"));
+                    sInfo.setPrice(rs.getLong("price"));
+                    sInfo.setQuantity(rs.getLong("quantity"));
+                    sInfo.setDate(rs.getString("bdate"));
+                    return sInfo;
+                }
+            }
+        );
+        for ( SellInformation s: sInfo )
+        {
+            s.setPname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from product where pid = ?",
+                    String.class,
+                    new Object[]{s.getPid()}
+                )
+            );
+            s.setEmname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from employee where emid = ?",
+                    String.class,
+                    new Object[]{s.getEmid()}
+                )
+            );
+            s.setCuname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from customer where cuid = ?",
+                    String.class,
+                    new Object[]{s.getCuid()}
+                )
+            );
+            s.setMobile_no(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select mobile_no from customer where cuid = ?",
+                    Long.class,
+                    new Object[]{s.getCuid()}
+                )
+            );
+        }
+        return sInfo;
+    }
+
+    public List<SellInformation> getSellDateInfo( String sdate, String edate )
+    {
+
+        List<SellInformation> sInfo =
+        this.jdbcTemplate.query
+        (
+            "select pid,emid,cuid,price,quantity, to_char(bdate,'YYYY-MM-DD HH24:MI:SS') bdate from buys where trunc(bdate) between to_date(?,'YYYY-MM-DD') and to_date(?,'YYYY-MM-DD') order by bdate desc",
+            new Object[]{sdate,edate},
+            new RowMapper<SellInformation>() {
+                public SellInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    SellInformation sInfo = new SellInformation();
+                    sInfo.setPid(rs.getLong("pid"));
+                    sInfo.setEmid(rs.getLong("emid"));
+                    sInfo.setCuid(rs.getLong("cuid"));
+                    sInfo.setPrice(rs.getLong("price"));
+                    sInfo.setQuantity(rs.getLong("quantity"));
+                    sInfo.setDate(rs.getString("bdate"));
+                    return sInfo;
+                }
+            }
+        );
+        for ( SellInformation s: sInfo )
+        {
+            s.setPname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from product where pid = ?",
+                    String.class,
+                    new Object[]{s.getPid()}
+                )
+            );
+            s.setEmname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from employee where emid = ?",
+                    String.class,
+                    new Object[]{s.getEmid()}
+                )
+            );
+            s.setCuname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from customer where cuid = ?",
+                    String.class,
+                    new Object[]{s.getCuid()}
+                )
+            );
+            s.setMobile_no(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select mobile_no from customer where cuid = ?",
+                    Long.class,
+                    new Object[]{s.getCuid()}
+                )
+            );
+        }
+        return sInfo;
+    }
+
+    public List<StoreInformation> getStoreDateInfo( String sdate, String edate )
+    {
+
+        List<StoreInformation> sInfo =
+        this.jdbcTemplate.query
+        (
+            "select pid,emid,price,quantity, to_char(sdate,'YYYY-MM-DD HH24:MI:SS') sdate from stores where trunc(sdate) between to_date(?,'YYYY-MM-DD') and to_date(?,'YYYY-MM-DD') order by sdate desc",
+            new Object[]{sdate,edate},
+            new RowMapper<StoreInformation>() {
+                public StoreInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    StoreInformation sInfo = new StoreInformation();
+                    sInfo.setPid(rs.getLong("pid"));
+                    sInfo.setEmid(rs.getLong("emid"));
+                    sInfo.setPrice(rs.getLong("price"));
+                    sInfo.setQuantity(rs.getLong("quantity"));
+                    sInfo.setDate(rs.getString("sdate"));
+                    return sInfo;
+                }
+            }
+        );
+        for ( StoreInformation s: sInfo )
+        {
+            s.setPname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from product where pid = ?",
+                    String.class,
+                    new Object[]{s.getPid()}
+                )
+            );
+            s.setEmname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from employee where emid = ?",
+                    String.class,
+                    new Object[]{s.getEmid()}
+                )
+            );
+        }
+        return sInfo;
+    }
+
+    public List<StoreInformation> getStorePrInfo( Long pid )
+    {
+
+        List<StoreInformation> sInfo =
+        this.jdbcTemplate.query
+        (
+            "select pid,emid,price,quantity, to_char(sdate,'YYYY-MM-DD HH24:MI:SS') sdate from stores where pid = ? order by sdate desc",
+            new Object[]{pid},
+            new RowMapper<StoreInformation>() {
+                public StoreInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    StoreInformation sInfo = new StoreInformation();
+                    sInfo.setPid(rs.getLong("pid"));
+                    sInfo.setEmid(rs.getLong("emid"));
+                    sInfo.setPrice(rs.getLong("price"));
+                    sInfo.setQuantity(rs.getLong("quantity"));
+                    sInfo.setDate(rs.getString("sdate"));
+                    return sInfo;
+                }
+            }
+        );
+        for ( StoreInformation s: sInfo )
+        {
+            s.setPname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from product where pid = ?",
+                    String.class,
+                    new Object[]{s.getPid()}
+                )
+            );
+            s.setEmname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from employee where emid = ?",
+                    String.class,
+                    new Object[]{s.getEmid()}
+                )
+            );
+        }
+        return sInfo;
+    }
+
+    public List<StoreInformation> getStoreEmInfo( Long emid )
+    {
+
+        List<StoreInformation> sInfo =
+        this.jdbcTemplate.query
+        (
+            "select pid,emid,price,quantity, to_char(sdate,'YYYY-MM-DD HH24:MI:SS') sdate from stores where emid = ?  order by sdate desc",
+            new Object[]{emid},
+            new RowMapper<StoreInformation>() {
+                public StoreInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    StoreInformation sInfo = new StoreInformation();
+                    sInfo.setPid(rs.getLong("pid"));
+                    sInfo.setEmid(rs.getLong("emid"));
+                    sInfo.setPrice(rs.getLong("price"));
+                    sInfo.setQuantity(rs.getLong("quantity"));
+                    sInfo.setDate(rs.getString("sdate"));
+                    return sInfo;
+                }
+            }
+        );
+        for ( StoreInformation s: sInfo )
+        {
+            s.setPname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from product where pid = ?",
+                    String.class,
+                    new Object[]{s.getPid()}
+                )
+            );
+            s.setEmname(
+                this.jdbcTemplate.queryForObject
+                (
+                    "select name from employee where emid = ?",
+                    String.class,
+                    new Object[]{s.getEmid()}
+                )
+            );
+        }
+        return sInfo;
+    }
+
     public Float sellProductToRegular(Long cuid, Long pid, Long emid, Long quantity)
     {
         Float price =
