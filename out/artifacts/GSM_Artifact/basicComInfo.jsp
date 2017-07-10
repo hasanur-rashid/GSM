@@ -15,6 +15,8 @@
         <style>
             table, th, td
             {
+                font-family: Helvetica,Arial;
+                font-size: 3vh;
                 border-radius: 8px;
                 border-collapse: collapse;
             }
@@ -36,7 +38,7 @@
 
             tr:hover
             {
-                background-color: forestgreen;
+                background-color: yellow;
             }
 
             h1.ex1
@@ -92,7 +94,7 @@
     </head>
     <body>
         <h1 class="ex1">Company Information:</h1>
-        <form action="backBasicComInfo">
+        <form action="backEmployeeHome">
             <button class="button pos0">Back To Home</button>
         </form>
         <%

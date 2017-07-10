@@ -1,15 +1,15 @@
-<%@ page import="org.hasan.model.CompanyInformation" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="org.hasan.model.SoldProductList" %><%--
   Created by IntelliJ IDEA.
   User: ENVY
-  Date: 5/21/2017
-  Time: 11:06 AM
+  Date: 7/10/2017
+  Time: 4:09 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
     <head>
-        <title>Basic Company Info</title>
+        <title>Memo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -93,56 +93,49 @@
         </style>
     </head>
     <body>
-        <h1 class="ex1">Company Information:</h1>
+        <h1 class="ex1">Printed Memo:</h1>
         <form action="backEmployeeHome">
             <button class="button pos0">Back To Home</button>
         </form>
         <%
-            CompanyInformation comInfo = (CompanyInformation) request.getAttribute("comInfo");
-            if(comInfo==null)
+            List<SoldProductList> sList = (List<SoldProductList>) request.getAttribute("sList");
+            if(sList==null)
             {
-                out.println("System has no information about the company.");
+                out.println("Error Generating Memo !!!");
             }
             else
             {
-                out.println( String.format("<h2 class=\"ex2\">Company ID: <span style=\"color: black\">%d</span></h2>", comInfo.getCmid().longValue()) );
-                out.println( String.format("<h2 class=\"ex2\">Company Name: <span style=\"color: black\">%s</span></h2>", comInfo.getCmname()) );
-                out.println( String.format("<h2 class=\"ex2\">Company Address: <span style=\"color: black\">%s</span></h2>", comInfo.getCmaddress()) );
-                out.println("<h1 class=\"ex1\">Company Product Information:</h1>");
+                String name = (String) session.getAttribute("cuname");
+                Long mobile_no = (Long) session.getAttribute("cumob");
+                Long cuid = (Long) session.getAttribute("cuid");
+                out.println( String.format("<h2 class=\"ex2\">Customer ID: <span style=\"color: black\">%d</span></h2>", cuid) );
+                out.println( String.format("<h2 class=\"ex2\">Customer Name: <span style=\"color: black\">%s</span></h2>", name) );
+                out.println( String.format("<h2 class=\"ex2\">Customer Mobile No.: <span style=\"color: black\">%d</span></h2>", mobile_no) );
+                out.println("<h1 class=\"ex1\">Sold Product List:</h1>");
                 out.println("<table>");
                 out.println("<tr>");
                 out.println("<th>Product ID</th>");
                 out.println("<th>Product Name</th>");
+                out.println("<th>Product Sold Time</th>");
+                out.println("<th>Product Price(per unit)</th>");
+                out.println("<th>Product Quantity</th>");
+                out.println("<th>Total Price(per product)</th>");
                 out.println("</tr>");
-                List<Long> pid = comInfo.getPid();
-                List<String> pname = comInfo.getPname();
-                for ( int  i = 0 ; i<pid.size() ; i++ )
+                float total = (float) 0.0;
+                for ( SoldProductList s: sList )
                 {
                     out.println("<tr>");
-                    out.println( String.format("<td>%d</td>", pid.get(i)));
-                    out.println( String.format("<td>%s</td>", pname.get(i)) );
+                    out.println( String.format("<td>%d</td>", s.getPid().longValue()));
+                    out.println( String.format("<td>%s</td>", s.getName()) );
+                    out.println( String.format("<td>%s</td>", s.getDate()) );
+                    out.println( String.format("<td>%.2f</td>", s.getPrice().floatValue()) );
+                    out.println( String.format("<td>%d</td>", s.getQuantity().longValue()) );
+                    out.println( String.format("<td>%.2f</td>", s.getPrice().floatValue()*s.getQuantity().longValue()) );
                     out.println("</tr>");
+                    total += s.getPrice().floatValue()*s.getQuantity().longValue();
                 }
                 out.println("</table>");
-                out.println("<h1 class=\"ex1\">Company Representative Information:</h1>");
-                out.println("<table>");
-                out.println("<tr>");
-                out.println("<th>Representative ID</th>");
-                out.println("<th>Representative Name</th>");
-                out.println("<th>Representative Mobile No.</th>");
-                out.println("</tr>");
-                List <Long> rid = comInfo.getRid();
-                List <String> rname = comInfo.getRname();
-                List <Long> mobile_no = comInfo.getMobile_no();
-                for ( int  i = 0 ; i<rid.size() ; i++ )
-                {
-                    out.println("<tr>");
-                    out.println( String.format("<td>%d</td>", rid.get(i)));
-                    out.println( String.format("<td>%s</td>", rname.get(i)) );
-                    out.println( String.format("<td>%s</td>", mobile_no.get(i)) );
-                    out.println("</tr>");
-                }
-                out.println("</table>");
+                out.println( String.format("<h2 class=\"ex2\">Total Price: <span style=\"color: black\">%.2f</span></h2>", total) );
             }
         %>
     </body>

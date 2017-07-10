@@ -1,5 +1,6 @@
 package org.hasan.controller;
 
+import org.hasan.model.SoldProductList;
 import org.hasan.service.SellStoreService;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.*;
 
 /**
  * Created by ENVY on 5/20/2017.
@@ -23,13 +25,48 @@ public class SellStoreController implements ApplicationContextAware
     private SellStoreService sv;
 
     @RequestMapping("/doSellToRegular")
-    public ModelAndView doSellToRegular(@RequestParam("name") String name, @RequestParam("mobile_no") Long mobile_no, @RequestParam("pid") Long pid, @RequestParam("quantity") Long quantity, HttpServletRequest request, HttpServletResponse response)
+    public ModelAndView doSellToRegular(@RequestParam("name") String name, @RequestParam("mobile_no") Long mobile_no, HttpServletRequest request, HttpServletResponse response)
     {
         HttpSession session = request.getSession();
-        Long emid = (Long)session.getAttribute("emid");
-        sv.performSellToRegular(name, mobile_no, pid, emid, quantity);
+        session.setAttribute("cuname",name);
+        session.setAttribute("cumob",mobile_no);
+        List<SoldProductList> sList = new ArrayList<SoldProductList>();
+        session.setAttribute("sList",sList);
         ModelAndView mv = new ModelAndView();
         mv.setViewName("employeeHome.jsp");
+        mv.addObject("openPrListRegAgain","open");
+        return mv;
+    }
+
+    @RequestMapping("/prListReg")
+    public ModelAndView prListReg(@RequestParam("pid") Long pid, @RequestParam("quantity") Long quantity, HttpServletRequest request, HttpServletResponse response)
+    {
+        SoldProductList s = new SoldProductList();
+        s.setPid(pid);
+        s.setQuantity(quantity);
+        HttpSession session = request.getSession();
+        List<SoldProductList> sList = (List<SoldProductList>) session.getAttribute("sList");
+        sList.add(s);
+        session.setAttribute("sList",sList);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("employeeHome.jsp");
+        mv.addObject("openPrListRegAgain","open");
+        return mv;
+    }
+
+    @RequestMapping("/genMemoReg")
+    public ModelAndView genMemoReg(HttpServletRequest request, HttpServletResponse response)
+    {
+        HttpSession session = request.getSession();
+        String name = (String) session.getAttribute("cuname");
+        Long mobile_no = (Long) session.getAttribute("cumob");
+        Long emid = (Long) session.getAttribute("emid");
+        Long cuid = sv.getRegularID(name,mobile_no);
+        session.setAttribute("cuid",cuid);
+        List<SoldProductList> sList = (List<SoldProductList>) session.getAttribute("sList");
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("sellMemo.jsp");
+        mv.addObject("sList", sv.performSellToRegular(cuid,emid,sList));
         return mv;
     }
 

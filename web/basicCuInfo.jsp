@@ -59,7 +59,7 @@
     </head>
     <body>
         <h1 class="ex1">Customer Information:</h1>
-        <form action="backBasicCuInfo">
+        <form action="backEmployeeHome">
             <button class="button pos0">Back To Home</button>
         </form>
         <%

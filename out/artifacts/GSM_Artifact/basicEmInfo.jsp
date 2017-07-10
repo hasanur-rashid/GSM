@@ -59,7 +59,7 @@
     </head>
     <body>
         <h1 class="ex1">Employee Information:</h1>
-        <form action="backBasicEmInfo">
+        <form action="backEmployeeHome">
             <button class="button pos0">Back To Home</button>
         </form>
         <%

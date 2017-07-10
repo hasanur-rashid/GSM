@@ -131,51 +131,19 @@ public class BasicInfoController implements ApplicationContextAware
         return mv;
     }
 
-    @RequestMapping("/backBasicPrInfo")
-    public ModelAndView backBasicPrInfo(HttpServletRequest request, HttpServletResponse response)
-    {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("employeeHome.jsp");
-        return mv;
-    }
-
-    @RequestMapping("/backBasicComInfo")
-    public ModelAndView backBasicComInfo(HttpServletRequest request, HttpServletResponse response)
-    {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("employeeHome.jsp");
-        return mv;
-    }
-
-    @RequestMapping("/backBasicCuInfo")
-    public ModelAndView backBasicCuInfo(HttpServletRequest request, HttpServletResponse response)
-    {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("employeeHome.jsp");
-        return mv;
-    }
-
-    @RequestMapping("/backBasicEmInfo")
-    public ModelAndView backBasicEmInfo(HttpServletRequest request, HttpServletResponse response)
-    {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("employeeHome.jsp");
-        return mv;
-    }
-
-    @RequestMapping("/backBasicRepInfo")
-    public ModelAndView backBasicRepInfo(HttpServletRequest request, HttpServletResponse response)
-    {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("employeeHome.jsp");
-        return mv;
-    }
-
     @RequestMapping("/backAdminHome")
     public ModelAndView backAdminHome(HttpServletRequest request, HttpServletResponse response)
     {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("adminHome.jsp");
+        return mv;
+    }
+
+    @RequestMapping("/backEmployeeHome")
+    public ModelAndView backEmployeeHome(HttpServletRequest request, HttpServletResponse response)
+    {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("employeeHome.jsp");
         return mv;
     }
 

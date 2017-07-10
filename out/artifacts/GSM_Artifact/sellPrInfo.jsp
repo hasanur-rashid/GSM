@@ -16,7 +16,7 @@
             table, th, td
             {
                 font-family: Helvetica,Arial;
-                font-size: 2.8vh;
+                font-size: 3vh;
                 border-radius: 8px;
                 border-collapse: collapse;
             }

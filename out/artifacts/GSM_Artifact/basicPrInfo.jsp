@@ -60,7 +60,7 @@
     </head>
     <body>
         <h1 class="ex1">Product Information:</h1>
-        <form action="backBasicPrInfo">
+        <form action="backEmployeeHome">
             <button class="button pos0">Back To Home</button>
         </form>
         <%

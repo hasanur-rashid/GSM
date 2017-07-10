@@ -535,16 +535,25 @@ public class DataAccess {
         return sInfo;
     }
 
-    public void sellProductToRegular(String name, Long mobile_no, Long pid, Long emid, Long quantity)
+    public Float sellProductToRegular(Long cuid, Long pid, Long emid, Long quantity)
     {
-        Long price =
+        Float price =
         this.jdbcTemplate.queryForObject
         (
                 "select price from product where pid = ?",
-                Long.class,
+                Float.class,
                 new Object[]{pid}
         );
 
+        this.jdbcTemplate.update("insert into buys values(?,?,?,sysdate,?,?)",new Object[]{pid,emid,cuid,price,quantity});
+
+        SqlParameterSource in1 = new MapSqlParameterSource("P_ID", pid).addValue("SELL_QUANTITY",quantity);
+        procQuantityDown.execute(in1);
+        return price;
+    }
+
+    public Long findRegularID (String name, Long mobile_no)
+    {
         Long maxCuid =
         this.jdbcTemplate.queryForObject
         (
@@ -556,10 +565,17 @@ public class DataAccess {
         Long cuid = (funcGetCustomerId.executeFunction(BigDecimal.class,in)).longValue();
 
         this.jdbcTemplate.update("insert into customer values(?,?,?)",new Object[]{cuid,name,mobile_no});
-        this.jdbcTemplate.update("insert into buys values(?,?,?,sysdate,?,?)",new Object[]{pid,emid,cuid,price,quantity});
+        return cuid;
+    }
 
-        SqlParameterSource in1 = new MapSqlParameterSource("P_ID", pid).addValue("SELL_QUANTITY",quantity);
-        procQuantityDown.execute(in1);
+    public String findProductName( Long pid )
+    {
+        return this.jdbcTemplate.queryForObject
+        (
+            "select name from product where pid = ?",
+            String.class,
+            new Object[]{pid}
+        );
     }
 
     public void sellProductToPremier(Long pid,Long emid, Long cuid, Long quantity)
