@@ -71,20 +71,54 @@ public class SellStoreController implements ApplicationContextAware
     }
 
     @RequestMapping("/doSellToPremier")
-    public ModelAndView doSellToPremier(@RequestParam("pid") Long pid, @RequestParam("cuid") Long cuid, @RequestParam("quantity") Long quantity, HttpServletRequest request, HttpServletResponse response)
+    public ModelAndView doSellToPremier(@RequestParam("cuid") Long cuid, HttpServletRequest request, HttpServletResponse response)
     {
-        HttpSession session = request.getSession();
-        Long emid = (Long)session.getAttribute("emid");
         ModelAndView mv = new ModelAndView();
-        if ( sv.performSellToPremier(pid, emid, cuid, quantity) )
+        if ( sv.isPrCustomer(cuid) )
         {
+            HttpSession session = request.getSession();
+            session.setAttribute("cuid",cuid);
+            List<SoldProductList> sList = new ArrayList<SoldProductList>();
+            session.setAttribute("sList",sList);
             mv.setViewName("employeeHome.jsp");
+            mv.addObject("openPrListPrAgain","open");
         }
         else
         {
             mv.setViewName("employeeHome.jsp");
             mv.addObject("errorValidCuid","Invalid Premier Customer ID !!!");
         }
+        return mv;
+    }
+
+    @RequestMapping("/prListPr")
+    public ModelAndView prListPr(@RequestParam("pid") Long pid, @RequestParam("quantity") Long quantity, HttpServletRequest request, HttpServletResponse response)
+    {
+        SoldProductList s = new SoldProductList();
+        s.setPid(pid);
+        s.setQuantity(quantity);
+        HttpSession session = request.getSession();
+        List<SoldProductList> sList = (List<SoldProductList>) session.getAttribute("sList");
+        sList.add(s);
+        session.setAttribute("sList",sList);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("employeeHome.jsp");
+        mv.addObject("openPrListPrAgain","open");
+        return mv;
+    }
+
+    @RequestMapping("/genMemoPr")
+    public ModelAndView genMemoPr(HttpServletRequest request, HttpServletResponse response)
+    {
+        HttpSession session = request.getSession();
+        Long emid = (Long) session.getAttribute("emid");
+        Long cuid = (Long) session.getAttribute("cuid");
+        session.setAttribute("cuname",sv.getCuName(cuid));
+        session.setAttribute("cumob",sv.getCuMob(cuid));
+        List<SoldProductList> sList = (List<SoldProductList>) session.getAttribute("sList");
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("sellMemo.jsp");
+        mv.addObject("sList", sv.performSellToPremier(cuid,emid,sList));
         return mv;
     }
 

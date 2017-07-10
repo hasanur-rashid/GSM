@@ -268,11 +268,9 @@
             <div class="modal-content">
                 <span class="close" id="c3">&times;</span>
                 <form action="doSellToPremier">
-                    <input type="number" name="pid" placeholder="Product ID" required/> <br>
                     <input type="number" name="cuid" placeholder="Customer ID" required/> <br>
-                    <input type="number" name="quantity" placeholder="Quantity" required/> <br>
                     <br>
-                    <input type="submit" value="Generate Memo" />
+                    <input type="submit" value="Ok" />
                 </form>
             </div>
 
@@ -616,6 +614,24 @@
             </div>
 
         </div>
+        <!-- The Modal -->
+        <div id="prListPrModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="c28">&times;</span>
+                <form action="prListPr">
+                    <input type="number" name="pid" placeholder="Product ID" required/> <br>
+                    <input type="number" name="quantity" placeholder="Quantity" required/> <br>
+                    <br>
+                    <input type="submit" value="Add" />
+                </form>
+                <form action="genMemoPr">
+                    <button class="modalButton">Generate Memo</button>
+                </form>
+            </div>
+
+        </div>
         <script>
             // Get the modal
             var prInfoModal = document.getElementById('prInfoModal');
@@ -646,6 +662,7 @@
             var errRidModal = document.getElementById('errRidModal');
             var errEmidModal = document.getElementById('errEmidModal');
             var prListRegModal = document.getElementById('prListRegModal');
+            var prListPrModal = document.getElementById('prListPrModal');
 
             // Get the button that opens the modal
             var prInfoBtn = document.getElementById("prInfoBtn");
@@ -687,6 +704,7 @@
             var span25 = document.getElementById("c25");
             var span26 = document.getElementById("c26");
             var span27 = document.getElementById("c27");
+            var span28 = document.getElementById("c28");
 
             var errPid = '${errorValidPid}';
             var errCmid = '${errorValidCmid}';
@@ -702,6 +720,11 @@
             var openAddPrAgain = '${openAddPrAgain}';
             var openAddCuAgain = '${openAddCuAgain}';
             var openPrListRegAgain = '${openPrListRegAgain}';
+            var openPrListPrAgain = '${openPrListPrAgain}';
+
+            if ( openPrListPrAgain!=null && openPrListPrAgain!="" ){
+                prListPrModal.style.display = "block";
+            }
 
             if ( openPrListRegAgain!=null && openPrListRegAgain!="" ){
                 prListRegModal.style.display = "block";
@@ -1000,6 +1023,9 @@
             span27.onclick = function() {
                 prListRegModal.style.display = "none";
             }
+            span28.onclick = function() {
+                prListPrModal.style.display = "none";
+            }
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == prInfoModal ) {
@@ -1085,6 +1111,9 @@
                 }
                 else if (event.target == prListRegModal ) {
                     prListRegModal.style.display = "none";
+                }
+                else if (event.target == prListPrModal ) {
+                    prListPrModal.style.display = "none";
                 }
             }
         </script>

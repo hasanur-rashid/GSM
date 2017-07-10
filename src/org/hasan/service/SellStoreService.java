@@ -23,6 +23,28 @@ public class SellStoreService
         return db.findRegularID(name, mobile_no);
     }
 
+    public String getCuName(Long cuid)
+    {
+        return db.findCuName(cuid);
+    }
+
+    public Long getCuMob(Long cuid)
+    {
+        return db.findCuMob(cuid);
+    }
+
+    public boolean isPrCustomer ( Long cuid )
+    {
+        if ( db.isPrCustomer(cuid) > 0 )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public List<SoldProductList> performSellToRegular ( Long cuid, Long emid, List<SoldProductList> sList)
     {
         for ( SoldProductList s: sList )
@@ -40,17 +62,21 @@ public class SellStoreService
         return sList;
     }
 
-    public boolean performSellToPremier (Long pid,Long emid, Long cuid, Long quantity)
+    public List<SoldProductList> performSellToPremier (Long cuid,Long emid, List<SoldProductList> sList)
     {
-        if ( db.isPrCustomer(cuid) > 0 )
+        for ( SoldProductList s: sList )
         {
-            db.sellProductToPremier(pid, emid, cuid, quantity);
-            return true;
+            //Get current date time
+            LocalDateTime now = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            Long pid = s.getPid();
+            Long quantity = s.getQuantity();
+            Float price = db.sellProductToPremier(pid, emid, cuid, quantity);
+            s.setDate(now.format(formatter));
+            s.setPrice(price);
+            s.setName(db.findProductName(pid));
         }
-        else
-        {
-            return false;
-        }
+        return sList;
     }
 
     public void performStore(Long pid,Long emid, Long price, Long quantity)

@@ -891,13 +891,33 @@ public class DataAccess {
         );
     }
 
-    public void sellProductToPremier(Long pid,Long emid, Long cuid, Long quantity)
+    public String findCuName( Long cuid )
     {
-        Long price =
+        return this.jdbcTemplate.queryForObject
+        (
+            "select name from customer where cuid = ?",
+            String.class,
+            new Object[]{cuid}
+        );
+    }
+
+    public Long findCuMob( Long cuid )
+    {
+        return this.jdbcTemplate.queryForObject
+        (
+            "select mobile_no from customer where cuid = ?",
+            Long.class,
+            new Object[]{cuid}
+        );
+    }
+
+    public Float sellProductToPremier(Long pid,Long emid, Long cuid, Long quantity)
+    {
+        Float price =
         this.jdbcTemplate.queryForObject
         (
                 "select price from product where pid = ?",
-                Long.class,
+                Float.class,
                 new Object[]{pid}
         );
 
@@ -908,6 +928,7 @@ public class DataAccess {
 
         SqlParameterSource in1 = new MapSqlParameterSource("P_ID", pid).addValue("SELL_QUANTITY",quantity);
         procQuantityDown.execute(in1);
+        return price;
     }
 
     public void storeProduct (Long pid,Long emid, Long price, Long quantity)
