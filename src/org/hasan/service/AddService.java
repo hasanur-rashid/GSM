@@ -66,7 +66,7 @@ public class AddService
 
     public boolean createNewPr(Long pid, Long cmid, String name, Long price, Long quantity, String category, Long rid, Long emid)
     {
-        if ( db.isEmployee(emid) > 0 )
+        if ( db.isProduct(pid) > 0 )
         {
             return false;
         }

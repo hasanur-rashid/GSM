@@ -286,7 +286,7 @@
                     <input type="number" name="price" placeholder="Product Price" required/> <br>
                     <input type="number" name="quantity" placeholder="Quantity" required/> <br>
                     <br>
-                    <input type="submit" value="Generate Memo" />
+                    <input type="submit" value="Ok" />
                 </form>
             </div>
 
